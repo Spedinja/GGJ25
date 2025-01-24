@@ -10,7 +10,6 @@ func _ready():
 	pass # Start the timer to spawn bubbles every 2 seconds
 
 func _process(delta):
-	# Update your score display here (if you have one)
 	accum_time += delta
 	if accum_time>1:
 		spawn_bubble()

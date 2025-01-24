@@ -6,13 +6,19 @@ extends Area2D
 
 var time = 0
 
+var delete_timer = 0
+
 var is_clicked = false
 
 func _physics_process(delta):
 	time += delta
+	delete_timer = time
 	var wiggle = sin(time*frequency)*amplitude
 	position.x += wiggle * delta
 	position.y -= upwards_speed * delta
+	
+	if delete_timer > (0.05 * upwards_speed): #change to speed/value
+		queue_free()
 
 # Called when the mouse clicks on the bubble.
 func _input_event(viewport, event, shape_idx):
