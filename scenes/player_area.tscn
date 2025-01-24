@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb6ad1kyqcpmi"]
+
+[ext_resource type="Script" path="res://scenes/bubble_area.gd" id="1_hc30i"]
+[ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="1_qpbnt"]
+[ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="2_mbd35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf55l"]
+size = Vector2(22.4824, 20)
+
+[node name="PlayerArea" type="Node2D"]
+
+[node name="BubbleArea" type="Node2D" parent="."]
+script = ExtResource("1_hc30i")
+
+[node name="SpawnArea" type="Area2D" parent="BubbleArea"]
+
+[node name="Bubbles" type="Node" parent="BubbleArea/SpawnArea"]
+
+[node name="BubbleSpawn" type="Node" parent="BubbleArea/SpawnArea"]
+
+[node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(428, 902)
+
+[node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(624, 856)
+
+[node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(808, 808)
+
+[node name="BubbleSpawn_4" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+
+[node name="BubbleSpawn_5" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(1058, 748)
+
+[node name="BubbleSpawn_6" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(1200, 814)
+
+[node name="BubbleSpawn_7" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(1420, 874)
+
+[node name="BubbleSpawn_8" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(1568, 922)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleArea/SpawnArea"]
+position = Vector2(963.9, 545)
+scale = Vector2(85.32, 53.84)
+shape = SubResource("RectangleShape2D_nf55l")
+
+[node name="Sprite2D" type="Sprite2D" parent="BubbleArea/SpawnArea"]
+position = Vector2(962, 546)
+texture = ExtResource("1_qpbnt")
+
+[node name="ShopArea" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopArea"]
+position = Vector2(967, 1633)
+texture = ExtResource("2_mbd35")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(962, 544)
