@@ -15,7 +15,7 @@ func _process(delta):
 
 func spawn_bubble():
 	# Randomize the position where the bubble will spawn
-	var random_position = Vector2(randf_range(0, get_viewport().size.x), randf_range(0, get_viewport().size.y))
+	var random_position = Vector2(randf_range(0, get_viewport().size.x), get_viewport().size.y)
 	
 	var bubble_instance = bubble_scene.instantiate()
 	bubble_instance.position = random_position
