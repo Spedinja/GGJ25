@@ -9,11 +9,14 @@ var accum_time = 0
 func _ready():
 	$SpawnArea/BubbleSpawn/BubbleSpawn_1.unlockSpawner() # Start the timer to spawn bubbles every 2 seconds
 
+
 func _process(delta):
 	#accum_time += delta
 	#if accum_time>1:
 	#	spawn_bubble()
 	#	accum_time = 0
+	#if accum_time > 5:
+	#	$SpawnArea/BubbleSpawn/BubbleSpawn_2.unlockSpawner() # Start the timer to spawn bubbles every 2 seconds
 	pass
 
 func spawn_bubble():
