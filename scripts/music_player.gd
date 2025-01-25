@@ -31,6 +31,7 @@ func _ready():
 	create_playlist()
 	play_random_song()
 	base_audio_player.finished.connect(on_audio_player_finished)
+	SignalManager.bubble_popped.connect(on_bubble_popped)
 	SignalManager.machine_level_up.connect(on_level_up)
 
 func create_playlist():
@@ -81,6 +82,7 @@ func cross_fade(from, to):
 	
 
 func on_bubble_popped():
+	print("blub")
 	var bubble_index = randi_range(0, bubble_sounds.size()-1)
 	bubble_sfx_player.stream = load(bubble_sounds[bubble_index].file_path)
 	bubble_sfx_player.play()
