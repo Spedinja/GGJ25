@@ -49,14 +49,16 @@ func _unlockSpawner() -> void:
 
 
 func levelUp(currentLvl) -> void:
+	SignalManager.machine_level_up.emit()
+	print(currentLvl)
 	if currentLvl == 0:#vorher1
 			_unlockSpawner()
 	_increaseStats(currentLvl)
 	
 func _increaseStats(currentLvl)-> void:
 	#get next element from array, adjust on instantiate
-	currentLvl = currentLvl+1
-	currModifier= arrStats[currentLvl-2]
+	self.currentLvl = currentLvl+1
+	self.currModifier= arrStats[currentLvl-2]
 	
 func getNextStats() -> void:
 	var nextLvl = currentLvl+1
