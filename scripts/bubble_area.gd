@@ -35,6 +35,7 @@ func _add_score(points):
 	score += points
 	# Update the score UI here if necessary
 	print("Score: ", score)
+	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	
 func on_bubble_popped():
 	_add_score(100)

@@ -77,6 +77,20 @@ shape = SubResource("RectangleShape2D_nf55l")
 position = Vector2(962, 546)
 texture = ExtResource("1_qpbnt")
 
+[node name="BubbleArea_HUD" type="CanvasLayer" parent="BubbleArea"]
+
+[node name="CurrentMoney_US" type="Label" parent="BubbleArea/BubbleArea_HUD"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_right = -4.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "$: "
+
 [node name="ShopArea" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ShopArea"]

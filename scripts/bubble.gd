@@ -13,6 +13,7 @@ var delete_timer = 0
 #Signal
 signal bubble_popped
 var is_clicked = false
+var bubbleValue
 
 func _ready() -> void:
 	direction = randf_range(-1,1)
@@ -40,3 +41,6 @@ func setBubbleScale(givenScale) -> void:
 	bubbleScale = givenScale
 	scale.x = bubbleScale
 	scale.y = bubbleScale
+
+func setBubbleValue(givenValue) -> void:
+	bubbleValue = givenValue
