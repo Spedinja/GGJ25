@@ -11,6 +11,7 @@ func _ready():
 	$SpawnArea/BubbleSpawn/BubbleSpawn_1.levelUp(1)
 	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
+	SignalManager.money_changed.connect(on_money_changed)
 	
 func _process(delta):
 	#accum_time += delta
@@ -38,7 +39,7 @@ func change_score(points):
 	if points > 0:
 		score += points
 	else:
-		score-= points
+		score+= points
 	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
 	

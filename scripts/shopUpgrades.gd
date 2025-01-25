@@ -18,8 +18,7 @@ func _on_btn_upgrade_1_pressed() -> void:
 	if currentLvl <= maxLvl:
 		currentLvl += currentLvl
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1".levelUp(currentLvl)
-		$"../../BubbleArea".cash_changed.emit((arrUpgradeCosts[0][arrCurrLevel[0]])*-1)
-		print((arrUpgradeCosts[0][arrCurrLevel[0]])*-1)	
+		SignalManager.money_changed.emit((arrUpgradeCosts[0][arrCurrLevel[0]])*-1)
 
 func updateShop()-> void:
 	var tmpCounter = 0
