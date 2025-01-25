@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="GGJ25"
+config/name="OcTeaPop!"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://svgs/lila_blub.svg"
 
 [autoload]
 
