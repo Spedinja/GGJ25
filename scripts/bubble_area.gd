@@ -12,7 +12,6 @@ func _ready():
 	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
 	
-	
 func _process(delta):
 	#accum_time += delta
 	#if accum_time>1:
@@ -48,3 +47,6 @@ func on_bubble_popped(arg1):
 	
 func on_money_changed(arg1):
 	change_score(arg1)
+
+func getCash() -> int:
+	return score

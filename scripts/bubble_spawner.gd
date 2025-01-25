@@ -11,9 +11,9 @@ var accum_time = 0
 @export var bubbleValue: float
 
 #Stats
-var currentLvl
+var currentLvl = 1
 var currModifier
-var arrStats: Array[float] = [1, 2, 4]
+@export var arrStats: Array[float]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,7 +37,8 @@ func spawn_bubble():
 		#bubble_instance.setBubbleValue(bubbleValue*bubbleScale)
 		bubble_instance.adjustBubbleValues(currModifier)
 		bubble_instance.position = position
-		bubble_instance.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
+		SignalManager.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
+		#bubble_instance.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
 		$"../../Bubbles".add_child(bubble_instance)
 	else:
 		print("error no bubble")
@@ -54,9 +55,7 @@ func levelUp(currentLvl) -> void:
 func _increaseStats(currentLvl)-> void:
 	#get next element from array, adjust on instantiate
 	currentLvl = currentLvl+1
-	currModifier = 1
-	pass
+	currModifier= arrStats[currentLvl-2]
 	
 func getNextStats() -> void:
 	var nextLvl = currentLvl+1
-	pass #todo
