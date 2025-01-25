@@ -118,7 +118,7 @@ offset_top = 1090.0
 offset_right = 1923.0
 offset_bottom = 2166.0
 script = ExtResource("8_i5d77")
-arrUpgradeCosts = Array[Array]([[2, 3, 4], []])
+arrUpgradeCosts = Array[Array]([[100, 300, 400]])
 
 [node name="CurrentMoney_LS" type="Label" parent="ShopArea/ShopArea_UI"]
 custom_minimum_size = Vector2(200, 0)
