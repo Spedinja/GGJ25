@@ -25,12 +25,12 @@ func _process(delta: float) -> void:
 func spawn_bubble():
 	var bubble_instance = bubble_scene.instantiate()
 	if bubble_instance != null:
-		bubble_instance.add_to_group("bubbles")
-		bubble_instance.bubble_popped.connect($"../../..".on_bubble_popped) 
+		bubble_instance.add_to_group("bubbles") 
 		bubbleScale = randf_range(1,4)
 		bubble_instance.setBubbleScale(bubbleScale)
 		bubble_instance.setBubbleValue(bubbleValue*bubbleScale)
 		bubble_instance.position = position
+		bubble_instance.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
 		$"../../Bubbles".add_child(bubble_instance)
 	else:
 		print("error no bubble")

@@ -11,7 +11,7 @@ var bubbleScale: float
 var delete_timer = 0
 
 #Signal
-signal bubble_popped
+signal bubble_popped(param)
 var is_clicked = false
 var bubbleValue
 
@@ -43,4 +43,7 @@ func setBubbleScale(givenScale) -> void:
 	scale.y = bubbleScale
 
 func setBubbleValue(givenValue) -> void:
-	bubbleValue = givenValue
+	self.bubbleValue = givenValue
+
+func getBubbleValue() -> int:
+	return self.bubbleValue

@@ -40,6 +40,7 @@ script = SubResource("GDScript_bdf3d")
 [node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(428, 902)
 script = ExtResource("2_7d4fa")
+bubbleValue = 100.0
 
 [node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(624, 856)
