@@ -14,6 +14,13 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qjgpw")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1hpni")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+texture = ExtResource("3_takre")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -52,13 +59,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1hpni")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(0, 1080)
-texture = ExtResource("3_takre")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("10_3ijnd")

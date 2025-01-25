@@ -12,7 +12,7 @@ extends Node
 
 signal music_changed
 
-var cafe : bool = true
+var cafe : bool = false
 
 var base_playlist = []
 var cafe_playlist = []
@@ -57,17 +57,17 @@ func play_song(song_index):
 func on_audio_player_finished():
 	play_random_song()
 
-func on_location_switch(from,to):
+func on_location_switch():
+	print("blub")
+	if cafe:
+		cross_fade(cafe_audio_player,sky_audio_player)
+	else:
+		cross_fade(sky_audio_player,cafe_audio_player)
+	cafe = not cafe
+
+func cross_fade(from, to):
 	var music_fade_out_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	music_fade_out_tween.tween_property(from, "volume_db", -80,1)
 	var music_fade_in_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	music_fade_in_tween.tween_property(to, "volume_db", -6,1)
 	
-func _input(event):
-	if event is InputEventMouseButton:
-		if cafe:
-			on_location_switch(cafe_audio_player,sky_audio_player)
-		else:
-			on_location_switch(sky_audio_player,cafe_audio_player)
-		cafe = not cafe
-		print(cafe)
