@@ -11,9 +11,9 @@ var accum_time = 0
 @export var bubbleValue: float
 
 #Stats
-var currentLvl
+var currentLvl = 1
 var currModifier
-var arrStats: Array[float] = [1, 2, 4]
+@export var arrStats: Array[float]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,9 +54,7 @@ func levelUp(currentLvl) -> void:
 func _increaseStats(currentLvl)-> void:
 	#get next element from array, adjust on instantiate
 	currentLvl = currentLvl+1
-	currModifier = 1
-	pass
+	currModifier= arrStats[currentLvl-2]
 	
 func getNextStats() -> void:
 	var nextLvl = currentLvl+1
-	pass #todo

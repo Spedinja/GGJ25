@@ -1,7 +1,8 @@
 extends Node
 
 var currentLvl = 0
-var maxLvl
+var maxLvl = 3
+@export var costs: Array[float]
 
 
 # Called when the node enters the scene tree for the first time.

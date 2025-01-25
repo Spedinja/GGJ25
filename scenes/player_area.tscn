@@ -45,6 +45,7 @@ script = ExtResource("1_hc30i")
 position = Vector2(428, 902)
 script = ExtResource("2_7d4fa")
 bubbleValue = 100.0
+arrStats = Array[float]([1.0, 2.0, 4.0])
 
 [node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(624, 856)
