@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=29 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="2_7d4fa"]
 [ext_resource type="Texture2D" uid="uid://tm1gwcr3fuol" path="res://sprites/Background_Sky.png" id="3_n7f4v"]
+[ext_resource type="Script" path="res://scripts/gadse.gd" id="4_harbk"]
 [ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_0jclp"]
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
@@ -92,6 +93,7 @@ theme_override_font_sizes/font_size = 50
 text = "$: 0000"
 
 [node name="btnGoDown" type="TextureButton" parent="BubbleArea/BubbleArea_HUD"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 anchors_preset = 3
@@ -203,8 +205,29 @@ disabled = true
 texture_normal = ExtResource("23_gaul0")
 texture_disabled = ExtResource("14_25fue")
 
+[node name="Cat" type="TextureButton" parent="."]
+offset_left = 393.0
+offset_top = 913.0
+offset_right = 593.0
+offset_bottom = 1033.0
+script = ExtResource("4_harbk")
+
+[node name="Cat2" type="TextureButton" parent="."]
+offset_left = 1315.0
+offset_top = 1628.0
+offset_right = 1515.0
+offset_bottom = 1748.0
+script = ExtResource("4_harbk")
+
+[node name="Cat3" type="TextureButton" parent="."]
+offset_left = 540.0
+offset_top = 1906.0
+offset_right = 675.0
+offset_bottom = 2026.0
+script = ExtResource("4_harbk")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(960, 1620)
 script = ExtResource("18_gmjm1")
 
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]

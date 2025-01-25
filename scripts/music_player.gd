@@ -16,6 +16,7 @@ extends Node
 @onready var other_sfx_player = $other_sfx
 
 var level_up_sfx = "res://sfx/MachineUpgrade.mp3"
+var cat_pet_sound = "res://sfx/PetTheCat.mp3"
 
 signal music_changed
 
@@ -33,6 +34,7 @@ func _ready():
 	base_audio_player.finished.connect(on_audio_player_finished)
 	SignalManager.bubble_popped.connect(on_bubble_popped)
 	SignalManager.machine_level_up.connect(on_level_up)
+	SignalManager.pet_cat.connect(pet_cat)
 
 func create_playlist():
 	base_playlist = [] + base_tracks
@@ -68,11 +70,11 @@ func on_audio_player_finished():
 	play_random_song()
 
 func on_location_switch():
+	cafe = not cafe
 	if cafe:
 		cross_fade(cafe_audio_player,sky_audio_player)
 	else:
 		cross_fade(sky_audio_player,cafe_audio_player)
-	cafe = not cafe
 
 func cross_fade(from, to):
 	var music_fade_out_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
@@ -90,3 +92,8 @@ func on_bubble_popped():
 func on_level_up():
 	other_sfx_player.stream = load(level_up_sfx)
 	other_sfx_player.play()
+
+func pet_cat():
+	other_sfx_player.stream = load(cat_pet_sound)
+	other_sfx_player.play()
+	print("meow")
