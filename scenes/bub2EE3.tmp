@@ -14,6 +14,21 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qjgpw")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1hpni")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+texture = ExtResource("3_takre")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -45,24 +60,9 @@ texture_normal = ExtResource("7_p8wwp")
 texture_pressed = ExtResource("8_d61yr")
 texture_hover = ExtResource("9_4qp5o")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1hpni")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(0, 1080)
-texture = ExtResource("3_takre")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("10_3ijnd")
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/ToShop" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="UI/ToBubbles" to="Camera2D" method="_on_to_bubbles_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

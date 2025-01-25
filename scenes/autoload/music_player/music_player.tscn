@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5e80idmdba5v"]
+
+[ext_resource type="Script" path="res://scripts/music_player.gd" id="1_gp57g"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="2_yxg3i"]
+[ext_resource type="Resource" uid="uid://bn6vibraxfv5y" path="res://music/Ressources/Song1Base.tres" id="3_dfjsa"]
+[ext_resource type="Resource" uid="uid://cte270pr3w6g0" path="res://music/Ressources/Song1Cafe.tres" id="4_q3wnu"]
+[ext_resource type="Resource" uid="uid://cykn72lky4it" path="res://music/Ressources/Song1Sky.tres" id="5_iqxqi"]
+
+[node name="music_player" type="Node"]
+script = ExtResource("1_gp57g")
+tracks = Array[ExtResource("2_yxg3i")]([ExtResource("3_dfjsa"), ExtResource("4_q3wnu"), ExtResource("5_iqxqi")])
+base_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("3_dfjsa")])
+cafe_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("4_q3wnu")])
+sky_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("5_iqxqi")])
+
+[node name="base_audio_player" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="cafe_audio_player" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="sky_audio_player" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+bus = &"Music"
