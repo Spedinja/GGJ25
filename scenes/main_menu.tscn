@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxx4ki7lbx727"]
+[gd_scene load_steps=10 format=3 uid="uid://dxx4ki7lbx727"]
 
-[ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="1_1j263"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_klkhb"]
+[ext_resource type="Texture2D" uid="uid://mnikefdbt2cl" path="res://sprites/Background_Shop.png" id="2_eduoj"]
+[ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="3_iki6t"]
+[ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="4_8iv1x"]
+[ext_resource type="Texture2D" uid="uid://nc6ev7fsfhw6" path="res://sprites/MachineIcons/Icon_Machine_ 3a.png" id="5_6ghpu"]
+[ext_resource type="Texture2D" uid="uid://dr67o13odj2sb" path="res://sprites/MachineIcons/Icon_Machine_ 4a.png" id="6_nqfmd"]
+[ext_resource type="Texture2D" uid="uid://dioeje56ptxt8" path="res://sprites/MachineIcons/Icon_Machine_ 5a.png" id="7_uwlwq"]
+[ext_resource type="Texture2D" uid="uid://dbmlm0t3eb26l" path="res://sprites/MachineIcons/Icon_Machine_ 6a.png" id="8_nj6au"]
+[ext_resource type="Texture2D" uid="uid://cl0u1mykw5oe3" path="res://sprites/MachineIcons/Icon_Machine_ 7a.png" id="9_bnf8u"]
 
 [node name="MainMenu_UI" type="Control"]
 layout_mode = 3
@@ -13,9 +20,58 @@ grow_vertical = 2
 script = ExtResource("1_klkhb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.509804)
-position = Vector2(964, 538)
-texture = ExtResource("1_1j263")
+position = Vector2(960, 540)
+texture = ExtResource("2_eduoj")
+
+[node name="ShopContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.34323
+anchor_top = -0.307689
+anchor_right = 9.18789
+anchor_bottom = 1.55848
+offset_left = 928.001
+offset_top = 578.305
+offset_right = 1104.25
+offset_bottom = 618.31
+scale = Vector2(0.075, 0.075)
+theme_override_constants/separation = 690
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("3_iki6t")
+
+[node name="2" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("4_8iv1x")
+
+[node name="3" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("5_6ghpu")
+
+[node name="4" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("6_nqfmd")
+
+[node name="5" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("7_uwlwq")
+
+[node name="6" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("8_nj6au")
+
+[node name="7" type="TextureRect" parent="ShopContainer"]
+layout_mode = 2
+texture = ExtResource("9_bnf8u")
+
+[node name="Sprite2D2" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.197937, 0.197937, 0.197937, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
