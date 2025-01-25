@@ -1,12 +1,12 @@
 [gd_scene load_steps=28 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
-[ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="1_qpbnt"]
 [ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="2_7d4fa"]
-[ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="2_mbd35"]
+[ext_resource type="Texture2D" uid="uid://tm1gwcr3fuol" path="res://sprites/Background_Sky.png" id="3_n7f4v"]
 [ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_0jclp"]
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
+[ext_resource type="Texture2D" uid="uid://mnikefdbt2cl" path="res://sprites/Background_Shop.png" id="7_iqowy"]
 [ext_resource type="Script" path="res://scripts/shopUpgrades.gd" id="8_i5d77"]
 [ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="8_ts1rx"]
 [ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="9_l13h3"]
@@ -76,8 +76,8 @@ scale = Vector2(85.32, 53.84)
 shape = SubResource("RectangleShape2D_nf55l")
 
 [node name="Sprite2D" type="Sprite2D" parent="BubbleArea/SpawnArea"]
-position = Vector2(962, 546)
-texture = ExtResource("1_qpbnt")
+position = Vector2(960, 540)
+texture = ExtResource("3_n7f4v")
 
 [node name="BubbleArea_HUD" type="CanvasLayer" parent="BubbleArea"]
 
@@ -107,8 +107,8 @@ stretch_mode = 0
 [node name="ShopArea" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ShopArea"]
-position = Vector2(962, 1633)
-texture = ExtResource("2_mbd35")
+position = Vector2(960, 1620)
+texture = ExtResource("7_iqowy")
 
 [node name="ShopArea_UI" type="Control" parent="ShopArea"]
 layout_mode = 3
@@ -198,7 +198,7 @@ texture_normal = ExtResource("23_gaul0")
 texture_disabled = ExtResource("14_25fue")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(962, 544)
+position = Vector2(960, 540)
 script = ExtResource("18_gmjm1")
 
 [connection signal="cash_changed" from="BubbleArea" to="ShopArea/ShopArea_UI" method="_on_bubble_area_cash_changed"]
