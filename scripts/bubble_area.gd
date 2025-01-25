@@ -7,8 +7,7 @@ var accum_time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$SpawnArea/BubbleSpawn/BubbleSpawn_1.unlockSpawner() # Start the timer to spawn bubbles every 2 seconds
-
+	$SpawnArea/BubbleSpawn/BubbleSpawn_1.unlockSpawner()
 
 func _process(delta):
 	#accum_time += delta
@@ -32,7 +31,11 @@ func spawn_bubble():
 	#	print("error no bubble")
 	pass
 
-func add_score(points):
+func _add_score(points):
 	score += points
 	# Update the score UI here if necessary
 	print("Score: ", score)
+	
+func on_bubble_popped():
+	_add_score(100)
+	print("pop")

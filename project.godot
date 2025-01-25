@@ -23,6 +23,10 @@ window/size/window_width_override=854
 window/size/window_height_override=480
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+bubbles=""
+
 [rendering]
 
 renderer/rendering_method="mobile"
