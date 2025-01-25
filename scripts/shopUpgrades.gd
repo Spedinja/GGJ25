@@ -44,7 +44,8 @@ func updateShop()-> void:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = true
 		tmpCounter= tmpCounter +1
-		break #ToDo
+		if tmpCounter == 3: #toDo
+			break #ToDo
 
 func _on_bubble_area_cash_changed(value: Variant) -> void:
 	updateShop()

@@ -43,7 +43,7 @@ func change_score(points):
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
 	
 func on_bubble_popped(arg1):
-	on_money_changed(arg1)
+	SignalManager.money_changed.emit(arg1)
 	
 func on_money_changed(arg1):
 	change_score(arg1)
