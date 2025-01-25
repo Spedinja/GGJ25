@@ -1,7 +1,7 @@
 extends Camera2D
 
-@onready var shop_button = $"../UI/ToShop"  # Reference to the Button node
-@onready var to_bubbles_button = $"../UI/ToBubbles"
+@onready var shop_button = $"../BubbleArea/BubbleArea_HUD/btnGoDown"#$"../UI/ToShop"  # Reference to the Button node
+@onready var to_bubbles_button = $"../ShopArea/ShopArea_UI/btnGoUp"#$"../UI/ToBubbles"
 
 func _on_to_shop_pressed():
 	shop_button.hide()

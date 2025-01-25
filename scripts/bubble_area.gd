@@ -1,14 +1,18 @@
 extends Node2D
 
-@onready var score = 0
+@onready var score = 100
 #@onready var bubble_scene = preload("res://scenes/bubble.tscn")
 #@onready var timer
 var accum_time = 0
+signal cash_changed(value)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$SpawnArea/BubbleSpawn/BubbleSpawn_1.unlockSpawner()
-
+	$SpawnArea/BubbleSpawn/BubbleSpawn_1.levelUp(1)
+	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
+	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
+	
+	
 func _process(delta):
 	#accum_time += delta
 	#if accum_time>1:
@@ -31,10 +35,16 @@ func spawn_bubble():
 	#	print("error no bubble")
 	pass
 
-func _add_score(points):
-	score += points
+func change_score(points):
+	if points > 0:
+		score += points
+	else:
+		score-= points
 	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
 	
 func on_bubble_popped(arg1):
-	_add_score(arg1)
+	on_money_changed(arg1)
+	
+func on_money_changed(arg1):
+	change_score(arg1)
