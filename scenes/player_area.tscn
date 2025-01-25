@@ -1,26 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=27 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="1_qpbnt"]
 [ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="2_7d4fa"]
 [ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="2_mbd35"]
-
-[sub_resource type="GDScript" id="GDScript_bdf3d"]
-script/source = "extends Node
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func on_bubble_popped():
-	pass
-"
+[ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_0jclp"]
+[ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
+[ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
+[ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="8_ts1rx"]
+[ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="9_l13h3"]
+[ext_resource type="Texture2D" uid="uid://nc6ev7fsfhw6" path="res://sprites/MachineIcons/Icon_Machine_ 3a.png" id="10_gb3aa"]
+[ext_resource type="Texture2D" uid="uid://c3jshdj8m2qvw" path="res://sprites/MachineIcons/Icon_Machine_ 1b.png" id="11_btw05"]
+[ext_resource type="Texture2D" uid="uid://dr67o13odj2sb" path="res://sprites/MachineIcons/Icon_Machine_ 4a.png" id="11_gu1w1"]
+[ext_resource type="Texture2D" uid="uid://dioeje56ptxt8" path="res://sprites/MachineIcons/Icon_Machine_ 5a.png" id="12_d7ijb"]
+[ext_resource type="Texture2D" uid="uid://dbmlm0t3eb26l" path="res://sprites/MachineIcons/Icon_Machine_ 6a.png" id="13_ce2n2"]
+[ext_resource type="Texture2D" uid="uid://diusxp3a0volv" path="res://sprites/MachineIcons/Icon_Machine_ 2b.png" id="13_mpu0g"]
+[ext_resource type="Texture2D" uid="uid://cl0u1mykw5oe3" path="res://sprites/MachineIcons/Icon_Machine_ 7a.png" id="14_25fue"]
+[ext_resource type="Texture2D" uid="uid://bxkxark5fc14w" path="res://sprites/MachineIcons/Icon_Machine_ 3b.png" id="15_3ls3x"]
+[ext_resource type="Texture2D" uid="uid://cogm7ey4bthub" path="res://sprites/tmp_btn_up_normal.png" id="15_800g8"]
+[ext_resource type="Texture2D" uid="uid://dptknvabur4l4" path="res://sprites/tmp_btn_up_pressed.png" id="16_0u06a"]
+[ext_resource type="Texture2D" uid="uid://c04kh6m5jhi3y" path="res://sprites/tmp_btn_up_hover.png" id="17_gp4mk"]
+[ext_resource type="Texture2D" uid="uid://de3ikg3n78w8b" path="res://sprites/MachineIcons/Icon_Machine_ 4b.png" id="17_ksanp"]
+[ext_resource type="Script" path="res://scripts/camera_movement.gd" id="18_gmjm1"]
+[ext_resource type="Texture2D" uid="uid://bh23nbpugpgvj" path="res://sprites/MachineIcons/Icon_Machine_ 5b.png" id="19_3rg8w"]
+[ext_resource type="Texture2D" uid="uid://drkxmfjyi4vso" path="res://sprites/MachineIcons/Icon_Machine_ 6b.png" id="21_1lw61"]
+[ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Icon_Machine_ 7b.png" id="23_gaul0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf55l"]
 size = Vector2(22.4824, 20)
@@ -33,7 +37,6 @@ script = ExtResource("1_hc30i")
 [node name="SpawnArea" type="Area2D" parent="BubbleArea"]
 
 [node name="Bubbles" type="Node" parent="BubbleArea/SpawnArea"]
-script = SubResource("GDScript_bdf3d")
 
 [node name="BubbleSpawn" type="Node" parent="BubbleArea/SpawnArea"]
 
@@ -65,10 +68,6 @@ script = ExtResource("2_7d4fa")
 position = Vector2(1420, 874)
 script = ExtResource("2_7d4fa")
 
-[node name="BubbleSpawn_8" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(1568, 922)
-script = ExtResource("2_7d4fa")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleArea/SpawnArea"]
 position = Vector2(963.9, 545)
 scale = Vector2(85.32, 53.84)
@@ -82,21 +81,115 @@ texture = ExtResource("1_qpbnt")
 
 [node name="CurrentMoney_US" type="Label" parent="BubbleArea/BubbleArea_HUD"]
 custom_minimum_size = Vector2(200, 0)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -104.0
-offset_right = -4.0
+offset_right = 200.0
 offset_bottom = 69.0
-grow_horizontal = 0
 theme_override_font_sizes/font_size = 50
-text = "$: "
+text = "$: 0000"
+
+[node name="btnGoDown" type="TextureButton" parent="BubbleArea/BubbleArea_HUD"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_x6kud")
+texture_pressed = ExtResource("5_0jclp")
+texture_hover = ExtResource("6_m3mqp")
+stretch_mode = 0
 
 [node name="ShopArea" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ShopArea"]
-position = Vector2(967, 1633)
+position = Vector2(962, 1633)
 texture = ExtResource("2_mbd35")
+
+[node name="ShopArea_UI" type="Control" parent="ShopArea"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = 1090.0
+offset_right = 1923.0
+offset_bottom = 2166.0
+
+[node name="CurrentMoney_LS" type="Label" parent="ShopArea/ShopArea_UI"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "$: 0000"
+
+[node name="btnGoUp" type="TextureButton" parent="ShopArea/ShopArea_UI"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("15_800g8")
+texture_pressed = ExtResource("16_0u06a")
+texture_hover = ExtResource("17_gp4mk")
+stretch_mode = 0
+
+[node name="ShopContainer" type="HBoxContainer" parent="ShopArea/ShopArea_UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.157676
+anchor_top = 0.185874
+anchor_right = 9.6888
+anchor_bottom = 2.05204
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.075, 0.075)
+theme_override_constants/separation = 680
+metadata/_edit_use_anchors_ = true
+
+[node name="btnUpgrade1" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_btw05")
+texture_disabled = ExtResource("8_ts1rx")
+stretch_mode = 0
+
+[node name="btnUpgrade2" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_mpu0g")
+texture_disabled = ExtResource("9_l13h3")
+
+[node name="btnUpgrade3" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_3ls3x")
+texture_disabled = ExtResource("10_gb3aa")
+
+[node name="btnUpgrade4" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("17_ksanp")
+texture_disabled = ExtResource("11_gu1w1")
+
+[node name="btnUpgrade5" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("19_3rg8w")
+texture_disabled = ExtResource("12_d7ijb")
+
+[node name="btnUpgrade6" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("21_1lw61")
+texture_disabled = ExtResource("13_ce2n2")
+
+[node name="btnUpgrade7" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+layout_mode = 2
+texture_normal = ExtResource("23_gaul0")
+texture_disabled = ExtResource("14_25fue")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(962, 544)
+script = ExtResource("18_gmjm1")
+
+[connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
