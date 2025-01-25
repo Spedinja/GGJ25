@@ -1,13 +1,13 @@
 extends Area2D
 
-@export var frequency : float = 5
-@export var amplitude : float = 150
-@export var upwards_speed : float = 100
+var frequency : float = 5
+var amplitude : float = 150
+var upwards_speed : float = 100
 var direction = 1 # Determines the horizontal direction (1 for right, -1 for left)
 
 var time = 0
 
-var bubbleScale: float
+var bubbleScale: float = 1
 var delete_timer = 0
 
 #Signal
@@ -16,6 +16,8 @@ var is_clicked = false
 var bubbleValue
 
 func _ready() -> void:
+	bubbleScale= randf_range(1,4)
+	setBubbleScale(bubbleScale)
 	direction = randf_range(-1,1)
 
 func _physics_process(delta):
@@ -42,8 +44,15 @@ func setBubbleScale(givenScale) -> void:
 	scale.x = bubbleScale
 	scale.y = bubbleScale
 
-func setBubbleValue(givenValue) -> void:
-	self.bubbleValue = givenValue
+#func setBubbleValue(givenValue) -> void:
+#	self.bubbleValue = givenValue
 
 func getBubbleValue() -> int:
 	return self.bubbleValue
+
+func adjustBubbleValues(multiplier) -> void:
+	frequency = 5 + multiplier
+	amplitude = 150 + (multiplier * 4)
+	upwards_speed = 100 + (multiplier * 10)
+	bubbleValue = bubbleScale * multiplier
+	

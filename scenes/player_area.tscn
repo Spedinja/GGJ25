@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=28 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="1_qpbnt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_0jclp"]
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
+[ext_resource type="Script" path="res://scripts/shopUpgrades.gd" id="8_i5d77"]
 [ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="8_ts1rx"]
 [ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="9_l13h3"]
 [ext_resource type="Texture2D" uid="uid://nc6ev7fsfhw6" path="res://sprites/MachineIcons/Icon_Machine_ 3a.png" id="10_gb3aa"]
@@ -115,6 +116,7 @@ offset_left = -5.0
 offset_top = 1090.0
 offset_right = 1923.0
 offset_bottom = 2166.0
+script = ExtResource("8_i5d77")
 
 [node name="CurrentMoney_LS" type="Label" parent="ShopArea/ShopArea_UI"]
 custom_minimum_size = Vector2(200, 0)
@@ -151,7 +153,7 @@ scale = Vector2(0.075, 0.075)
 theme_override_constants/separation = 680
 metadata/_edit_use_anchors_ = true
 
-[node name="btnUpgrade1" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
+[node name="btnUpgrade1" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer" groups=["bubbles"]]
 layout_mode = 2
 texture_normal = ExtResource("11_btw05")
 texture_disabled = ExtResource("8_ts1rx")
@@ -159,31 +161,37 @@ stretch_mode = 0
 
 [node name="btnUpgrade2" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("13_mpu0g")
 texture_disabled = ExtResource("9_l13h3")
 
 [node name="btnUpgrade3" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("15_3ls3x")
 texture_disabled = ExtResource("10_gb3aa")
 
 [node name="btnUpgrade4" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("17_ksanp")
 texture_disabled = ExtResource("11_gu1w1")
 
 [node name="btnUpgrade5" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("19_3rg8w")
 texture_disabled = ExtResource("12_d7ijb")
 
 [node name="btnUpgrade6" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("21_1lw61")
 texture_disabled = ExtResource("13_ce2n2")
 
 [node name="btnUpgrade7" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("23_gaul0")
 texture_disabled = ExtResource("14_25fue")
 
@@ -193,3 +201,4 @@ script = ExtResource("18_gmjm1")
 
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade1" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_1_pressed"]
