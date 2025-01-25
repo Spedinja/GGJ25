@@ -17,12 +17,21 @@ func _process(delta: float) -> void:
 func _on_btn_upgrade_1_pressed() -> void:
 	if currentLvl <= maxLvl:
 		currentLvl += currentLvl
-	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1".levelUp(currentLvl)	
+		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1".levelUp(currentLvl)
+		$"../../BubbleArea".cash_changed.emit((arrUpgradeCosts[0][arrCurrLevel[0]])*-1)
+		print((arrUpgradeCosts[0][arrCurrLevel[0]])*-1)	
 
 func updateShop()-> void:
-	var currMoney = $BubbleArea.getCash
-	#for elem in arrCurrLevel():
-
+	var tmpCounter = 0
+	var tmpElem: int
+	var currMoney = $"../../BubbleArea".getCash()
+	for elem in arrCurrLevel:
+		tmpElem = elem
+		if currMoney >= arrUpgradeCosts[tmpCounter][tmpElem]:
+			tmpCounter= tmpCounter +1
+			print(str("btnUpgrade",tmpCounter))
+			$ShopContainer/btnUpgrade1.disabled = false
+			break
 
 func _on_bubble_area_cash_changed(value: Variant) -> void:
 	updateShop()
