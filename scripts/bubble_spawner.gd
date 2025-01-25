@@ -49,7 +49,7 @@ func _unlockSpawner() -> void:
 
 
 func levelUp(currentLvl) -> void:
-	if currentLvl == 1:
+	if currentLvl == 0:#vorher1
 			_unlockSpawner()
 	_increaseStats(currentLvl)
 	

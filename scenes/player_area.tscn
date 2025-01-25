@@ -50,6 +50,8 @@ arrStats = Array[float]([1.0, 2.0, 4.0])
 [node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(545, 766)
 script = ExtResource("2_7d4fa")
+bubbleValue = 500.0
+arrStats = Array[float]([3.0, 9.0, 12.0])
 
 [node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(747, 740)
@@ -208,3 +210,9 @@ script = ExtResource("18_gmjm1")
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade1" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_1_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade2" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_2_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade3" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_3_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade4" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_4_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade5" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_5_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade6" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_6_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade7" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_7_pressed"]

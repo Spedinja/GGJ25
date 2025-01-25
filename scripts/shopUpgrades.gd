@@ -24,10 +24,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_btn_upgrade_1_pressed() -> void:
+	currentLvl = arrCurrLevel[0]
 	if currentLvl <= maxLvl:
 		currentLvl += currentLvl
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1".levelUp(currentLvl)
-		SignalManager.money_changed.emit((arrUpgradeCosts[0][arrCurrLevel[0]])*-1)
+		SignalManager.money_changed.emit((arrUpgradeCosts[0][arrCurrLevel[currentLvl]])*-1)
 
 func updateShop()-> void:
 	var tmpCounter = 0
@@ -36,16 +37,45 @@ func updateShop()-> void:
 	var tempNode: TextureButton
 	for elem in arrCurrLevel:
 		tmpElem = elem
-		print(arrButtons[tmpCounter])
-		if currMoney >= arrUpgradeCosts[tmpCounter][tmpElem]:
-			tempNode =arrButtons[tmpCounter]
-			tempNode.disabled = false
-		else:
-			tempNode =arrButtons[tmpCounter]
-			tempNode.disabled = true
-		tmpCounter= tmpCounter +1
-		if tmpCounter == 3: #toDo
-			break #ToDo
+		if tmpElem < 4:
+			if currMoney >= arrUpgradeCosts[tmpCounter][tmpElem]:
+				tempNode =arrButtons[tmpCounter]
+				tempNode.disabled = false
+			else:
+				tempNode =arrButtons[tmpCounter]
+				tempNode.disabled = true
+			tmpCounter= tmpCounter +1
+			if tmpCounter == 3: #toDo
+				break #ToDo
 
 func _on_bubble_area_cash_changed(value: Variant) -> void:
 	updateShop()
+
+
+func _on_btn_upgrade_2_pressed() -> void:
+	currentLvl = arrCurrLevel[1]
+	if currentLvl <= maxLvl:
+		currentLvl += currentLvl
+		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_2".levelUp(currentLvl)
+		SignalManager.money_changed.emit((arrUpgradeCosts[1][arrCurrLevel[currentLvl]])*-1)
+
+
+
+func _on_btn_upgrade_3_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_upgrade_4_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_upgrade_5_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_upgrade_6_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_upgrade_7_pressed() -> void:
+	pass # Replace with function body.
