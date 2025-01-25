@@ -42,36 +42,37 @@ script = ExtResource("1_hc30i")
 [node name="BubbleSpawn" type="Node" parent="BubbleArea/SpawnArea"]
 
 [node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(428, 902)
+position = Vector2(353, 800)
 script = ExtResource("2_7d4fa")
 bubbleValue = 100.0
 arrStats = Array[float]([1.0, 2.0, 4.0])
 
 [node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(624, 856)
+position = Vector2(545, 766)
 script = ExtResource("2_7d4fa")
 
 [node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(808, 808)
+position = Vector2(747, 740)
 script = ExtResource("2_7d4fa")
 
 [node name="BubbleSpawn_4" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+position = Vector2(960, 708)
 script = ExtResource("2_7d4fa")
 
 [node name="BubbleSpawn_5" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(1058, 748)
+position = Vector2(1162, 731)
 script = ExtResource("2_7d4fa")
 
 [node name="BubbleSpawn_6" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(1200, 814)
+position = Vector2(1367, 762)
 script = ExtResource("2_7d4fa")
 
 [node name="BubbleSpawn_7" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
-position = Vector2(1420, 874)
+position = Vector2(1555, 794)
 script = ExtResource("2_7d4fa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleArea/SpawnArea"]
-position = Vector2(963.9, 545)
+position = Vector2(960, 540)
 scale = Vector2(85.32, 53.84)
 shape = SubResource("RectangleShape2D_nf55l")
 
@@ -89,6 +90,7 @@ theme_override_font_sizes/font_size = 50
 text = "$: 0000"
 
 [node name="btnGoDown" type="TextureButton" parent="BubbleArea/BubbleArea_HUD"]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 anchors_preset = 3
 anchor_left = 1.0
@@ -113,10 +115,9 @@ texture = ExtResource("7_iqowy")
 [node name="ShopArea_UI" type="Control" parent="ShopArea"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -5.0
-offset_top = 1090.0
-offset_right = 1923.0
-offset_bottom = 2166.0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 2160.0
 script = ExtResource("8_i5d77")
 arrUpgradeCosts = Array[Array]([[100, 300, 400]])
 
@@ -129,6 +130,7 @@ theme_override_font_sizes/font_size = 50
 text = "$: 0000"
 
 [node name="btnGoUp" type="TextureButton" parent="ShopArea/ShopArea_UI"]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 1
@@ -145,14 +147,16 @@ stretch_mode = 0
 [node name="ShopContainer" type="HBoxContainer" parent="ShopArea/ShopArea_UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.157676
-anchor_top = 0.185874
-anchor_right = 9.6888
-anchor_bottom = 2.05204
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_left = 0.15677
+anchor_top = 0.194162
+anchor_right = 9.68789
+anchor_bottom = 2.06033
+offset_left = -31.9993
+offset_top = 36.3046
+offset_right = 144.242
+offset_bottom = 76.3098
 scale = Vector2(0.075, 0.075)
-theme_override_constants/separation = 680
+theme_override_constants/separation = 690
 metadata/_edit_use_anchors_ = true
 
 [node name="btnUpgrade1" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer" groups=["bubbles"]]
