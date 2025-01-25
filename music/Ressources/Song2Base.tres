@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Music" load_steps=2 format=3 uid="uid://r148xjvwvg11"]
+
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_0i841"]
+
+[resource]
+script = ExtResource("1_0i841")
+name = "Song2Base"
+file_path = "res://music/BaseTrack_Background_LoFi2_v1.mp3"

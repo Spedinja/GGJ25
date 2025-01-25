@@ -6,9 +6,13 @@ extends Node
 @export var cafe_tracks : Array[Music]
 @export var sky_tracks : Array[Music]
 
+@export var bubble_sounds : Array[Music]
+
 @onready var base_audio_player = $base_audio_player
 @onready var cafe_audio_player = $cafe_audio_player
 @onready var sky_audio_player = $sky_audio_player
+
+@onready var bubble_sfx_player = $bubble_sfx
 
 signal music_changed
 
@@ -24,6 +28,7 @@ func _ready():
 	create_playlist()
 	play_random_song()
 	base_audio_player.finished.connect(on_audio_player_finished)
+	SignalManager.bubble_popped.connect(on_bubble_popped)
 
 func create_playlist():
 	base_playlist = [] + base_tracks
@@ -32,6 +37,7 @@ func create_playlist():
 
 func play_random_song():
 	var song_index = randi_range(0, base_playlist.size()-1)
+	print(song_index)
 	var song = base_playlist[song_index]
 	
 	music_changed.emit()
@@ -71,3 +77,8 @@ func cross_fade(from, to):
 	var music_fade_in_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	music_fade_in_tween.tween_property(to, "volume_db", -6,1)
 	
+
+func on_bubble_popped():
+	bubble_sfx_player.stream = load(bubble_sounds[randi_range(0, bubble_sounds.size()-1)].file_path)
+	bubble_sfx_player.play()
+	pass

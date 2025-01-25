@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5e80idmdba5v"]
+[gd_scene load_steps=12 format=3 uid="uid://b5e80idmdba5v"]
 
 [ext_resource type="Script" path="res://scripts/music_player.gd" id="1_gp57g"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="2_yxg3i"]
 [ext_resource type="Resource" uid="uid://bn6vibraxfv5y" path="res://music/Ressources/Song1Base.tres" id="3_dfjsa"]
 [ext_resource type="Resource" uid="uid://cte270pr3w6g0" path="res://music/Ressources/Song1Cafe.tres" id="4_q3wnu"]
 [ext_resource type="Resource" uid="uid://cykn72lky4it" path="res://music/Ressources/Song1Sky.tres" id="5_iqxqi"]
+[ext_resource type="Resource" uid="uid://r148xjvwvg11" path="res://music/Ressources/Song2Base.tres" id="6_uilpd"]
+[ext_resource type="Resource" uid="uid://bmli06i7c2eat" path="res://music/Ressources/Song2Cafe.tres" id="7_ekhet"]
+[ext_resource type="Resource" uid="uid://c4fj0jglb87sf" path="res://music/Ressources/Song2Sky.tres" id="8_4cf32"]
+[ext_resource type="Resource" uid="uid://6dnxesg0are8" path="res://sfx/bubble_pop_1.tres" id="9_wmyyv"]
+[ext_resource type="Resource" uid="uid://btqm03bi6g72l" path="res://sfx/bubble_pop_2.tres" id="10_eay8m"]
+[ext_resource type="Resource" uid="uid://cdgapsmcpi7ht" path="res://sfx/bubble_pop_3.tres" id="11_sqgpy"]
 
 [node name="music_player" type="Node"]
 script = ExtResource("1_gp57g")
 tracks = Array[ExtResource("2_yxg3i")]([ExtResource("3_dfjsa"), ExtResource("4_q3wnu"), ExtResource("5_iqxqi")])
-base_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("3_dfjsa")])
-cafe_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("4_q3wnu")])
-sky_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("5_iqxqi")])
+base_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("3_dfjsa"), ExtResource("6_uilpd")])
+cafe_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("4_q3wnu"), ExtResource("7_ekhet")])
+sky_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("5_iqxqi"), ExtResource("8_4cf32")])
+bubble_sounds = Array[ExtResource("2_yxg3i")]([ExtResource("9_wmyyv"), ExtResource("10_eay8m"), ExtResource("11_sqgpy")])
 
 [node name="base_audio_player" type="AudioStreamPlayer" parent="."]
 volume_db = -6.0
@@ -24,3 +31,6 @@ bus = &"Music"
 [node name="sky_audio_player" type="AudioStreamPlayer" parent="."]
 volume_db = -80.0
 bus = &"Music"
+
+[node name="bubble_sfx" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
