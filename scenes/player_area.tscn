@@ -1,9 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=7 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="1_qpbnt"]
 [ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="2_7d4fa"]
 [ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="2_mbd35"]
+
+[sub_resource type="GDScript" id="GDScript_bdf3d"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func on_bubble_popped():
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf55l"]
 size = Vector2(22.4824, 20)
@@ -16,12 +33,14 @@ script = ExtResource("1_hc30i")
 [node name="SpawnArea" type="Area2D" parent="BubbleArea"]
 
 [node name="Bubbles" type="Node" parent="BubbleArea/SpawnArea"]
+script = SubResource("GDScript_bdf3d")
 
 [node name="BubbleSpawn" type="Node" parent="BubbleArea/SpawnArea"]
 
 [node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(428, 902)
 script = ExtResource("2_7d4fa")
+bubbleValue = 100.0
 
 [node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(624, 856)
@@ -58,6 +77,20 @@ shape = SubResource("RectangleShape2D_nf55l")
 [node name="Sprite2D" type="Sprite2D" parent="BubbleArea/SpawnArea"]
 position = Vector2(962, 546)
 texture = ExtResource("1_qpbnt")
+
+[node name="BubbleArea_HUD" type="CanvasLayer" parent="BubbleArea"]
+
+[node name="CurrentMoney_US" type="Label" parent="BubbleArea/BubbleArea_HUD"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_right = -4.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "$: "
 
 [node name="ShopArea" type="Node2D" parent="."]
 

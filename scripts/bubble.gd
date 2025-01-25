@@ -10,7 +10,10 @@ var time = 0
 var bubbleScale: float
 var delete_timer = 0
 
+#Signal
+signal bubble_popped(param)
 var is_clicked = false
+var bubbleValue
 
 func _ready() -> void:
 	direction = randf_range(-1,1)
@@ -30,6 +33,7 @@ func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not is_clicked:
 			is_clicked = true
+			emit_signal("bubble_popped")
 			queue_free()  # Removes the bubble when clicked (pops it)
 			#get_tree().root.get_node("MainScene").add_score(10)  # Add points to the score
 
@@ -37,3 +41,9 @@ func setBubbleScale(givenScale) -> void:
 	bubbleScale = givenScale
 	scale.x = bubbleScale
 	scale.y = bubbleScale
+
+func setBubbleValue(givenValue) -> void:
+	self.bubbleValue = givenValue
+
+func getBubbleValue() -> int:
+	return self.bubbleValue
