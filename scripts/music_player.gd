@@ -13,6 +13,9 @@ extends Node
 @onready var sky_audio_player = $sky_audio_player
 
 @onready var bubble_sfx_player = $bubble_sfx
+@onready var other_sfx_player = $other_sfx
+
+var level_up_sfx = "res://sfx/MachineUpgrade.mp3"
 
 signal music_changed
 
@@ -28,7 +31,7 @@ func _ready():
 	create_playlist()
 	play_random_song()
 	base_audio_player.finished.connect(on_audio_player_finished)
-	SignalManager.bubble_popped.connect(on_bubble_popped)
+	SignalManager.machine_level_up.connect(on_level_up)
 
 func create_playlist():
 	base_playlist = [] + base_tracks
@@ -81,4 +84,7 @@ func on_bubble_popped():
 	var bubble_index = randi_range(0, bubble_sounds.size()-1)
 	bubble_sfx_player.stream = load(bubble_sounds[bubble_index].file_path)
 	bubble_sfx_player.play()
-	pass
+
+func on_level_up():
+	other_sfx_player.stream = load(level_up_sfx)
+	other_sfx_player.play()

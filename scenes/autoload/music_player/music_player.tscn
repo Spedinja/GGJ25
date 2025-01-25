@@ -32,3 +32,5 @@ bus = &"Music"
 
 [node name="bubble_sfx" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
+
+[node name="other_sfx" type="AudioStreamPlayer" parent="."]
