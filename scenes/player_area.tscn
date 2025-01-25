@@ -205,7 +205,6 @@ texture_disabled = ExtResource("14_25fue")
 position = Vector2(960, 540)
 script = ExtResource("18_gmjm1")
 
-[connection signal="cash_changed" from="BubbleArea" to="ShopArea/ShopArea_UI" method="_on_bubble_area_cash_changed"]
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade1" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_1_pressed"]
