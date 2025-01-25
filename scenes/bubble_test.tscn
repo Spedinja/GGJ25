@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cipxn815b6ca2"]
+[gd_scene load_steps=11 format=3 uid="uid://cipxn815b6ca2"]
 
 [ext_resource type="Script" path="res://scripts/main_scene_test.gd" id="1_qjgpw"]
+[ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="2_1hpni"]
+[ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="3_takre"]
+[ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="4_46cq6"]
+[ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_wh41h"]
+[ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_bavj0"]
+[ext_resource type="Texture2D" uid="uid://cogm7ey4bthub" path="res://sprites/tmp_btn_up_normal.png" id="7_p8wwp"]
+[ext_resource type="Texture2D" uid="uid://dptknvabur4l4" path="res://sprites/tmp_btn_up_pressed.png" id="8_d61yr"]
+[ext_resource type="Texture2D" uid="uid://c04kh6m5jhi3y" path="res://sprites/tmp_btn_up_hover.png" id="9_4qp5o"]
+[ext_resource type="Script" path="res://scripts/camera_movement.gd" id="10_3ijnd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qjgpw")
@@ -13,4 +22,46 @@ offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1hpni")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+texture = ExtResource("3_takre")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ToShop" type="TextureButton" parent="UI"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 806.0
+offset_top = 384.0
+offset_right = 822.0
+offset_bottom = 400.0
+scale = Vector2(8, 8)
+texture_normal = ExtResource("4_46cq6")
+texture_pressed = ExtResource("5_wh41h")
+texture_hover = ExtResource("6_bavj0")
+
+[node name="ToBubbles" type="TextureButton" parent="UI"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 812.0
+offset_top = 563.0
+offset_right = 828.0
+offset_bottom = 579.0
+scale = Vector2(8, 8)
+texture_normal = ExtResource("7_p8wwp")
+texture_pressed = ExtResource("8_d61yr")
+texture_hover = ExtResource("9_4qp5o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("10_3ijnd")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/ToShop" to="Camera2D" method="_on_shop_button_pressed"]
