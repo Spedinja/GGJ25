@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 func spawn_bubble():
 	var bubble_instance = bubble_scene.instantiate()
 	if bubble_instance != null:
+		bubble_instance.setBubbleScale(randf_range(1,4))
 		bubble_instance.position = position
 		$"../../Bubbles".add_child(bubble_instance)
 	else:
