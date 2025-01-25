@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Music" load_steps=2 format=3 uid="uid://quxykv755sxl"]
+
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_xd7pc"]
+
+[resource]
+script = ExtResource("1_xd7pc")
+name = "Song 3 Sky"
+file_path = "res://music/Sky_Background_LoFi3_v1.mp3"
