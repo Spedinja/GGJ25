@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_1cm5h")
-name = ""
-file_path = ""
+name = "Bubble Pop 1"
+file_path = "res://sfx/BubblePop1.mp3"

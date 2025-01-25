@@ -4,9 +4,9 @@ extends Camera2D
 @onready var to_bubbles_button = $"../UI/ToBubbles"
 
 func _on_to_shop_pressed():
+	SignalManager.bubble_popped.emit()
 	shop_button.hide()
 	MusicPlayer.on_location_switch()
-	print(get_viewport_rect().size.y)
 	var shop_button_tween := create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	shop_button_tween.tween_property(self, "position:y", get_viewport_rect().size.y,1)
 	# When Movement to the Shop is finished, un-hide the Up Button in the Shop

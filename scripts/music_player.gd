@@ -64,7 +64,6 @@ func on_audio_player_finished():
 	play_random_song()
 
 func on_location_switch():
-	print("blub")
 	if cafe:
 		cross_fade(cafe_audio_player,sky_audio_player)
 	else:
@@ -79,6 +78,7 @@ func cross_fade(from, to):
 	
 
 func on_bubble_popped():
-	bubble_sfx_player.stream = load(bubble_sounds[randi_range(0, bubble_sounds.size()-1)].file_path)
+	var bubble_index = randi_range(0, bubble_sounds.size()-1)
+	bubble_sfx_player.stream = load(bubble_sounds[bubble_index].file_path)
 	bubble_sfx_player.play()
 	pass
