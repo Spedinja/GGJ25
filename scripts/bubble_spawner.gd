@@ -37,7 +37,8 @@ func spawn_bubble():
 		#bubble_instance.setBubbleValue(bubbleValue*bubbleScale)
 		bubble_instance.adjustBubbleValues(currModifier)
 		bubble_instance.position = position
-		bubble_instance.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
+		SignalManager.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
+		#bubble_instance.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
 		$"../../Bubbles".add_child(bubble_instance)
 	else:
 		print("error no bubble")
