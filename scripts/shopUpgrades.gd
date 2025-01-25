@@ -40,7 +40,8 @@ func updateShop()-> void:
 	for elem in arrCurrLevel:
 		tmpElem = elem
 		if tmpElem < 3:
-			if currMoney >= arrUpgradeCosts[tmpCounter][tmpElem]:
+			#if currMoney >= arrUpgradeCosts[tmpCounter][tmpElem]:
+			if (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>0:
 				tempNode =arrButtons[tmpCounter]
 				tempNode.disabled = false
 			else:
