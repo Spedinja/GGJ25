@@ -35,8 +35,10 @@ func _on_btn_upgrade_1_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[0][currentLvl])*-1)
 		currentLvl = currentLvl+1
+		if currentLvl < 3: arrLabels[0].text = str(arrUpgradeCosts[0][currentLvl], "$")
 		arrCurrLevel[0] = currentLvl
 
+		
 func updateShop()-> void:
 	var tmpCounter = 0
 	var tmpElem: int
@@ -48,14 +50,11 @@ func updateShop()-> void:
 		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>=0:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = false
-			lbl = arrLabels[tmpCounter]
-			lbl.visible = true
-			lbl.text= str(arrUpgradeCosts[tmpCounter][arrCurrLevel[tmpCounter]], "$")
 		else:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = true
 			
-			if tmpElem >= 3:
+			if arrCurrLevel[tmpCounter] == 2:
 				lbl = arrLabels[tmpCounter]
 				lbl.visible = false
 				lbl.text= "$"
@@ -64,7 +63,7 @@ func updateShop()-> void:
 
 func _on_bubble_area_cash_changed(value: Variant) -> void:
 	updateShop()
-
+	#updateLabels()
 
 func _on_btn_upgrade_2_pressed() -> void:
 	currentLvl = arrCurrLevel[1]
@@ -72,7 +71,9 @@ func _on_btn_upgrade_2_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_2".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[1][currentLvl])*-1)
 		currentLvl = currentLvl +1
+		if currentLvl < 3: arrLabels[1].text = str(arrUpgradeCosts[1][currentLvl], "$")
 		arrCurrLevel[1] = currentLvl
+
 
 
 func _on_btn_upgrade_3_pressed() -> void:
@@ -81,6 +82,7 @@ func _on_btn_upgrade_3_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_3".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[2][currentLvl])*-1)
 		currentLvl = currentLvl +1
+		if currentLvl < 3: arrLabels[2].text = str(arrUpgradeCosts[2][currentLvl], "$")
 		arrCurrLevel[2] = currentLvl
 
 
@@ -90,6 +92,7 @@ func _on_btn_upgrade_4_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_4".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[3][currentLvl])*-1)
 		currentLvl = currentLvl +1
+		if currentLvl < 3: arrLabels[3].text = str(arrUpgradeCosts[3][currentLvl], "$")
 		arrCurrLevel[3] = currentLvl
 
 
@@ -99,6 +102,7 @@ func _on_btn_upgrade_5_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_5".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[4][currentLvl])*-1)
 		currentLvl = currentLvl +1
+		if currentLvl < 3: arrLabels[4].text = str(arrUpgradeCosts[4][currentLvl], "$")
 		arrCurrLevel[4] = currentLvl
 
 
@@ -108,8 +112,8 @@ func _on_btn_upgrade_6_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_6".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[5][currentLvl])*-1)
 		currentLvl = currentLvl +1
+		if currentLvl < 3: arrLabels[5].text = str(arrUpgradeCosts[5][currentLvl], "$")
 		arrCurrLevel[5] = currentLvl
-
 
 func _on_btn_upgrade_7_pressed() -> void:
 	currentLvl = arrCurrLevel[6]
@@ -117,6 +121,7 @@ func _on_btn_upgrade_7_pressed() -> void:
 		$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_7".levelUp(currentLvl)
 		SignalManager.money_changed.emit((arrUpgradeCosts[6][currentLvl])*-1)
 		currentLvl = currentLvl +1
+		if currentLvl < 3: arrLabels[6].text = str(arrUpgradeCosts[6][currentLvl], "$")
 		arrCurrLevel[6] = currentLvl
 		
 func setupLabels()->void:
