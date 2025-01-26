@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=34 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bh23nbpugpgvj" path="res://sprites/MachineIcons/Icon_Machine_ 5b.png" id="19_3rg8w"]
 [ext_resource type="Texture2D" uid="uid://drkxmfjyi4vso" path="res://sprites/MachineIcons/Icon_Machine_ 6b.png" id="21_1lw61"]
 [ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Icon_Machine_ 7b.png" id="23_gaul0"]
+[ext_resource type="FontFile" uid="uid://d0euvmb6jo6s2" path="res://fonts/cozy caps.ttf" id="28_t2hu8"]
 [ext_resource type="Theme" uid="uid://5xwc7t140c5q" path="res://themes/buttons.tres" id="30_lw7il"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf55l"]
@@ -241,89 +242,103 @@ texture_disabled = ExtResource("14_25fue")
 
 [node name="PriceLabels" type="Control" parent="ShopArea/ShopArea_UI"]
 anchors_preset = 0
-offset_top = -1350.0
-offset_bottom = -1350.0
+offset_top = -1345.0
+offset_bottom = -1345.0
 
 [node name="Machine1Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 242.0
+offset_left = 246.0
 offset_top = 1509.0
-offset_right = 442.0
+offset_right = 446.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine2Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 449.0
+offset_left = 453.0
 offset_top = 1509.0
-offset_right = 649.0
+offset_right = 653.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine3Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 650.0
+offset_left = 654.0
 offset_top = 1509.0
-offset_right = 850.0
+offset_right = 854.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine4Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 860.0
+offset_left = 864.0
 offset_top = 1509.0
-offset_right = 1060.0
+offset_right = 1064.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine5Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 1064.0
+offset_left = 1068.0
 offset_top = 1509.0
-offset_right = 1264.0
+offset_right = 1268.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine6Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 1268.0
+offset_left = 1272.0
 offset_top = 1509.0
-offset_right = 1468.0
+offset_right = 1472.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine7Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
 layout_mode = 0
-offset_left = 1476.0
+offset_left = 1480.0
 offset_top = 1509.0
-offset_right = 1676.0
+offset_right = 1680.0
 offset_bottom = 1564.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+theme_override_colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
 theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("28_t2hu8")
 theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
