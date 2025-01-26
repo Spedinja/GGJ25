@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_ovkjc")
 name = "Song2Cafe"
-file_path = "res://music/Cafe_Background_LoFi2_v1.mp3"
+file_path = "res://music/Cafe_Background_LoFi2_v2.mp3"
