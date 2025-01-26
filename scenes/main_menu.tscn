@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dxx4ki7lbx727"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_klkhb"]
-[ext_resource type="Texture2D" uid="uid://bpvfeekxrgou5" path="res://sprites/Background_MainMenu.png" id="2_2e8cv"]
+[ext_resource type="Texture2D" uid="uid://dkfq3w74ic6ep" path="res://sprites/Background_MainMenu_v2.png" id="2_ij0t2"]
 [ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="3_iki6t"]
 [ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="4_8iv1x"]
 [ext_resource type="Texture2D" uid="uid://nc6ev7fsfhw6" path="res://sprites/MachineIcons/Icon_Machine_ 3a.png" id="5_6ghpu"]
@@ -24,7 +24,7 @@ script = ExtResource("1_klkhb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_2e8cv")
+texture = ExtResource("2_ij0t2")
 
 [node name="ShopContainer" type="HBoxContainer" parent="."]
 visible = false
@@ -86,9 +86,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -175.0
-offset_top = 161.0
+offset_top = -138.0
 offset_right = 175.0
-offset_bottom = 437.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
