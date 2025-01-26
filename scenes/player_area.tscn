@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=30 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="1_muuwv"]
 [ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="2_7d4fa"]
 [ext_resource type="Texture2D" uid="uid://tm1gwcr3fuol" path="res://sprites/Background_Sky.png" id="3_n7f4v"]
 [ext_resource type="Script" path="res://scripts/gadse.gd" id="4_harbk"]
@@ -32,6 +33,7 @@
 size = Vector2(22.4824, 20)
 
 [node name="PlayerArea" type="Node2D"]
+script = ExtResource("1_muuwv")
 
 [node name="BubbleArea" type="Node2D" parent="."]
 script = ExtResource("1_hc30i")
@@ -240,6 +242,52 @@ script = ExtResource("4_harbk")
 position = Vector2(960, 1620)
 script = ExtResource("18_gmjm1")
 
+[node name="Control" type="Control" parent="Camera2D"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Control"]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.17881, 0.17881, 0.17881, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 164.0
+offset_right = 100.0
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Continue" type="Button" parent="Camera2D/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Continue"
+
+[node name="Back2Menu" type="Button" parent="Camera2D/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back to Menu"
+
+[node name="Quit" type="Button" parent="Camera2D/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade1" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_1_pressed"]
@@ -249,3 +297,6 @@ script = ExtResource("18_gmjm1")
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade5" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_5_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade6" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_6_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade7" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_7_pressed"]
+[connection signal="pressed" from="Camera2D/Control/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Camera2D/Control/VBoxContainer/Back2Menu" to="." method="_on_back_2_menu_pressed"]
+[connection signal="pressed" from="Camera2D/Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
