@@ -25,3 +25,11 @@ func _on_btn_toggle_full_screen_toggled(toggled_on: bool) -> void:
 
 func _on_btn_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_btn_credits_pressed() -> void:
+	$Credits.visible = true
+
+
+func _on_button_pressed() -> void:
+	$Credits.visible = false

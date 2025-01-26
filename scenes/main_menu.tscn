@@ -67,6 +67,7 @@ layout_mode = 2
 texture = ExtResource("9_bnf8u")
 
 [node name="Sprite2D2" type="ColorRect" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_right = 1920.0
@@ -98,10 +99,90 @@ layout_mode = 2
 toggle_mode = true
 text = "Toggle Fullscreen"
 
+[node name="btnCredits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Credits"
+
 [node name="btnQuit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
+[node name="Credits" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Credits"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.823529, 0.521569, 0.396078, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Credits" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Credits:
+
+"
+horizontal_alignment = 1
+
+[node name="Programming" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Programming:"
+horizontal_alignment = 1
+
+[node name="Programmer" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Nando Berg
+Jan Bleßmann
+ "
+horizontal_alignment = 1
+
+[node name="Art" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Art:"
+horizontal_alignment = 1
+
+[node name="Artist" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Jannick Elfers
+ "
+horizontal_alignment = 1
+
+[node name="Sound" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Music & SFX:"
+horizontal_alignment = 1
+
+[node name="Sound-Designer" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Johannes Kross"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Credits"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 989.0
+offset_right = 164.0
+offset_bottom = 1059.0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
 [connection signal="pressed" from="VBoxContainer/btnStartGame" to="." method="_on_btn_start_game_pressed"]
 [connection signal="toggled" from="VBoxContainer/btnToggleFullScreen" to="." method="_on_btn_toggle_full_screen_toggled"]
+[connection signal="pressed" from="VBoxContainer/btnCredits" to="." method="_on_btn_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnQuit" to="." method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="Credits/Button" to="." method="_on_button_pressed"]
