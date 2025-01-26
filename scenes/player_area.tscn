@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
 [ext_resource type="Script" path="res://scripts/shopUpgrades.gd" id="8_i5d77"]
-[ext_resource type="Texture2D" uid="uid://bj63qcccyc7fc" path="res://sprites/Background_Shop_v3.png" id="8_kaa80"]
 [ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="8_ts1rx"]
+[ext_resource type="Texture2D" uid="uid://d1233laatdy5r" path="res://sprites/Background_Shop_v4.png" id="8_xoyp7"]
 [ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="9_l13h3"]
 [ext_resource type="Texture2D" uid="uid://nc6ev7fsfhw6" path="res://sprites/MachineIcons/Icon_Machine_ 3a.png" id="10_gb3aa"]
 [ext_resource type="Texture2D" uid="uid://c3jshdj8m2qvw" path="res://sprites/MachineIcons/Icon_Machine_ 1b.png" id="11_btw05"]
@@ -140,7 +140,7 @@ stretch_mode = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="ShopArea"]
 position = Vector2(960, 1620)
-texture = ExtResource("8_kaa80")
+texture = ExtResource("8_xoyp7")
 
 [node name="ShopArea_UI" type="Control" parent="ShopArea"]
 layout_mode = 3
