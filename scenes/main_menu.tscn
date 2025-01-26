@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxx4ki7lbx727"]
+[gd_scene load_steps=13 format=3 uid="uid://dxx4ki7lbx727"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_klkhb"]
 [ext_resource type="Texture2D" uid="uid://mnikefdbt2cl" path="res://sprites/Background_Shop.png" id="2_eduoj"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dioeje56ptxt8" path="res://sprites/MachineIcons/Icon_Machine_ 5a.png" id="7_uwlwq"]
 [ext_resource type="Texture2D" uid="uid://dbmlm0t3eb26l" path="res://sprites/MachineIcons/Icon_Machine_ 6a.png" id="8_nj6au"]
 [ext_resource type="Texture2D" uid="uid://cl0u1mykw5oe3" path="res://sprites/MachineIcons/Icon_Machine_ 7a.png" id="9_bnf8u"]
+[ext_resource type="Texture2D" uid="uid://c4btyuxd3urr2" path="res://sprites/Background_Sky_New.png" id="10_xn7rc"]
+[ext_resource type="Theme" uid="uid://5xwc7t140c5q" path="res://themes/buttons.tres" id="12_13k3k"]
+[ext_resource type="FontFile" uid="uid://d0euvmb6jo6s2" path="res://fonts/cozy caps.ttf" id="12_cfyy0"]
 
 [node name="MainMenu_UI" type="Control"]
 layout_mode = 3
@@ -81,10 +84,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -50.5
-offset_right = 48.0
-offset_bottom = 50.5
+offset_left = -175.0
+offset_top = 161.0
+offset_right = 175.0
+offset_bottom = 437.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -92,20 +95,28 @@ alignment = 1
 
 [node name="btnStartGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_13k3k")
 text = "Start Game"
 
 [node name="btnToggleFullScreen" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_13k3k")
 toggle_mode = true
 text = "Toggle Fullscreen"
 
 [node name="btnCredits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_13k3k")
 toggle_mode = true
 text = "Credits"
 
 [node name="btnQuit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_13k3k")
 text = "Quit"
 
 [node name="Credits" type="Control" parent="."]
@@ -120,56 +131,101 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.823529, 0.521569, 0.396078, 1)
 
+[node name="TextureRect" type="TextureRect" parent="Credits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_xn7rc")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 layout_mode = 0
+offset_top = 60.0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1120.0
 
 [node name="Credits" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 80
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 90
 text = "Credits:
+"
+horizontal_alignment = 1
 
+[node name="Seperator" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 20
+text = "
 "
 horizontal_alignment = 1
 
 [node name="Programming" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 50
 text = "Programming:"
 horizontal_alignment = 1
 
 [node name="Programmer" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 50
 text = "Nando Berg
-Jan Bleßmann
- "
+Jan Bleßmann"
+horizontal_alignment = 1
+
+[node name="Seperator2" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 20
+text = "
+"
 horizontal_alignment = 1
 
 [node name="Art" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 50
 text = "Art:"
 horizontal_alignment = 1
 
 [node name="Artist" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Jannick Elfers
- "
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 50
+text = "Jannick Elfers"
+horizontal_alignment = 1
+
+[node name="Seperator3" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 20
+text = "
+"
 horizontal_alignment = 1
 
 [node name="Sound" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 50
 text = "Music & SFX:"
 horizontal_alignment = 1
 
 [node name="Sound-Designer" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Johannes Kross"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cfyy0")
+theme_override_font_sizes/font_size = 50
+text = "Johannes J. Kross"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Credits"]
@@ -178,6 +234,7 @@ offset_left = 24.0
 offset_top = 989.0
 offset_right = 164.0
 offset_bottom = 1059.0
+theme = ExtResource("12_13k3k")
 theme_override_font_sizes/font_size = 40
 text = "Back"
 

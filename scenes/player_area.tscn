@@ -1,10 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=33 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_muuwv"]
 [ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="2_7d4fa"]
-[ext_resource type="Texture2D" uid="uid://tm1gwcr3fuol" path="res://sprites/Background_Sky.png" id="3_n7f4v"]
 [ext_resource type="Script" path="res://scripts/gadse.gd" id="4_harbk"]
+[ext_resource type="Texture2D" uid="uid://c4btyuxd3urr2" path="res://sprites/Background_Sky_New.png" id="4_uh3b7"]
 [ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_0jclp"]
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bh23nbpugpgvj" path="res://sprites/MachineIcons/Icon_Machine_ 5b.png" id="19_3rg8w"]
 [ext_resource type="Texture2D" uid="uid://drkxmfjyi4vso" path="res://sprites/MachineIcons/Icon_Machine_ 6b.png" id="21_1lw61"]
 [ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Icon_Machine_ 7b.png" id="23_gaul0"]
+[ext_resource type="Theme" uid="uid://5xwc7t140c5q" path="res://themes/buttons.tres" id="30_lw7il"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf55l"]
 size = Vector2(22.4824, 20)
@@ -100,7 +101,7 @@ shape = SubResource("RectangleShape2D_nf55l")
 
 [node name="Sprite2D" type="Sprite2D" parent="BubbleArea/SpawnArea"]
 position = Vector2(960, 540)
-texture = ExtResource("3_n7f4v")
+texture = ExtResource("4_uh3b7")
 
 [node name="BubbleArea_HUD" type="CanvasLayer" parent="BubbleArea"]
 
@@ -232,6 +233,88 @@ disabled = true
 texture_normal = ExtResource("23_gaul0")
 texture_disabled = ExtResource("14_25fue")
 
+[node name="PriceLabels" type="Control" parent="ShopArea/ShopArea_UI"]
+anchors_preset = 0
+offset_top = -1350.0
+offset_bottom = -1350.0
+
+[node name="Machine1Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 242.0
+offset_top = 1509.0
+offset_right = 442.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="Machine2Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 449.0
+offset_top = 1509.0
+offset_right = 649.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="Machine3Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 650.0
+offset_top = 1509.0
+offset_right = 850.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="Machine4Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 860.0
+offset_top = 1509.0
+offset_right = 1060.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="Machine5Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 1064.0
+offset_top = 1509.0
+offset_right = 1264.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="Machine6Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 1268.0
+offset_top = 1509.0
+offset_right = 1468.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
+[node name="Machine7Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
+offset_left = 1476.0
+offset_top = 1509.0
+offset_right = 1676.0
+offset_bottom = 1564.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 40
+text = "TEST"
+horizontal_alignment = 1
+
 [node name="Cat" type="TextureButton" parent="."]
 offset_left = 393.0
 offset_top = 913.0
@@ -280,10 +363,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 164.0
-offset_right = 100.0
-offset_bottom = 364.0
+offset_left = -150.0
+offset_top = 169.0
+offset_right = 150.0
+offset_bottom = 369.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -291,16 +374,19 @@ theme_override_constants/separation = 20
 [node name="Continue" type="Button" parent="Camera2D/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("30_lw7il")
 text = "Continue"
 
 [node name="Back2Menu" type="Button" parent="Camera2D/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("30_lw7il")
 text = "Back to Menu"
 
 [node name="Quit" type="Button" parent="Camera2D/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("30_lw7il")
 text = "Quit"
 
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]

@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://5xwc7t140c5q"]
+
+[ext_resource type="FontFile" uid="uid://d0euvmb6jo6s2" path="res://fonts/cozy caps.ttf" id="1_fjjlo"]
+
+[resource]
+Button/colors/font_color = Color(0.984314, 0.717647, 0.584314, 1)
+Button/colors/font_outline_color = Color(0.501961, 0.196078, 0.196078, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_fjjlo")
