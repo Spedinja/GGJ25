@@ -38,19 +38,15 @@ func updateShop()-> void:
 	var currMoney = $"../../BubbleArea".getCash()
 	var tempNode: TextureButton
 	for elem in arrCurrLevel:
-		tmpElem = elem
-		if tmpElem < 3:
-			#if currMoney >= arrUpgradeCosts[tmpCounter][tmpElem]:
-			if (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>0:
-				tempNode =arrButtons[tmpCounter]
-				tempNode.disabled = false
-			else:
-				tempNode =arrButtons[tmpCounter]
-				tempNode.disabled = true
-			tmpCounter= tmpCounter +1
+		tmpElem = elem + 1
+		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>0:
+			tempNode =arrButtons[tmpCounter]
+			tempNode.disabled = false
 		else:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = true
+		tmpCounter= tmpCounter +1
+
 
 func _on_bubble_area_cash_changed(value: Variant) -> void:
 	updateShop()
