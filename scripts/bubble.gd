@@ -13,7 +13,7 @@ var delete_timer = 0
 #Signal
 #signal bubble_popped(param)
 var is_clicked = false
-var bubbleValue
+var bubbleValue = 1
 
 func _ready() -> void:
 	bubbleScale= randf_range(1,4)
@@ -49,11 +49,11 @@ func setBubbleScale(givenScale) -> void:
 #	self.bubbleValue = givenValue
 
 func getBubbleValue() -> int:
-	return self.bubbleValue
+	return bubbleValue
 
-func adjustBubbleValues(multiplier) -> void:
+func adjustBubbleValues(multiplier, val) -> void:
 	frequency = 5 + multiplier
 	amplitude = 150 + (multiplier * 4)
 	upwards_speed = 100 + (multiplier * 10)
-	bubbleValue = bubbleScale * multiplier
+	bubbleValue = val #bubbleScale * multiplier
 	

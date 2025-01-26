@@ -39,7 +39,7 @@ func spawn_bubble():
 		#bubbleScale = randf_range(1,4)
 		#bubble_instance.setBubbleScale(bubbleScale)
 		#bubble_instance.setBubbleValue(bubbleValue*bubbleScale)
-		bubble_instance.adjustBubbleValues(currModifier)
+		bubble_instance.adjustBubbleValues(currModifier, bubbleValue)
 		bubble_instance.position = position
 		SignalManager.bubble_popped.disconnect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
 		SignalManager.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
