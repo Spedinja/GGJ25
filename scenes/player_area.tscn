@@ -56,49 +56,49 @@ script = ExtResource("1_hc30i")
 [node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(353, 800)
 script = ExtResource("2_7d4fa")
-bubbleValue = 100.0
+bubbleValue = 2.0
 arrStats = Array[float]([1.0, 2.0, 4.0])
 
 [node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(545, 766)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 1
-bubbleValue = 500.0
+bubbleValue = 4.0
 arrStats = Array[float]([3.0, 9.0, 12.0])
 
 [node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(747, 740)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 2
-bubbleValue = 500.0
+bubbleValue = 12.0
 arrStats = Array[float]([6.0, 10.0, 100.0])
 
 [node name="BubbleSpawn_4" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(960, 708)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 3
-bubbleValue = 10.0
+bubbleValue = 40.0
 arrStats = Array[float]([100.0, 1000.0, 10000.0])
 
 [node name="BubbleSpawn_5" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(1162, 731)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 4
-bubbleValue = 80.0
+bubbleValue = 120.0
 arrStats = Array[float]([90.0, 900.0, 1000.0])
 
 [node name="BubbleSpawn_6" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(1367, 762)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 5
-bubbleValue = 60.0
+bubbleValue = 400.0
 arrStats = Array[float]([90.0, 90.0, 90.0])
 
 [node name="BubbleSpawn_7" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(1555, 794)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 6
-bubbleValue = 68.0
+bubbleValue = 1200.0
 arrStats = Array[float]([90.0, 60.0, 45.0])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleArea/SpawnArea"]
@@ -150,7 +150,7 @@ offset_top = 1080.0
 offset_right = 1920.0
 offset_bottom = 2160.0
 script = ExtResource("8_i5d77")
-arrUpgradeCosts = Array[Array]([[100, 300, 400], [1, 2, 3], [1, 4, 5], [1, 2, 30], [6, 6, 6], [8, 8, 8], [3, 5, 6], [5, 6, 6]])
+arrUpgradeCosts = Array[Array]([[10, 15, 25], [20, 40, 75], [60, 120, 300], [200, 400, 750], [600, 1200, 3000], [2000, 4000, 7500], [6000, 10000, 15000], [5, 6, 6]])
 
 [node name="CurrentMoney_LS" type="Label" parent="ShopArea/ShopArea_UI"]
 visible = false

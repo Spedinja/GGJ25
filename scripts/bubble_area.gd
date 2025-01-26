@@ -1,13 +1,13 @@
 extends Node2D
 
-@onready var score = 100
+@onready var score = 10
 #@onready var bubble_scene = preload("res://scenes/bubble.tscn")
 #@onready var timer
 var accum_time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$SpawnArea/BubbleSpawn/BubbleSpawn_1.levelUp(1)
+	#$SpawnArea/BubbleSpawn/BubbleSpawn_1.levelUp(1)
 	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
 	SignalManager.money_changed.connect(on_money_changed)
