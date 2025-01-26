@@ -5,7 +5,11 @@ var spawner_unlocked = false
 
 #vars
 var bubble_scene = preload("res://scenes/bubble.tscn")
+var bubble_scenes = [preload("res://scenes/bubble_1.tscn"),preload("res://scenes/bubble_2.tscn"),preload("res://scenes/bubble_3.tscn"),preload("res://scenes/bubble_4.tscn"),preload("res://scenes/bubble_5.tscn"),preload("res://scenes/bubble_6.tscn"),preload("res://scenes/bubble_7.tscn")]
 var accum_time = 0
+
+@export var bubble_spawner_nr : int
+
 
 #var bubbleScale
 @export var bubbleValue: float
@@ -29,7 +33,7 @@ func _process(delta: float) -> void:
 			accum_time = 0
 
 func spawn_bubble():
-	var bubble_instance = bubble_scene.instantiate()
+	var bubble_instance = bubble_scenes[bubble_spawner_nr].instantiate()
 	if bubble_instance != null:
 		#bubble_instance.add_to_group("bubbles") not needed
 		#bubbleScale = randf_range(1,4)

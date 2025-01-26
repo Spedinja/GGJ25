@@ -14,9 +14,14 @@ var arrCurrLevel: Array=[0,0,0,0,0,0,0]
 	$ShopContainer/btnUpgrade7
 ]
 
+@onready var arrLabels: Array=[
+	$PriceLabels/Machine1Price, $PriceLabels/Machine2Price, $PriceLabels/Machine3Price, $PriceLabels/Machine4Price, $PriceLabels/Machine5Price, $PriceLabels/Machine6Price, $PriceLabels/Machine7Price
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalManager.money_changed.connect(_on_bubble_area_cash_changed)
+	setupLabels()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,14 +42,23 @@ func updateShop()-> void:
 	var tmpElem: int
 	var currMoney = $"../../BubbleArea".getCash()
 	var tempNode: TextureButton
+	var lbl: Label
 	for elem in arrCurrLevel:
 		tmpElem = elem + 1
-		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>0:
+		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>=0:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = false
+			lbl = arrLabels[tmpCounter]
+			lbl.visible = true
+			lbl.text= str(arrUpgradeCosts[tmpCounter][arrCurrLevel[tmpCounter]], "$")
 		else:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = true
+			
+			if tmpElem >= 3:
+				lbl = arrLabels[tmpCounter]
+				lbl.visible = false
+				lbl.text= "$"
 		tmpCounter= tmpCounter +1
 
 
@@ -104,3 +118,10 @@ func _on_btn_upgrade_7_pressed() -> void:
 		SignalManager.money_changed.emit((arrUpgradeCosts[6][currentLvl])*-1)
 		currentLvl = currentLvl +1
 		arrCurrLevel[6] = currentLvl
+		
+func setupLabels()->void:
+	var counter = 0
+	for lbl in arrLabels:
+		lbl.visible = true
+		lbl.text= str(arrUpgradeCosts[counter][0], "$")
+		counter = counter +1
