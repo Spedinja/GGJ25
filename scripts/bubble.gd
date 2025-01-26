@@ -53,7 +53,7 @@ func getBubbleValue() -> int:
 
 func adjustBubbleValues(multiplier, val) -> void:
 	frequency = 5 + multiplier
-	amplitude = 150 + (multiplier * 4)
+	amplitude = 150 + (multiplier * 10)
 	upwards_speed = 100 + (multiplier * 10)
 	bubbleValue = val #bubbleScale * multiplier
 	

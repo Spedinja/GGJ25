@@ -58,42 +58,42 @@ position = Vector2(545, 766)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 1
 bubbleValue = 4.0
-arrStats = Array[float]([3.0, 9.0, 12.0])
+arrStats = Array[float]([3.0, 6.0, 9.0])
 
 [node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(747, 740)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 2
 bubbleValue = 12.0
-arrStats = Array[float]([6.0, 10.0, 100.0])
+arrStats = Array[float]([4.0, 8.0, 12.0])
 
 [node name="BubbleSpawn_4" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(960, 708)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 3
 bubbleValue = 40.0
-arrStats = Array[float]([100.0, 1000.0, 10000.0])
+arrStats = Array[float]([5.0, 10.0, 15.0])
 
 [node name="BubbleSpawn_5" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(1162, 731)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 4
 bubbleValue = 120.0
-arrStats = Array[float]([90.0, 900.0, 1000.0])
+arrStats = Array[float]([6.0, 12.0, 18.0])
 
 [node name="BubbleSpawn_6" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(1367, 762)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 5
 bubbleValue = 400.0
-arrStats = Array[float]([90.0, 90.0, 90.0])
+arrStats = Array[float]([7.0, 14.0, 21.0])
 
 [node name="BubbleSpawn_7" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
 position = Vector2(1555, 794)
 script = ExtResource("2_7d4fa")
 bubble_spawner_nr = 6
 bubbleValue = 1200.0
-arrStats = Array[float]([90.0, 60.0, 45.0])
+arrStats = Array[float]([8.0, 16.0, 24.0])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleArea/SpawnArea"]
 position = Vector2(960, 540)
