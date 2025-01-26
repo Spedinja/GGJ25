@@ -3,7 +3,6 @@ extends Node
 var currentLvl = 0
 var maxLvl = 3
 @export var arrUpgradeCosts: Array[Array] #only use integer plox
-var arrCurrLevel: Array=[0,0,0,0,0,0,0]
 @onready var arrButtons: Array=[
 	$ShopContainer/btnUpgrade1,
 	$ShopContainer/btnUpgrade2,
@@ -40,14 +39,15 @@ func _on_btn_upgrade_1_pressed() -> void:
 	btnUpgradePressed(0)
 
 func btnUpgradePressed(btnNum: int)->void:
-	currentLvl = arrCurrLevel[btnNum]
-	if currentLvl < maxLvl:
-		print(currentLvl)
-		arrSpawns[btnNum].levelUp(currentLvl)
+	currentLvl = arrSpawns[btnNum].getLevel()
+	if currentLvl+1 <= maxLvl:
+		currentLvl = arrSpawns[btnNum].levelUp()
+		if currentLvl < 2:
+			arrLabels[btnNum].text = str(arrUpgradeCosts[btnNum][currentLvl+1], "$")
+		else:
+			arrLabels[btnNum].visible = false
 		SignalManager.money_changed.emit((arrUpgradeCosts[btnNum][currentLvl])*-1)
-		currentLvl = currentLvl+1
-		if currentLvl < 3: arrLabels[btnNum].text = str(arrUpgradeCosts[btnNum][currentLvl], "$")
-		arrCurrLevel[btnNum] = currentLvl
+
 		
 func updateShop()-> void:
 	var tmpCounter = 0
@@ -55,8 +55,8 @@ func updateShop()-> void:
 	var currMoney = $"../../BubbleArea".getCash()
 	var tempNode: TextureButton
 	var lbl: Label
-	for elem in arrCurrLevel:
-		tmpElem = elem #+ 1
+	for spawn in arrSpawns:
+		tmpElem = spawn.getLevel()+1
 		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>=0:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = false
@@ -64,7 +64,7 @@ func updateShop()-> void:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = true
 			
-			if arrCurrLevel[tmpCounter] == 2:
+			if spawn.getLevel() == 3:
 				lbl = arrLabels[tmpCounter]
 				lbl.visible = false
 				lbl.text= "$"
@@ -85,8 +85,6 @@ func _on_btn_upgrade_2_pressed() -> void:
 		#arrCurrLevel[1] = currentLvl
 	btnUpgradePressed(1)
 
-
-
 func _on_btn_upgrade_3_pressed() -> void:
 	#currentLvl = arrCurrLevel[2]
 	#if currentLvl < maxLvl:
@@ -96,7 +94,6 @@ func _on_btn_upgrade_3_pressed() -> void:
 		#if currentLvl < 3: arrLabels[2].text = str(arrUpgradeCosts[2][currentLvl], "$")
 		#arrCurrLevel[2] = currentLvl
 	btnUpgradePressed(2)
-
 
 func _on_btn_upgrade_4_pressed() -> void:
 	#currentLvl = arrCurrLevel[3]
@@ -108,7 +105,6 @@ func _on_btn_upgrade_4_pressed() -> void:
 		#arrCurrLevel[3] = currentLvl
 	btnUpgradePressed(3)
 
-
 func _on_btn_upgrade_5_pressed() -> void:
 	#currentLvl = arrCurrLevel[4]
 	#if currentLvl < maxLvl:
@@ -118,7 +114,6 @@ func _on_btn_upgrade_5_pressed() -> void:
 		#if currentLvl < 3: arrLabels[4].text = str(arrUpgradeCosts[4][currentLvl], "$")
 		#arrCurrLevel[4] = currentLvl
 	btnUpgradePressed(4)
-
 
 func _on_btn_upgrade_6_pressed() -> void:
 	#currentLvl = arrCurrLevel[5]

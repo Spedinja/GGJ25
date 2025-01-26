@@ -15,7 +15,7 @@ var accum_time = 0
 @export var bubbleValue: float
 
 #Stats
-var currentLvl = 1
+var currentLvl = -1
 var currModifier
 @export var arrStats: Array[float]
 
@@ -52,17 +52,21 @@ func _unlockSpawner() -> void:
 	spawner_unlocked = true
 
 
-func levelUp(currentLvl) -> void:
+func levelUp() -> int:
 	SignalManager.machine_level_up.emit()
-	print(currentLvl)
+	_increaseStats()
 	if currentLvl == 0:#vorher1
-			_unlockSpawner()
-	_increaseStats(currentLvl)
+		_unlockSpawner()
+	return self.currentLvl
 	
-func _increaseStats(currentLvl)-> void:
+func _increaseStats()-> void:
 	#get next element from array, adjust on instantiate
-	self.currentLvl = currentLvl+1
-	self.currModifier= arrStats[currentLvl-2]
+	self.currentLvl = self.currentLvl+1
+	if currentLvl < 3:
+		self.currModifier= arrStats[self.currentLvl]
+
+func getLevel() -> int:
+	return self.currentLvl	
 	
 func getNextStats() -> void:
 	var nextLvl = currentLvl+1
