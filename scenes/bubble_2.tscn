@@ -11,7 +11,6 @@ script = ExtResource("1_7jprf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.016, 0.016)
 texture = ExtResource("2_osl6r")
 
 [node name="ClickBox" type="CollisionShape2D" parent="."]

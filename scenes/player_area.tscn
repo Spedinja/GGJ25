@@ -239,7 +239,6 @@ offset_top = -1350.0
 offset_bottom = -1350.0
 
 [node name="Machine1Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 242.0
 offset_top = 1509.0
 offset_right = 442.0
@@ -251,7 +250,6 @@ text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine2Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 449.0
 offset_top = 1509.0
 offset_right = 649.0
@@ -263,7 +261,6 @@ text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine3Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 650.0
 offset_top = 1509.0
 offset_right = 850.0
@@ -275,7 +272,6 @@ text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine4Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 860.0
 offset_top = 1509.0
 offset_right = 1060.0
@@ -287,7 +283,6 @@ text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine5Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 1064.0
 offset_top = 1509.0
 offset_right = 1264.0
@@ -299,7 +294,6 @@ text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine6Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 1268.0
 offset_top = 1509.0
 offset_right = 1468.0
@@ -311,7 +305,6 @@ text = "TEST"
 horizontal_alignment = 1
 
 [node name="Machine7Price" type="Label" parent="ShopArea/ShopArea_UI/PriceLabels"]
-layout_mode = 0
 offset_left = 1476.0
 offset_top = 1509.0
 offset_right = 1676.0
