@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=28 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -9,19 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
 [ext_resource type="Script" path="res://scripts/shopUpgrades.gd" id="8_i5d77"]
-[ext_resource type="Texture2D" uid="uid://8pdukleqo72x" path="res://sprites/MachineIcons/Icon_Machine_ 1a.png" id="8_ts1rx"]
 [ext_resource type="Texture2D" uid="uid://d1233laatdy5r" path="res://sprites/Background_Shop_v4.png" id="8_xoyp7"]
-[ext_resource type="Texture2D" uid="uid://csopy0743rb2s" path="res://sprites/MachineIcons/Icon_Machine_ 2a.png" id="9_l13h3"]
-[ext_resource type="Texture2D" uid="uid://nc6ev7fsfhw6" path="res://sprites/MachineIcons/Icon_Machine_ 3a.png" id="10_gb3aa"]
 [ext_resource type="Texture2D" uid="uid://c3jshdj8m2qvw" path="res://sprites/MachineIcons/Icon_Machine_ 1b.png" id="11_btw05"]
-[ext_resource type="Texture2D" uid="uid://dr67o13odj2sb" path="res://sprites/MachineIcons/Icon_Machine_ 4a.png" id="11_gu1w1"]
-[ext_resource type="Texture2D" uid="uid://dioeje56ptxt8" path="res://sprites/MachineIcons/Icon_Machine_ 5a.png" id="12_d7ijb"]
-[ext_resource type="Texture2D" uid="uid://dbmlm0t3eb26l" path="res://sprites/MachineIcons/Icon_Machine_ 6a.png" id="13_ce2n2"]
 [ext_resource type="Texture2D" uid="uid://diusxp3a0volv" path="res://sprites/MachineIcons/Icon_Machine_ 2b.png" id="13_mpu0g"]
 [ext_resource type="Shader" path="res://scripts/outline.gdshader" id="13_sfoo4"]
-[ext_resource type="Texture2D" uid="uid://cl0u1mykw5oe3" path="res://sprites/MachineIcons/Icon_Machine_ 7a.png" id="14_25fue"]
 [ext_resource type="Texture2D" uid="uid://bxkxark5fc14w" path="res://sprites/MachineIcons/Icon_Machine_ 3b.png" id="15_3ls3x"]
 [ext_resource type="Texture2D" uid="uid://cogm7ey4bthub" path="res://sprites/tmp_btn_up_normal.png" id="15_800g8"]
+[ext_resource type="Texture2D" uid="uid://c06khog51fnnx" path="res://sprites/Icon_Machine_Locked.png" id="15_bad72"]
 [ext_resource type="Texture2D" uid="uid://dptknvabur4l4" path="res://sprites/tmp_btn_up_pressed.png" id="16_0u06a"]
 [ext_resource type="Texture2D" uid="uid://c04kh6m5jhi3y" path="res://sprites/tmp_btn_up_hover.png" id="17_gp4mk"]
 [ext_resource type="Texture2D" uid="uid://de3ikg3n78w8b" path="res://sprites/MachineIcons/Icon_Machine_ 4b.png" id="17_ksanp"]
@@ -195,7 +189,7 @@ metadata/_edit_use_anchors_ = true
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 texture_normal = ExtResource("11_btw05")
-texture_disabled = ExtResource("8_ts1rx")
+texture_disabled = ExtResource("15_bad72")
 stretch_mode = 0
 
 [node name="btnUpgrade2" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
@@ -203,42 +197,42 @@ material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("13_mpu0g")
-texture_disabled = ExtResource("9_l13h3")
+texture_disabled = ExtResource("15_bad72")
 
 [node name="btnUpgrade3" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("15_3ls3x")
-texture_disabled = ExtResource("10_gb3aa")
+texture_disabled = ExtResource("15_bad72")
 
 [node name="btnUpgrade4" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("17_ksanp")
-texture_disabled = ExtResource("11_gu1w1")
+texture_disabled = ExtResource("15_bad72")
 
 [node name="btnUpgrade5" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("19_3rg8w")
-texture_disabled = ExtResource("12_d7ijb")
+texture_disabled = ExtResource("15_bad72")
 
 [node name="btnUpgrade6" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("21_1lw61")
-texture_disabled = ExtResource("13_ce2n2")
+texture_disabled = ExtResource("15_bad72")
 
 [node name="btnUpgrade7" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer"]
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("23_gaul0")
-texture_disabled = ExtResource("14_25fue")
+texture_disabled = ExtResource("15_bad72")
 
 [node name="PriceLabels" type="Control" parent="ShopArea/ShopArea_UI"]
 anchors_preset = 0
@@ -362,6 +356,13 @@ offset_left = 540.0
 offset_top = 1906.0
 offset_right = 675.0
 offset_bottom = 2026.0
+script = ExtResource("4_harbk")
+
+[node name="Cat4" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_top = 2038.0
+offset_right = 136.0
+offset_bottom = 2158.0
 script = ExtResource("4_harbk")
 
 [node name="Camera2D" type="Camera2D" parent="."]

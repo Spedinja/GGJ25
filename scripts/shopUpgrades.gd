@@ -46,7 +46,7 @@ func updateShop()-> void:
 	var tempNode: TextureButton
 	var lbl: Label
 	for elem in arrCurrLevel:
-		tmpElem = elem + 1
+		tmpElem = elem #+ 1
 		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>=0:
 			tempNode =arrButtons[tmpCounter]
 			tempNode.disabled = false
