@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=38 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cpiju8q6q2y1o" path="res://scenes/plane.tscn" id="12_2qq77"]
 [ext_resource type="Texture2D" uid="uid://citngj2c3xcim" path="res://sprites/Arrow_Down.png" id="13_g2y3q"]
 [ext_resource type="Texture2D" uid="uid://diusxp3a0volv" path="res://sprites/MachineIcons/Icon_Machine_ 2b.png" id="13_mpu0g"]
+[ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="13_s7fe6"]
 [ext_resource type="Shader" path="res://scripts/outline.gdshader" id="13_sfoo4"]
 [ext_resource type="Texture2D" uid="uid://bmkqb11pv33gv" path="res://sprites/Arrow_Down_pressed.png" id="14_oa8sp"]
 [ext_resource type="Texture2D" uid="uid://bxkxark5fc14w" path="res://sprites/MachineIcons/Icon_Machine_ 3b.png" id="15_3ls3x"]
@@ -107,8 +108,10 @@ position = Vector2(2100, 400)
 
 [node name="CurrentMoney_US" type="Label" parent="BubbleArea/BubbleArea_HUD"]
 custom_minimum_size = Vector2(200, 0)
-offset_right = 200.0
+offset_left = 10.0
+offset_right = 210.0
 offset_bottom = 69.0
+theme = ExtResource("13_s7fe6")
 theme_override_font_sizes/font_size = 50
 text = "$: 0000"
 
