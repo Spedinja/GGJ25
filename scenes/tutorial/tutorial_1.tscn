@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvnqcgsgqk7ec"]
 
 [ext_resource type="Script" path="res://scripts/tutorial/tutorial_1.gd" id="1_bcv7t"]
-[ext_resource type="Texture2D" uid="uid://dimkydw2ler17" path="res://sprites/tutorial/Temp_Speech_Bubble.png" id="3_xl3yn"]
+[ext_resource type="Texture2D" uid="uid://butmnt27uq8qk" path="res://sprites/tutorial/Speech_Bubble.png" id="2_5sw8q"]
 [ext_resource type="Texture2D" uid="uid://dg1dxib61wskj" path="res://sprites/tutorial/Temp_click.png" id="4_76odr"]
 [ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="5_e1p1d"]
 
@@ -33,13 +33,13 @@ script = ExtResource("1_bcv7t")
 
 [node name="SpeechBubble" type="Sprite2D" parent="."]
 position = Vector2(0, 303)
-texture = ExtResource("3_xl3yn")
+texture = ExtResource("2_5sw8q")
 
 [node name="Cursor" type="AnimatedSprite2D" parent="."]
 position = Vector2(-590, -198)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i2661")
-frame_progress = 0.567058
+frame_progress = 0.0347685
 
 [node name="RichTextLabel" type="Label" parent="."]
 offset_left = -657.0

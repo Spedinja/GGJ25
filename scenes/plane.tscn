@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/plane.gd" id="1_3r5b6"]
 [ext_resource type="Texture2D" uid="uid://crcrbm5o5cf48" path="res://sprites/Temp_Plane.png" id="2_cg0jd"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4hl2w"]
-radius = 50.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tdekd"]
+radius = 49.0
 height = 172.0
 
 [node name="Plane" type="Area2D"]
@@ -15,4 +15,6 @@ texture = ExtResource("2_cg0jd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4hl2w")
+shape = SubResource("CapsuleShape2D_tdekd")
+
+[node name="Timer" type="Timer" parent="."]
