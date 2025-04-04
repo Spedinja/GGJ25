@@ -11,6 +11,7 @@ func _ready():
 	$BubbleArea_HUD/CurrentMoney_US.text = str("$: ", score)
 	$"../ShopArea/ShopArea_UI/CurrentMoney_LS".text = str("$: ", score)
 	SignalManager.money_changed.connect(on_money_changed)
+	SignalManager.bubble_popped.connect(on_bubble_popped)
 	
 func _process(delta):
 	#accum_time += delta

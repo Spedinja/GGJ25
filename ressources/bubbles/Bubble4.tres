@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bubble" load_steps=2 format=3 uid="uid://m5srp5aq7jlr"]
+
+[ext_resource type="Script" path="res://scripts/bubbleRes.gd" id="1_wvomw"]
+
+[resource]
+script = ExtResource("1_wvomw")
+value = 8
+frequency = 5.0
+amplitude = 150.0
+upwards_speed = 100.0
+scale = 1.0

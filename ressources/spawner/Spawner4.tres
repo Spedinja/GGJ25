@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Spawner" load_steps=3 format=3 uid="uid://dn3m2l77whtfl"]
+
+[ext_resource type="PackedScene" uid="uid://bhb7k7e67xgfc" path="res://scenes/bubble_4.tscn" id="1_84f88"]
+[ext_resource type="Script" path="res://scripts/spawnerRes.gd" id="1_oibek"]
+
+[resource]
+script = ExtResource("1_oibek")
+bubbleValue = 4.0
+arrStats = Array[float]([14.0, 16.0, 18.0])
+bubble_scene = ExtResource("1_84f88")
