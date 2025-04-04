@@ -76,6 +76,7 @@ position = Vector2(0, 303)
 texture = ExtResource("2_j7p7d")
 
 [node name="Cursor" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-590, -198)
 scale = Vector2(2, 2)
 texture = ExtResource("4_gis2v")

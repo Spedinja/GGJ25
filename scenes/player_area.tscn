@@ -101,7 +101,7 @@ position = Vector2(960, 540)
 texture = ExtResource("4_uh3b7")
 
 [node name="Plane" parent="BubbleArea/SpawnArea" instance=ExtResource("12_2qq77")]
-position = Vector2(2100, 350)
+position = Vector2(2100, 400)
 
 [node name="BubbleArea_HUD" type="CanvasLayer" parent="BubbleArea"]
 

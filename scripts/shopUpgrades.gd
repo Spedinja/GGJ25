@@ -45,7 +45,7 @@ func btnUpgradePressed(btnNum: int)->void:
 		if currentLvl < 2:
 			arrLabels[btnNum].text = str(arrUpgradeCosts[btnNum][currentLvl+1], "$")
 		else:
-			arrLabels[btnNum].visible = false
+			arrLabels[btnNum].text = "Max"
 		SignalManager.money_changed.emit((arrUpgradeCosts[btnNum][currentLvl])*-1)
 
 		
