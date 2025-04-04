@@ -1,6 +1,6 @@
 extends Node
 
-@export var tracks : Array[Music]
+# @export var tracks : Array[Music]
 
 @export var base_tracks : Array[Music]
 @export var cafe_tracks : Array[Music]

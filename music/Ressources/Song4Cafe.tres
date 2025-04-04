@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Music" load_steps=2 format=3 uid="uid://fb2g7p7ibkky"]
+
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_87qf7"]
+
+[resource]
+script = ExtResource("1_87qf7")
+name = "Song 4 Cafe"
+file_path = "res://music/LoFi_4_CafeTrack_v1.mp3"

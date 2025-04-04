@@ -7,6 +7,7 @@ extends Camera2D
 @export var cafe_cam_position : Node
 
 func _on_to_shop_pressed():
+	SignalManager.move_to_shop.emit()
 	shop_button.hide()
 	MusicPlayer.on_location_switch()
 	var shop_button_tween := create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
@@ -20,6 +21,7 @@ func _on_camera_movement_finished(button : TextureButton, tween : Tween):
 
 
 func _on_to_bubbles_pressed():
+	SignalManager.move_to_bubbles.emit()
 	to_bubbles_button.hide()
 	MusicPlayer.on_location_switch()
 	var to_bubbles_button_tween := create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
