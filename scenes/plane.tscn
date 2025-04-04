@@ -39,10 +39,12 @@ texture = ExtResource("2_cg0jd")
 
 [node name="PlaneAnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g082e")
-frame_progress = 0.696976
+frame_progress = 0.721806
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tdekd")
+
+[node name="PlaneAudio" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]

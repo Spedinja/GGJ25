@@ -6,6 +6,7 @@ extends Area2D
 
 @onready var plane_animated_sprite: AnimatedSprite2D = $PlaneAnimatedSprite
 @onready var timer: Timer = $Timer
+@onready var plane_audio: AudioStreamPlayer2D = $PlaneAudio
 
 var current_speed : int
 var y_starting_position
@@ -21,6 +22,8 @@ func _ready():
 	current_speed = x_speed
 	y_starting_position = position.y
 	plane_animated_sprite.play("default")
+	plane_audio.stream = load("res://sfx/PlaneFlying.mp3")
+	plane_audio.play()
 
 func _process(delta):
 	if timer_running:
@@ -52,3 +55,4 @@ func _on_cooldown_over():
 	var max = y_offset_radius/2
 	var min = -max
 	position.y = y_starting_position + randi_range(min,max)
+	plane_audio.play()
