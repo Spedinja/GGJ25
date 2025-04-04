@@ -1,8 +1,6 @@
 extends Area2D
 
-var frequency : float = 5
-var amplitude : float = 150
-var upwards_speed : float = 100
+@export var bubble_data: Bubble
 var direction = 1 # Determines the horizontal direction (1 for right, -1 for left)
 
 var time = 0
@@ -13,21 +11,20 @@ var delete_timer = 0
 #Signal
 #signal bubble_popped(param)
 var is_clicked = false
-var bubbleValue = 1
 
 func _ready() -> void:
-	bubbleScale= randf_range(1,4)
-	setBubbleScale(bubbleScale)
-	direction = randf_range(-1,1)
+	self.bubbleScale= randf_range(1,4)
+	self.setBubbleScale(bubbleScale)
+	self.direction = randf_range(-1,1)
 
 func _physics_process(delta):
-	time += delta
-	delete_timer = time
-	var wiggle = sin(time*frequency)*amplitude*direction
-	position.x += wiggle * delta
-	position.y -= upwards_speed * delta
+	self.time += delta
+	self.delete_timer = self.time
+	var wiggle = sin(time*bubble_data.frequency)*bubble_data.amplitude*direction
+	self.position.x += wiggle * delta
+	self.position.y -= bubble_data.upwards_speed * delta
 	
-	if delete_timer > (0.05 * upwards_speed): #change to speed/value
+	if delete_timer > (0.05 * bubble_data.upwards_speed): #change to speed/value
 		queue_free()
 
 # Called when the mouse clicks on the bubble.
@@ -36,24 +33,24 @@ func _input_event(viewport, event, shape_idx):
 		if not is_clicked:
 			is_clicked = true
 			#emit_signal("bubble_popped")
+			SignalManager.bubble_popped.emit(self.getBubbleValue())
 			SignalManager.bubble_popped.emit()
 			queue_free()  # Removes the bubble when clicked (pops it)
 			#get_tree().root.get_node("MainScene").add_score(10)  # Add points to the score
 
 func setBubbleScale(givenScale) -> void:
 	bubbleScale = givenScale
-	scale.x = bubbleScale
-	scale.y = bubbleScale
+	self.scale.x = bubbleScale
+	self.scale.y = bubbleScale
 
-#func setBubbleValue(givenValue) -> void:
-#	self.bubbleValue = givenValue
+func setBubbleValue(value) -> void:
+	self.bubble_data.bubbleValue = value
 
 func getBubbleValue() -> int:
-	return bubbleValue
+	return self.bubble_data.bubbleValue
 
-func adjustBubbleValues(multiplier, val) -> void:
-	frequency = 5 + multiplier
-	amplitude = 150 + (multiplier * 10)
-	upwards_speed = 100 + (multiplier * 10)
-	bubbleValue = val #bubbleScale * multiplier
-	
+func adjustBubbleValues(multiplier) -> void:
+	self.bubble_data.frequency = 5 + multiplier
+	self.bubble_data.amplitude = 150 + (multiplier * 10)
+	self.bubble_data.upwards_speed = 100 + (multiplier * 10)
+	#self.bubble_data = self.bubble_data.bubbleValue * multiplier  #bubbleScale * multiplier

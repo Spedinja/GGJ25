@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhb7k7e67xgfc"]
+[gd_scene load_steps=5 format=3 uid="uid://bhb7k7e67xgfc"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_kgkdi"]
 [ext_resource type="Texture2D" uid="uid://bn4kegx72pm1f" path="res://sprites/Bubbles/new/Bubble_4a.png" id="2_3ugpq"]
+[ext_resource type="Resource" uid="uid://m5srp5aq7jlr" path="res://ressources/bubbles/Bubble4.tres" id="2_3vfp6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iiivj"]
 
 [node name="Bubble" type="Area2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_kgkdi")
+bubble_data = ExtResource("2_3vfp6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
