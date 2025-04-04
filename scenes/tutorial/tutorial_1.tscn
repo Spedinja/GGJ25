@@ -39,7 +39,7 @@ texture = ExtResource("2_5sw8q")
 position = Vector2(-590, -198)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i2661")
-frame_progress = 0.0347685
+frame_progress = 0.0739065
 
 [node name="RichTextLabel" type="Label" parent="."]
 offset_left = -657.0

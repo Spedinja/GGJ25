@@ -6,10 +6,7 @@
 [ext_resource type="Script" path="res://scripts/gadse.gd" id="4_harbk"]
 [ext_resource type="Resource" uid="uid://buxb5k5qdmovy" path="res://ressources/spawner/Spawner1.tres" id="4_l5oaj"]
 [ext_resource type="Texture2D" uid="uid://c4btyuxd3urr2" path="res://sprites/Background_Sky_New.png" id="4_uh3b7"]
-[ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_0jclp"]
-[ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="5_x6kud"]
 [ext_resource type="Resource" uid="uid://d5udhbcbb6b" path="res://ressources/spawner/Spawner2.tres" id="5_xg42i"]
-[ext_resource type="Texture2D" uid="uid://c4crdoexrkg6w" path="res://sprites/tmp_btn_hover.png" id="6_m3mqp"]
 [ext_resource type="Resource" uid="uid://d07cdtq0bdlno" path="res://ressources/spawner/Spawner3.tres" id="6_qklym"]
 [ext_resource type="Resource" uid="uid://dn3m2l77whtfl" path="res://ressources/spawner/Spawner4.tres" id="7_2lglj"]
 [ext_resource type="Resource" uid="uid://bc0nayaysyafe" path="res://ressources/spawner/Spawner5.tres" id="8_01gma"]
@@ -19,16 +16,19 @@
 [ext_resource type="Resource" uid="uid://c2tesf1rynblm" path="res://ressources/spawner/Spawner7.tres" id="10_83vmp"]
 [ext_resource type="Texture2D" uid="uid://c3jshdj8m2qvw" path="res://sprites/MachineIcons/Icon_Machine_ 1b.png" id="11_btw05"]
 [ext_resource type="PackedScene" uid="uid://cpiju8q6q2y1o" path="res://scenes/plane.tscn" id="12_2qq77"]
+[ext_resource type="Texture2D" uid="uid://citngj2c3xcim" path="res://sprites/Arrow_Down.png" id="13_g2y3q"]
 [ext_resource type="Texture2D" uid="uid://diusxp3a0volv" path="res://sprites/MachineIcons/Icon_Machine_ 2b.png" id="13_mpu0g"]
 [ext_resource type="Shader" path="res://scripts/outline.gdshader" id="13_sfoo4"]
+[ext_resource type="Texture2D" uid="uid://bmkqb11pv33gv" path="res://sprites/Arrow_Down_pressed.png" id="14_oa8sp"]
 [ext_resource type="Texture2D" uid="uid://bxkxark5fc14w" path="res://sprites/MachineIcons/Icon_Machine_ 3b.png" id="15_3ls3x"]
-[ext_resource type="Texture2D" uid="uid://cogm7ey4bthub" path="res://sprites/tmp_btn_up_normal.png" id="15_800g8"]
 [ext_resource type="Texture2D" uid="uid://c06khog51fnnx" path="res://sprites/Icon_Machine_Locked.png" id="15_bad72"]
-[ext_resource type="Texture2D" uid="uid://dptknvabur4l4" path="res://sprites/tmp_btn_up_pressed.png" id="16_0u06a"]
-[ext_resource type="Texture2D" uid="uid://c04kh6m5jhi3y" path="res://sprites/tmp_btn_up_hover.png" id="17_gp4mk"]
+[ext_resource type="Texture2D" uid="uid://c6yjjf3krjtjx" path="res://sprites/Arrow_Down_hover.png" id="15_idymo"]
 [ext_resource type="Texture2D" uid="uid://de3ikg3n78w8b" path="res://sprites/MachineIcons/Icon_Machine_ 4b.png" id="17_ksanp"]
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="18_gmjm1"]
+[ext_resource type="Texture2D" uid="uid://cbioqwhrinwl5" path="res://sprites/Arrow_Up.png" id="18_i6f7b"]
 [ext_resource type="Texture2D" uid="uid://bh23nbpugpgvj" path="res://sprites/MachineIcons/Icon_Machine_ 5b.png" id="19_3rg8w"]
+[ext_resource type="Texture2D" uid="uid://0072pu46w5v8" path="res://sprites/Arrow_Up_pressed.png" id="19_r2f3t"]
+[ext_resource type="Texture2D" uid="uid://cfjtho7kcpg60" path="res://sprites/Arrow_Up_hover.png" id="20_7avwc"]
 [ext_resource type="Texture2D" uid="uid://drkxmfjyi4vso" path="res://sprites/MachineIcons/Icon_Machine_ 6b.png" id="21_1lw61"]
 [ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Icon_Machine_ 7b.png" id="23_gaul0"]
 [ext_resource type="FontFile" uid="uid://d0euvmb6jo6s2" path="res://fonts/cozy caps.ttf" id="28_t2hu8"]
@@ -101,7 +101,7 @@ position = Vector2(960, 540)
 texture = ExtResource("4_uh3b7")
 
 [node name="Plane" parent="BubbleArea/SpawnArea" instance=ExtResource("12_2qq77")]
-position = Vector2(2006, 373)
+position = Vector2(2100, 350)
 
 [node name="BubbleArea_HUD" type="CanvasLayer" parent="BubbleArea"]
 
@@ -125,9 +125,9 @@ offset_left = -40.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("5_x6kud")
-texture_pressed = ExtResource("5_0jclp")
-texture_hover = ExtResource("6_m3mqp")
+texture_normal = ExtResource("13_g2y3q")
+texture_pressed = ExtResource("14_oa8sp")
+texture_hover = ExtResource("15_idymo")
 stretch_mode = 0
 
 [node name="ShopArea" type="Node2D" parent="."]
@@ -164,9 +164,9 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-texture_normal = ExtResource("15_800g8")
-texture_pressed = ExtResource("16_0u06a")
-texture_hover = ExtResource("17_gp4mk")
+texture_normal = ExtResource("18_i6f7b")
+texture_pressed = ExtResource("19_r2f3t")
+texture_hover = ExtResource("20_7avwc")
 stretch_mode = 0
 
 [node name="ShopContainer" type="HBoxContainer" parent="ShopArea/ShopArea_UI"]
