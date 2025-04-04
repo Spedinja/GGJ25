@@ -5,4 +5,4 @@ class_name Bubble
 @export var amplitude: float = 150.0
 @export var upwards_speed: float = 100.0
 @export var scale: float = 1
-@export var bubbleValue: int = 1
+var bubbleValue: int = 1

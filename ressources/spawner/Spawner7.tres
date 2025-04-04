@@ -5,6 +5,5 @@
 
 [resource]
 script = ExtResource("1_5vrqm")
-bubbleValue = 7.0
 arrStats = Array[float]([40.0, 45.0, 50.0])
 bubble_scene = ExtResource("1_5kgnx")
