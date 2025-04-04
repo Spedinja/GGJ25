@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_bdiq3")
-value = 1
 frequency = 5.0
 amplitude = 150.0
 upwards_speed = 100.0
 scale = 1.0
+bubbleValue = 1

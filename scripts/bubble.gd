@@ -50,7 +50,7 @@ func getBubbleValue() -> int:
 	return self.bubble_data.bubbleValue
 
 func adjustBubbleValues(multiplier) -> void:
-	self.bubble_data.frequency = 5 + multiplier
-	self.bubble_data.amplitude = 150 + (multiplier * 10)
-	self.bubble_data.upwards_speed = 100 + (multiplier * 10)
+	self.bubble_data.frequency = self.bubble_data.frequency + multiplier
+	self.bubble_data.amplitude = self.bubble_data.amplitude + (multiplier * 10)
+	self.bubble_data.upwards_speed = self.bubble_data.upwards_speed + (multiplier * 10)
 	#self.bubble_data = self.bubble_data.bubbleValue * multiplier  #bubbleScale * multiplier
