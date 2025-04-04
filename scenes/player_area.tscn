@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=36 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Icon_Machine_ 7b.png" id="23_gaul0"]
 [ext_resource type="FontFile" uid="uid://d0euvmb6jo6s2" path="res://fonts/cozy caps.ttf" id="28_t2hu8"]
 [ext_resource type="Theme" uid="uid://5xwc7t140c5q" path="res://themes/buttons.tres" id="30_lw7il"]
+[ext_resource type="PackedScene" uid="uid://dvnqcgsgqk7ec" path="res://scenes/tutorial/tutorial_1.tscn" id="33_csm8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf55l"]
 size = Vector2(22.4824, 20)
@@ -411,6 +412,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("30_lw7il")
 text = "Quit"
+
+[node name="Tutorial 1" parent="." instance=ExtResource("33_csm8r")]
 
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
