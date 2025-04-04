@@ -7,16 +7,18 @@ extends Node
 @export var sky_tracks : Array[Music]
 
 @export var bubble_sounds : Array[Music]
+@export var cat_pet_sounds : Array[Music]
 
 @onready var base_audio_player = $base_audio_player
 @onready var cafe_audio_player = $cafe_audio_player
 @onready var sky_audio_player = $sky_audio_player
 
 @onready var bubble_sfx_player = $bubble_sfx
+@onready var cat_pet_sfx_player = $cat_pet_sfx
 @onready var other_sfx_player = $other_sfx
 
 var level_up_sfx = "res://sfx/MachineUpgrade.mp3"
-var cat_pet_sound = "res://sfx/PetTheCat.mp3"
+#var cat_pet_sound = "res://sfx/PetTheCat.mp3"
 
 signal music_changed
 
@@ -94,6 +96,8 @@ func on_level_up():
 	other_sfx_player.play()
 
 func pet_cat():
-	other_sfx_player.stream = load(cat_pet_sound)
-	other_sfx_player.play()
+	var pet_index = randi_range(0, bubble_sounds.size()-1)
+	cat_pet_sfx_player.stream = load(cat_pet_sounds[pet_index].file_path)	
+	#cat_pet_sfx_player.stream = load(cat_pet_sounds)
+	cat_pet_sfx_player.play()
 	print("meow")
