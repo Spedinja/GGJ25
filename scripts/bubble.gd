@@ -61,5 +61,6 @@ func adjustBubbleValues(multiplier) -> void:
 	#self.bubble_data = self.bubble_data.bubbleValue * multiplier  #bubbleScale * multiplier
 
 func _on_body_entered(body):
+	print("entered")
 	if body.has_method("pop_bubble"):
 		pop_this_bubble()

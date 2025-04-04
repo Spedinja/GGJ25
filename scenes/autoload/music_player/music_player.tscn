@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bn6vibraxfv5y" path="res://music/Ressources/Song1Base.tres" id="3_dfjsa"]
 [ext_resource type="Resource" uid="uid://cte270pr3w6g0" path="res://music/Ressources/Song1Cafe.tres" id="4_q3wnu"]
 [ext_resource type="Resource" uid="uid://cykn72lky4it" path="res://music/Ressources/Song1Sky.tres" id="5_iqxqi"]
-[ext_resource type="Resource" path="res://music/Ressources/Song4Base.tres" id="6_36mgt"]
+[ext_resource type="Resource" uid="uid://drbycfvlhgkwp" path="res://music/Ressources/Song4Base.tres" id="6_36mgt"]
 [ext_resource type="Resource" uid="uid://r148xjvwvg11" path="res://music/Ressources/Song2Base.tres" id="6_uilpd"]
 [ext_resource type="Resource" uid="uid://dby31bfw7nlhm" path="res://music/Ressources/Song3Base.tres" id="7_1j1ve"]
 [ext_resource type="Resource" uid="uid://bmli06i7c2eat" path="res://music/Ressources/Song2Cafe.tres" id="7_ekhet"]
@@ -13,10 +13,10 @@
 [ext_resource type="Resource" uid="uid://bd3it3vtcrg8" path="res://music/Ressources/Song3Cafe.tres" id="9_6qet3"]
 [ext_resource type="Resource" uid="uid://6dnxesg0are8" path="res://sfx/bubble_pop_1.tres" id="9_wmyyv"]
 [ext_resource type="Resource" uid="uid://btqm03bi6g72l" path="res://sfx/bubble_pop_2.tres" id="10_eay8m"]
-[ext_resource type="Resource" path="res://music/Ressources/Song4Cafe.tres" id="10_g4gdt"]
+[ext_resource type="Resource" uid="uid://fb2g7p7ibkky" path="res://music/Ressources/Song4Cafe.tres" id="10_g4gdt"]
 [ext_resource type="Resource" uid="uid://quxykv755sxl" path="res://music/Ressources/Song3Sky.tres" id="11_p3v3p"]
 [ext_resource type="Resource" uid="uid://cdgapsmcpi7ht" path="res://sfx/bubble_pop_3.tres" id="11_sqgpy"]
-[ext_resource type="Resource" path="res://music/Ressources/Song4Sky.tres" id="14_nl1uk"]
+[ext_resource type="Resource" uid="uid://iqqcx60be3so" path="res://music/Ressources/Song4Sky.tres" id="14_nl1uk"]
 
 [sub_resource type="Resource" id="Resource_5u21b"]
 script = ExtResource("2_yxg3i")
