@@ -2,12 +2,15 @@ extends Node
 
 # @export var tracks : Array[Music]
 
-@export var base_tracks : Array[Music]
-@export var cafe_tracks : Array[Music]
-@export var sky_tracks : Array[Music]
+@export_category("Music")
+@export var base_tracks : Array[AudioStream]
+@export var cafe_tracks : Array[AudioStream]
+@export var sky_tracks : Array[AudioStream]
 
-@export var bubble_sounds : Array[Music]
-@export var cat_pet_sounds : Array[Music]
+@export_category("SFX")
+@export var bubble_sounds : Array[AudioStream]
+@export var cat_pet_sounds : Array[AudioStream]
+@export var level_up_sfx: AudioStream
 
 @onready var base_audio_player = $base_audio_player
 @onready var cafe_audio_player = $cafe_audio_player
@@ -17,7 +20,6 @@ extends Node
 @onready var cat_pet_sfx_player = $cat_pet_sfx
 @onready var other_sfx_player = $other_sfx
 
-var level_up_sfx = "res://sfx/MachineUpgrade.mp3"
 #var cat_pet_sound = "res://sfx/PetTheCat.mp3"
 
 signal music_changed
@@ -28,7 +30,7 @@ var base_playlist = []
 var cafe_playlist = []
 var sky_playlist = []
 
-var song_name : String
+#var song_name : String
 
 func _ready():
 	create_playlist()
@@ -61,11 +63,11 @@ func play_random_song():
 		create_playlist()
 
 func play_song(song_index):
-	base_audio_player.stream = load(base_playlist[song_index].file_path)
+	base_audio_player.stream = base_playlist[song_index]
+	cafe_audio_player.stream = cafe_playlist[song_index]
+	sky_audio_player.stream = sky_playlist[song_index]
 	base_audio_player.play()
-	cafe_audio_player.stream = load(cafe_playlist[song_index].file_path)
 	cafe_audio_player.play()
-	sky_audio_player.stream = load(sky_playlist[song_index].file_path)
 	sky_audio_player.play()
 
 func on_audio_player_finished():
@@ -83,21 +85,20 @@ func cross_fade(from, to):
 	music_fade_out_tween.tween_property(from, "volume_db", -80,2)
 	var music_fade_in_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	music_fade_in_tween.tween_property(to, "volume_db", 0,2)
-	
 
 func on_bubble_popped():
 	#print("blub")
 	var bubble_index = randi_range(0, bubble_sounds.size()-1)
-	bubble_sfx_player.stream = load(bubble_sounds[bubble_index].file_path)
+	bubble_sfx_player.stream = bubble_sounds[bubble_index]
 	bubble_sfx_player.play()
 
 func on_level_up():
-	other_sfx_player.stream = load(level_up_sfx)
+	other_sfx_player.stream = level_up_sfx
 	other_sfx_player.play()
 
 func pet_cat():
 	var pet_index = randi_range(0, bubble_sounds.size()-1)
-	cat_pet_sfx_player.stream = load(cat_pet_sounds[pet_index].file_path)	
+	cat_pet_sfx_player.stream = cat_pet_sounds[pet_index]
 	#cat_pet_sfx_player.stream = load(cat_pet_sounds)
 	cat_pet_sfx_player.play()
 	print("meow")

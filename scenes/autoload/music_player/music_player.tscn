@@ -1,55 +1,36 @@
 [gd_scene load_steps=23 format=3 uid="uid://b5e80idmdba5v"]
 
 [ext_resource type="Script" path="res://scripts/music_player.gd" id="1_gp57g"]
-[ext_resource type="Script" path="res://scripts/music.gd" id="2_yxg3i"]
-[ext_resource type="Resource" uid="uid://bn6vibraxfv5y" path="res://music/Ressources/Song1Base.tres" id="3_dfjsa"]
-[ext_resource type="Resource" uid="uid://cte270pr3w6g0" path="res://music/Ressources/Song1Cafe.tres" id="4_q3wnu"]
-[ext_resource type="Resource" uid="uid://cykn72lky4it" path="res://music/Ressources/Song1Sky.tres" id="5_iqxqi"]
-[ext_resource type="Resource" uid="uid://drbycfvlhgkwp" path="res://music/Ressources/Song4Base.tres" id="6_36mgt"]
-[ext_resource type="Resource" uid="uid://r148xjvwvg11" path="res://music/Ressources/Song2Base.tres" id="6_uilpd"]
-[ext_resource type="Resource" uid="uid://dby31bfw7nlhm" path="res://music/Ressources/Song3Base.tres" id="7_1j1ve"]
-[ext_resource type="Resource" uid="uid://bmli06i7c2eat" path="res://music/Ressources/Song2Cafe.tres" id="7_ekhet"]
-[ext_resource type="Resource" uid="uid://c4fj0jglb87sf" path="res://music/Ressources/Song2Sky.tres" id="8_4cf32"]
-[ext_resource type="Resource" uid="uid://bd3it3vtcrg8" path="res://music/Ressources/Song3Cafe.tres" id="9_6qet3"]
-[ext_resource type="Resource" uid="uid://6dnxesg0are8" path="res://sfx/bubble_pop_1.tres" id="9_wmyyv"]
-[ext_resource type="Resource" uid="uid://btqm03bi6g72l" path="res://sfx/bubble_pop_2.tres" id="10_eay8m"]
-[ext_resource type="Resource" uid="uid://fb2g7p7ibkky" path="res://music/Ressources/Song4Cafe.tres" id="10_g4gdt"]
-[ext_resource type="Resource" uid="uid://quxykv755sxl" path="res://music/Ressources/Song3Sky.tres" id="11_p3v3p"]
-[ext_resource type="Resource" uid="uid://cdgapsmcpi7ht" path="res://sfx/bubble_pop_3.tres" id="11_sqgpy"]
-[ext_resource type="Resource" uid="uid://iqqcx60be3so" path="res://music/Ressources/Song4Sky.tres" id="14_nl1uk"]
-
-[sub_resource type="Resource" id="Resource_5u21b"]
-script = ExtResource("2_yxg3i")
-name = "CatPet1"
-file_path = "res://sfx/PetTheCat.mp3"
-
-[sub_resource type="Resource" id="Resource_6xlb7"]
-script = ExtResource("2_yxg3i")
-name = "CatPet2"
-file_path = "res://sfx/PetTheCat2.mp3"
-
-[sub_resource type="Resource" id="Resource_a0602"]
-script = ExtResource("2_yxg3i")
-name = "CatPet3"
-file_path = "res://sfx/PetTheCat3.mp3"
-
-[sub_resource type="Resource" id="Resource_i1sfi"]
-script = ExtResource("2_yxg3i")
-name = "CatPet4"
-file_path = "res://sfx/PetTheCat4.mp3"
-
-[sub_resource type="Resource" id="Resource_tjdcu"]
-script = ExtResource("2_yxg3i")
-name = "CatPet5"
-file_path = "res://sfx/PetTheCat5.mp3"
+[ext_resource type="AudioStream" uid="uid://c6my8x3fejrgg" path="res://music/BaseTrack_Background_LoFi1_v4.mp3" id="2_ngqab"]
+[ext_resource type="AudioStream" uid="uid://ca481oyk4loqf" path="res://music/BaseTrack_Background_LoFi2_v2.mp3" id="3_5geyd"]
+[ext_resource type="AudioStream" uid="uid://x5rro5lme6dp" path="res://music/BaseTrack_Background_LoFi3_v1.mp3" id="4_vds8h"]
+[ext_resource type="AudioStream" uid="uid://bqdesfp23vf7d" path="res://music/LoFi_4_BaseTrack_v1.mp3" id="5_miumd"]
+[ext_resource type="AudioStream" uid="uid://csuhh6hm64gwr" path="res://music/Cafe_Background_LoFi1_v4.mp3" id="6_6w4a5"]
+[ext_resource type="AudioStream" uid="uid://c20nxf23o1ug7" path="res://music/Cafe_Background_LoFi2_v2.mp3" id="7_gu7g7"]
+[ext_resource type="AudioStream" uid="uid://dfaorbr6e1kp5" path="res://music/Cafe_Background_LoFi3_v1.mp3" id="8_mctud"]
+[ext_resource type="AudioStream" uid="uid://d57hplhsicrf" path="res://music/LoFi_4_CafeTrack_v1.mp3" id="9_upujk"]
+[ext_resource type="AudioStream" uid="uid://bu5x2cq1p6yml" path="res://music/Sky_Background_LoFi1_v4.mp3" id="10_3vtla"]
+[ext_resource type="AudioStream" uid="uid://bbyr1rod7lss6" path="res://music/Sky_Background_LoFi2_v2.mp3" id="11_145py"]
+[ext_resource type="AudioStream" uid="uid://ctpkrr0grtatk" path="res://music/Sky_Background_LoFi3_v1.mp3" id="12_vcevq"]
+[ext_resource type="AudioStream" uid="uid://cmjjadkkh2ftq" path="res://music/LoFi_4_SkyTrack_v1.mp3" id="13_a8f86"]
+[ext_resource type="AudioStream" uid="uid://xqylqjyyvgmy" path="res://sfx/BubblePop1.mp3" id="15_t8ykh"]
+[ext_resource type="AudioStream" uid="uid://c4q1cmyl1hawl" path="res://sfx/BubblePop2.mp3" id="16_y0k48"]
+[ext_resource type="AudioStream" uid="uid://dhd2gkn8kha0s" path="res://sfx/BubblePop3.mp3" id="17_l688k"]
+[ext_resource type="AudioStream" uid="uid://cdipg00ehr3ag" path="res://sfx/PetTheCat.mp3" id="18_0tdtv"]
+[ext_resource type="AudioStream" uid="uid://dewxujiqy6of1" path="res://sfx/PetTheCat2.mp3" id="19_dr52b"]
+[ext_resource type="AudioStream" uid="uid://cqxt1262dw4dq" path="res://sfx/PetTheCat3.mp3" id="20_xrhcd"]
+[ext_resource type="AudioStream" uid="uid://uogg0w843452" path="res://sfx/PetTheCat4.mp3" id="21_504t7"]
+[ext_resource type="AudioStream" uid="uid://bgektvcsuuab6" path="res://sfx/MachineUpgrade.mp3" id="22_ce0i1"]
+[ext_resource type="AudioStream" uid="uid://b2uo46w56ddxq" path="res://sfx/PetTheCat5.mp3" id="22_ghxqk"]
 
 [node name="music_player" type="Node"]
 script = ExtResource("1_gp57g")
-base_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("3_dfjsa"), ExtResource("6_uilpd"), ExtResource("7_1j1ve"), ExtResource("6_36mgt")])
-cafe_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("4_q3wnu"), ExtResource("7_ekhet"), ExtResource("9_6qet3"), ExtResource("10_g4gdt")])
-sky_tracks = Array[ExtResource("2_yxg3i")]([ExtResource("5_iqxqi"), ExtResource("8_4cf32"), ExtResource("11_p3v3p"), ExtResource("14_nl1uk")])
-bubble_sounds = Array[ExtResource("2_yxg3i")]([ExtResource("9_wmyyv"), ExtResource("10_eay8m"), ExtResource("11_sqgpy")])
-cat_pet_sounds = Array[ExtResource("2_yxg3i")]([SubResource("Resource_5u21b"), SubResource("Resource_6xlb7"), SubResource("Resource_a0602"), SubResource("Resource_i1sfi"), SubResource("Resource_tjdcu")])
+base_tracks = Array[AudioStream]([ExtResource("2_ngqab"), ExtResource("3_5geyd"), ExtResource("4_vds8h"), ExtResource("5_miumd")])
+cafe_tracks = Array[AudioStream]([ExtResource("6_6w4a5"), ExtResource("7_gu7g7"), ExtResource("8_mctud"), ExtResource("9_upujk")])
+sky_tracks = Array[AudioStream]([ExtResource("10_3vtla"), ExtResource("11_145py"), ExtResource("12_vcevq"), ExtResource("13_a8f86")])
+bubble_sounds = Array[AudioStream]([ExtResource("15_t8ykh"), ExtResource("16_y0k48"), ExtResource("17_l688k")])
+cat_pet_sounds = Array[AudioStream]([ExtResource("18_0tdtv"), ExtResource("19_dr52b"), ExtResource("20_xrhcd"), ExtResource("21_504t7"), ExtResource("22_ghxqk")])
+level_up_sfx = ExtResource("22_ce0i1")
 
 [node name="base_audio_player" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
@@ -62,9 +43,11 @@ volume_db = -80.0
 bus = &"Music"
 
 [node name="bubble_sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
 bus = &"SFX"
 
 [node name="cat_pet_sfx" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
 [node name="other_sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
