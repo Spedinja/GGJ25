@@ -14,7 +14,7 @@ config/name="OcTeaPop!"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/image="res://sprites/Splashscreen.png"
-config/icon="res://svgs/lila_blub_smol.svg"
+config/icon="res://svgs/icon_512_android.png"
 
 [autoload]
 
@@ -45,3 +45,4 @@ UI_Menu={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
