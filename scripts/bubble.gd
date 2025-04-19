@@ -13,7 +13,7 @@ var delete_timer = 0
 var is_clicked = false
 
 func _ready() -> void:
-	self.bubbleScale= randf_range(1,4)
+	self.bubbleScale= randf_range(2,4)
 	self.setBubbleScale(bubbleScale)
 	self.direction = randf_range(-1,1)
 
@@ -54,7 +54,8 @@ func getBubbleValue() -> int:
 	return self.bubble_data.bubbleValue
 
 func adjustBubbleValues(multiplier) -> void:
-	self.bubble_data.frequency = self.bubble_data.frequency + multiplier
-	self.bubble_data.amplitude = self.bubble_data.amplitude + (multiplier * 10)
-	self.bubble_data.upwards_speed = self.bubble_data.upwards_speed + (multiplier * 10)
+	var random_multiplier: float = randf_range(-1,1)
+	self.bubble_data.frequency = self.bubble_data.frequency + random_multiplier #+- multiplier
+	self.bubble_data.amplitude = self.bubble_data.amplitude + (random_multiplier*10) #+- (multiplier * 10)
+	self.bubble_data.upwards_speed = self.bubble_data.upwards_speed + (random_multiplier*10) #+- (multiplier * 10)
 	#self.bubble_data = self.bubble_data.bubbleValue * multiplier  #bubbleScale * multiplier
