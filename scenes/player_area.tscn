@@ -14,24 +14,24 @@
 [ext_resource type="Texture2D" uid="uid://d1233laatdy5r" path="res://sprites/Background_Shop_v4.png" id="8_xoyp7"]
 [ext_resource type="Resource" uid="uid://cnvtg0m6725hy" path="res://ressources/spawner/Spawner6.tres" id="9_ckta8"]
 [ext_resource type="Resource" uid="uid://c2tesf1rynblm" path="res://ressources/spawner/Spawner7.tres" id="10_83vmp"]
-[ext_resource type="Texture2D" uid="uid://c3jshdj8m2qvw" path="res://sprites/MachineIcons/Icon_Machine_ 1b.png" id="11_btw05"]
 [ext_resource type="PackedScene" uid="uid://cpiju8q6q2y1o" path="res://scenes/plane.tscn" id="12_2qq77"]
 [ext_resource type="Texture2D" uid="uid://citngj2c3xcim" path="res://sprites/Arrow_Down.png" id="13_g2y3q"]
-[ext_resource type="Texture2D" uid="uid://diusxp3a0volv" path="res://sprites/MachineIcons/Icon_Machine_ 2b.png" id="13_mpu0g"]
+[ext_resource type="Texture2D" uid="uid://diusxp3a0volv" path="res://sprites/MachineIcons/Basic/Icon_Machine_ 2b.png" id="13_mpu0g"]
 [ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="13_s7fe6"]
 [ext_resource type="Shader" path="res://scripts/outline.gdshader" id="13_sfoo4"]
 [ext_resource type="Texture2D" uid="uid://bmkqb11pv33gv" path="res://sprites/Arrow_Down_pressed.png" id="14_oa8sp"]
-[ext_resource type="Texture2D" uid="uid://bxkxark5fc14w" path="res://sprites/MachineIcons/Icon_Machine_ 3b.png" id="15_3ls3x"]
-[ext_resource type="Texture2D" uid="uid://c06khog51fnnx" path="res://sprites/Icon_Machine_Locked.png" id="15_bad72"]
+[ext_resource type="Texture2D" uid="uid://bxkxark5fc14w" path="res://sprites/MachineIcons/Basic/Icon_Machine_ 3b.png" id="15_3ls3x"]
+[ext_resource type="Texture2D" uid="uid://c06khog51fnnx" path="res://sprites/MachineIcons/Icon_Machine_Locked.png" id="15_bad72"]
 [ext_resource type="Texture2D" uid="uid://c6yjjf3krjtjx" path="res://sprites/Arrow_Down_hover.png" id="15_idymo"]
-[ext_resource type="Texture2D" uid="uid://de3ikg3n78w8b" path="res://sprites/MachineIcons/Icon_Machine_ 4b.png" id="17_ksanp"]
+[ext_resource type="Texture2D" uid="uid://de3ikg3n78w8b" path="res://sprites/MachineIcons/Basic/Icon_Machine_ 4b.png" id="17_ksanp"]
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="18_gmjm1"]
 [ext_resource type="Texture2D" uid="uid://cbioqwhrinwl5" path="res://sprites/Arrow_Up.png" id="18_i6f7b"]
-[ext_resource type="Texture2D" uid="uid://bh23nbpugpgvj" path="res://sprites/MachineIcons/Icon_Machine_ 5b.png" id="19_3rg8w"]
+[ext_resource type="Texture2D" uid="uid://bh23nbpugpgvj" path="res://sprites/MachineIcons/Basic/Icon_Machine_ 5b.png" id="19_3rg8w"]
 [ext_resource type="Texture2D" uid="uid://0072pu46w5v8" path="res://sprites/Arrow_Up_pressed.png" id="19_r2f3t"]
 [ext_resource type="Texture2D" uid="uid://cfjtho7kcpg60" path="res://sprites/Arrow_Up_hover.png" id="20_7avwc"]
-[ext_resource type="Texture2D" uid="uid://drkxmfjyi4vso" path="res://sprites/MachineIcons/Icon_Machine_ 6b.png" id="21_1lw61"]
-[ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Icon_Machine_ 7b.png" id="23_gaul0"]
+[ext_resource type="Texture2D" uid="uid://drkxmfjyi4vso" path="res://sprites/MachineIcons/Basic/Icon_Machine_ 6b.png" id="21_1lw61"]
+[ext_resource type="Texture2D" uid="uid://cxetbf7mbx1dn" path="res://sprites/MachineIcons/Unlockable/Icon_Machine_1_Unlockable.png" id="23_3jcd8"]
+[ext_resource type="Texture2D" uid="uid://dbl4f62p8tqj7" path="res://sprites/MachineIcons/Basic/Icon_Machine_ 7b.png" id="23_gaul0"]
 [ext_resource type="FontFile" uid="uid://d0euvmb6jo6s2" path="res://fonts/cozy caps.ttf" id="28_t2hu8"]
 [ext_resource type="Theme" uid="uid://5xwc7t140c5q" path="res://themes/buttons.tres" id="30_lw7il"]
 [ext_resource type="PackedScene" uid="uid://dvnqcgsgqk7ec" path="res://scenes/tutorial/tutorial_1.tscn" id="33_csm8r"]
@@ -190,7 +190,7 @@ metadata/_edit_use_anchors_ = true
 [node name="btnUpgrade1" type="TextureButton" parent="ShopArea/ShopArea_UI/ShopContainer" groups=["bubbles"]]
 material = SubResource("ShaderMaterial_38w0d")
 layout_mode = 2
-texture_normal = ExtResource("11_btw05")
+texture_normal = ExtResource("23_3jcd8")
 texture_disabled = ExtResource("15_bad72")
 stretch_mode = 0
 
@@ -371,7 +371,7 @@ script = ExtResource("4_harbk")
 position = Vector2(960, 1620)
 script = ExtResource("18_gmjm1")
 
-[node name="Control" type="Control" parent="Camera2D"]
+[node name="PauseMenu" type="Control" parent="Camera2D"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -380,14 +380,13 @@ offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/Control"]
+[node name="ColorRect" type="ColorRect" parent="Camera2D/PauseMenu"]
 self_modulate = Color(1, 1, 1, 0.501961)
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.17881, 0.17881, 0.17881, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -402,19 +401,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Continue" type="Button" parent="Camera2D/Control/VBoxContainer"]
+[node name="Continue" type="Button" parent="Camera2D/PauseMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("30_lw7il")
 text = "Continue"
 
-[node name="Back2Menu" type="Button" parent="Camera2D/Control/VBoxContainer"]
+[node name="Back2Menu" type="Button" parent="Camera2D/PauseMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("30_lw7il")
-text = "Back to Menu"
+text = "To Menu"
 
-[node name="Quit" type="Button" parent="Camera2D/Control/VBoxContainer"]
+[node name="Quit" type="Button" parent="Camera2D/PauseMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("30_lw7il")
@@ -431,6 +430,6 @@ text = "Quit"
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade5" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_5_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade6" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_6_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade7" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_7_pressed"]
-[connection signal="pressed" from="Camera2D/Control/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="Camera2D/Control/VBoxContainer/Back2Menu" to="." method="_on_back_2_menu_pressed"]
-[connection signal="pressed" from="Camera2D/Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Camera2D/PauseMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Camera2D/PauseMenu/VBoxContainer/Back2Menu" to="." method="_on_back_2_menu_pressed"]
+[connection signal="pressed" from="Camera2D/PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

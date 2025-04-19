@@ -20,4 +20,5 @@ func _on_downtime_over():
 	animation_player.play("Tutorial2")
 
 func on_first_move():
+	SignalManager.tutorial_completed = true
 	queue_free()

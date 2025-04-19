@@ -13,9 +13,25 @@ var maxLvl = 3
 	$ShopContainer/btnUpgrade7
 ]
 @onready var arrLabels: Array=[
-	$PriceLabels/Machine1Price, $PriceLabels/Machine2Price, $PriceLabels/Machine3Price, $PriceLabels/Machine4Price, $PriceLabels/Machine5Price, $PriceLabels/Machine6Price, $PriceLabels/Machine7Price
+	$PriceLabels/Machine1Price, 
+	$PriceLabels/Machine2Price, 
+	$PriceLabels/Machine3Price, 
+	$PriceLabels/Machine4Price, 
+	$PriceLabels/Machine5Price, 
+	$PriceLabels/Machine6Price, 
+	$PriceLabels/Machine7Price
 ]
-@onready var arrSpawns: Array= [$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1", $"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_2", $"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_3", $"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_4", $"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_5", $"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_6", $"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_7"]
+@onready var arrSpawns: Array=[
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1", 
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_2", 
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_3", 
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_4", 
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_5", 
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_6", 
+	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_7"
+]
+
+enum shop_states {cant_unlock,can_unlock,cant_upgrade,can_upgrade,max}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,29 +67,72 @@ func btnUpgradePressed(btnNum: int)->void:
 		
 func updateShop()-> void:
 	var tmpCounter = 0
-	var tmpElem: int
+	var current_spawner_level: int
 	var currMoney = $"../../BubbleArea".getCash()
-	var tempNode: TextureButton
+	var current_shop_button: TextureButton
 	var lbl: Label
 	for spawn in arrSpawns:
-		tmpElem = spawn.getLevel()+1
-		if (tmpElem < 3) && (currMoney - arrUpgradeCosts[tmpCounter][tmpElem])>=0:
-			tempNode =arrButtons[tmpCounter]
-			tempNode.disabled = false
-		else:
-			tempNode =arrButtons[tmpCounter]
-			tempNode.disabled = true
+		current_spawner_level = spawn.getLevel()+1 
+		current_shop_button = arrButtons[tmpCounter]
+		# State: Max
+		if current_spawner_level > 2:
+			set_button_textures(tmpCounter, shop_states.max)
+			current_shop_button.disabled = true
+			#print("Spawner " + str(tmpCounter) + " - State: Max")
+		# State: Can't Unlock
+		elif current_spawner_level == 0 and (currMoney < arrUpgradeCosts[tmpCounter][current_spawner_level]):
+			set_button_textures(tmpCounter, shop_states.cant_unlock)
+			current_shop_button.disabled = true
+			#print("Spawner " + str(tmpCounter) + " - State: Locked")
+		# State: Can Unlock
+		elif current_spawner_level == 0 and (currMoney >= arrUpgradeCosts[tmpCounter][current_spawner_level]):
+			set_button_textures(tmpCounter, shop_states.can_unlock)
+			current_shop_button.disabled = false
+			#print("Spawner " + str(tmpCounter) + " - State: Can Unlock")
+		# State: Upgradeable
+		elif (current_spawner_level > 0 and current_spawner_level < 3) && (currMoney >= arrUpgradeCosts[tmpCounter][current_spawner_level]):
+			set_button_textures(tmpCounter, shop_states.can_upgrade)
+			current_shop_button.disabled = false
+			#print("Spawner " + str(tmpCounter) + " - State: Upgradable")
+		# State: Can't Upgrade
+		elif (current_spawner_level > 0 and current_spawner_level < 3) && (currMoney < arrUpgradeCosts[tmpCounter][current_spawner_level]):
+			set_button_textures(tmpCounter, shop_states.cant_upgrade)
+			current_shop_button.disabled = true
+			#print("Spawner " + str(tmpCounter) + " - State: Cannot Upgrade")
 			
 			if spawn.getLevel() == 3:
 				lbl = arrLabels[tmpCounter]
 				lbl.visible = false
 				lbl.text= "$"
-		tmpCounter= tmpCounter +1
+		# State: Max - Not Yet Implemented
+		tmpCounter += 1
+	#print("-----------------")
 
 
 func _on_bubble_area_cash_changed(value: Variant) -> void:
 	updateShop()
 	#updateLabels()
+
+func set_button_textures(spawner_nr: int, button_type: shop_states):
+	var path = "res://sprites/MachineIcons/"
+	match button_type:
+		shop_states.cant_unlock:
+			path += "Icon_Machine_Locked.png"
+		shop_states.can_unlock:
+			path += "Unlockable/Icon_Machine_" + str(spawner_nr+1) + "_Unlockable.png"
+		shop_states.cant_upgrade:
+			path += "Basic/Icon_Machine_ " + str(spawner_nr+1) + "b.png"
+		shop_states.can_upgrade:
+			path += "Upgradeable/Icon_Machine_" + str(spawner_nr+1) + "_Upgradable.png"
+		shop_states.max:
+			# TODO: New Icon
+			path += "Basic/Icon_Machine_ " + str(spawner_nr+1) + "b.png"
+		_:
+			print("Error in \"set_button_textures\": There is no such Button-Type/Shop-State \"" + str(button_type) + "\"")
+
+	var new_sprite = load(path)
+	arrButtons[spawner_nr].texture_normal = new_sprite
+	arrButtons[spawner_nr].texture_disabled = new_sprite
 
 func _on_btn_upgrade_2_pressed() -> void:
 	#currentLvl = arrCurrLevel[1]

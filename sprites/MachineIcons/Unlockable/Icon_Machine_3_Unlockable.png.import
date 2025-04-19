@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c06khog51fnnx"
-path="res://.godot/imported/Icon_Machine_Locked.png-535b0a5dd3bca7e5065bdc37918a4201.ctex"
+uid="uid://cs3f03swf75u6"
+path="res://.godot/imported/Icon_Machine_3_Unlockable.png-05d088f5a468bf4ba25522014ec0a7cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Icon_Machine_Locked.png"
-dest_files=["res://.godot/imported/Icon_Machine_Locked.png-535b0a5dd3bca7e5065bdc37918a4201.ctex"]
+source_file="res://sprites/MachineIcons/Unlockable/Icon_Machine_3_Unlockable.png"
+dest_files=["res://.godot/imported/Icon_Machine_3_Unlockable.png-05d088f5a468bf4ba25522014ec0a7cd.ctex"]
 
 [params]
 

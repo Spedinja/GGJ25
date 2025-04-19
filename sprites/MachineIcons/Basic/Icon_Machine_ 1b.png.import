@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c84gu0hvlad3l"
-path="res://.godot/imported/Icon_Machine_7_Upgradable.png-5ff55ade775eca83f19ae11f0f3897d7.ctex"
+uid="uid://c3jshdj8m2qvw"
+path="res://.godot/imported/Icon_Machine_ 1b.png-cf3cfa0afb3a037e93bfdfa3ab86b393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/MachineIcons/Icon_Machine_7_Upgradable.png"
-dest_files=["res://.godot/imported/Icon_Machine_7_Upgradable.png-5ff55ade775eca83f19ae11f0f3897d7.ctex"]
+source_file="res://sprites/MachineIcons/Basic/Icon_Machine_ 1b.png"
+dest_files=["res://.godot/imported/Icon_Machine_ 1b.png-cf3cfa0afb3a037e93bfdfa3ab86b393.ctex"]
 
 [params]
 
