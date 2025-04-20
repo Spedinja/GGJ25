@@ -5,6 +5,8 @@ extends Node2D
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel") and SignalManager.tutorial_completed:  # "ui_cancel" ist standardmäßig die Escape-Taste
 		pause_menu.visible = !pause_menu.visible
+	#if Input.is_action_just_pressed("DEBUG_Money"):
+		#SignalManager.bubble_popped.emit(500)
 
 func _on_continue_pressed():
 	close_menu()

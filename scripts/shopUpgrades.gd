@@ -58,6 +58,8 @@ func _on_btn_upgrade_1_pressed() -> void:
 func btnUpgradePressed(btnNum: int)->void:
 	var currMoney = $"../../BubbleArea".getCash()
 	currentLvl = arrSpawns[btnNum].getLevel()
+	# If the player doesn't have enough money to unlock or upgrade a Machine, 
+	# play a Sound, then return
 	if currMoney < arrUpgradeCosts[btnNum][currentLvl+1]:
 		if currentLvl+1 == 0:
 			SignalManager.cant_unlock.emit()
@@ -71,6 +73,10 @@ func btnUpgradePressed(btnNum: int)->void:
 		else:
 			arrLabels[btnNum].text = "Max"
 		SignalManager.money_changed.emit((arrUpgradeCosts[btnNum][currentLvl])*-1)
+	for spawner in arrSpawns:
+		if spawner.getLevel() < 2:
+			return
+	print("All Machines Maxed out")
 
 		
 func updateShop()-> void:
