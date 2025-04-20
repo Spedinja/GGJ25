@@ -8,9 +8,18 @@ extends Node
 @export var sky_tracks : Array[AudioStream]
 
 @export_category("SFX")
+## Sounds that play when a Bubble is popped.
 @export var bubble_sounds : Array[AudioStream]
+## Sounds that play when a Cat is pet.
 @export var cat_pet_sounds : Array[AudioStream]
+## Sound that plays when a Bubble Machine is Upgraded.
 @export var level_up_sfx: AudioStream
+## Sound that plays when a Bubble Machine is Unlocked.
+@export var unlock_sfx: AudioStream
+## Sound that plays when a Bubble Machine cannot be Upgraded.
+@export var cant_upgrade_sfx: AudioStream
+## Sound that plays when a Bubble Machine cannot be Unlocked.
+@export var cant_unlock_sfx: AudioStream
 
 @onready var base_audio_player = $base_audio_player
 @onready var cafe_audio_player = $cafe_audio_player

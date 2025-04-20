@@ -2,6 +2,7 @@ extends Node
 
 var currentLvl = 0
 var maxLvl = 3
+## Array that holds the Unlock & Upgrade Costs for all Bubble Machines.
 @export var arrUpgradeCosts: Array[Array] #only use integer plox
 @onready var arrButtons: Array=[
 	$ShopContainer/btnUpgrade1,
