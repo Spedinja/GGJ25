@@ -107,7 +107,9 @@ func on_bubble_popped():
 
 func on_machine_unlock():
 	print("Unlocked new Machine")
-	on_level_up()
+	other_sfx_player.stream = unlock_sfx
+	other_sfx_player.play()
+	#on_level_up()
 
 func on_level_up():
 	other_sfx_player.stream = level_up_sfx
@@ -122,10 +124,10 @@ func pet_cat():
 
 func cant_upgrade():
 	print("Cannot Upgrade this Bubble Machine")
-	#other_sfx_player.stream = level_up_sfx
-	#other_sfx_player.play()
+	other_sfx_player.stream = cant_upgrade_sfx
+	other_sfx_player.play()
 
 func cant_unlock():
 	print("Cannot Unlock this Bubble Machine")
-	#other_sfx_player.stream = level_up_sfx
-	#other_sfx_player.play()
+	other_sfx_player.stream = cant_unlock_sfx
+	other_sfx_player.play()

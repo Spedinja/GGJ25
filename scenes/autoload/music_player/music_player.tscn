@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b5e80idmdba5v"]
+[gd_scene load_steps=26 format=3 uid="uid://b5e80idmdba5v"]
 
 [ext_resource type="Script" path="res://scripts/music_player.gd" id="1_gp57g"]
 [ext_resource type="AudioStream" uid="uid://c6my8x3fejrgg" path="res://music/BaseTrack_Background_LoFi1_v4.mp3" id="2_ngqab"]
@@ -20,8 +20,10 @@
 [ext_resource type="AudioStream" uid="uid://dewxujiqy6of1" path="res://sfx/PetTheCat2.mp3" id="19_dr52b"]
 [ext_resource type="AudioStream" uid="uid://cqxt1262dw4dq" path="res://sfx/PetTheCat3.mp3" id="20_xrhcd"]
 [ext_resource type="AudioStream" uid="uid://uogg0w843452" path="res://sfx/PetTheCat4.mp3" id="21_504t7"]
-[ext_resource type="AudioStream" uid="uid://bgektvcsuuab6" path="res://sfx/MachineUpgrade.mp3" id="22_ce0i1"]
 [ext_resource type="AudioStream" uid="uid://b2uo46w56ddxq" path="res://sfx/PetTheCat5.mp3" id="22_ghxqk"]
+[ext_resource type="AudioStream" uid="uid://b5l0p87qd2q7o" path="res://sfx/Upgrade.mp3" id="22_mt4dw"]
+[ext_resource type="AudioStream" uid="uid://divngy3q63di0" path="res://sfx/UnlockMachine.mp3" id="23_4bbwu"]
+[ext_resource type="AudioStream" uid="uid://xt64nco0nru8" path="res://sfx/CantBuy.mp3" id="24_j30ih"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a3tu5"]
 random_pitch = 1.3
@@ -38,7 +40,10 @@ cafe_tracks = Array[AudioStream]([ExtResource("6_6w4a5"), ExtResource("7_gu7g7")
 sky_tracks = Array[AudioStream]([ExtResource("10_3vtla"), ExtResource("11_145py"), ExtResource("12_vcevq"), ExtResource("13_a8f86")])
 bubble_sounds = Array[AudioStream]([ExtResource("15_t8ykh"), ExtResource("16_y0k48"), ExtResource("17_l688k")])
 cat_pet_sounds = Array[AudioStream]([ExtResource("18_0tdtv"), ExtResource("19_dr52b"), ExtResource("20_xrhcd"), ExtResource("21_504t7"), ExtResource("22_ghxqk")])
-level_up_sfx = ExtResource("22_ce0i1")
+level_up_sfx = ExtResource("22_mt4dw")
+unlock_sfx = ExtResource("23_4bbwu")
+cant_upgrade_sfx = ExtResource("24_j30ih")
+cant_unlock_sfx = ExtResource("24_j30ih")
 
 [node name="base_audio_player" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
