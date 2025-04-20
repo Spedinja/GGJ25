@@ -101,8 +101,8 @@ func cross_fade(from, to):
 
 func on_bubble_popped():
 	#print("blub")
-	var bubble_index = randi_range(0, bubble_sounds.size()-1)
-	bubble_sfx_player.stream = bubble_sounds[bubble_index]
+	#var bubble_index = randi_range(0, bubble_sounds.size()-1)
+	#bubble_sfx_player.stream = bubble_sounds[bubble_index]
 	bubble_sfx_player.play()
 
 func on_machine_unlock():
