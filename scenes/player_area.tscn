@@ -355,6 +355,10 @@ offset_right = 136.0
 offset_bottom = 2158.0
 script = ExtResource("4_harbk")
 
+[node name="Overlays" type="Node2D" parent="."]
+
+[node name="Tutorial 1" parent="Overlays" instance=ExtResource("33_csm8r")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 1620)
 script = ExtResource("18_gmjm1")
@@ -407,8 +411,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("30_lw7il")
 text = "Quit"
-
-[node name="Tutorial 1" parent="." instance=ExtResource("33_csm8r")]
 
 [connection signal="pressed" from="BubbleArea/BubbleArea_HUD/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]

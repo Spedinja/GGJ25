@@ -3,7 +3,7 @@ extends Node2D
 @onready var pause_menu: Control = $Camera2D/PauseMenu
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel") and SignalManager.tutorial_completed:  # "ui_cancel" ist standardmäßig die Escape-Taste
+	if Input.is_action_just_pressed("ui_cancel"):
 		pause_menu.visible = !pause_menu.visible
 	#if Input.is_action_just_pressed("DEBUG_Money"):
 		#SignalManager.bubble_popped.emit(500)

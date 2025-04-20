@@ -9,8 +9,9 @@ func _ready() -> void:
 	cursor.play("default")
 
 func on_first_unlock():
+	var parent = self.get_parent()
 	var tut2 = load("res://scenes/tutorial/tutorial_2.tscn") as PackedScene
-	get_tree().root.add_child(tut2.instantiate())
+	parent.add_child(tut2.instantiate())
 	queue_free()
 
 
