@@ -40,7 +40,10 @@ func _unlockSpawner() -> void:
 
 
 func levelUp() -> int:
-	SignalManager.machine_level_up.emit()
+	if spawner_data.currentLvl+1 == 0:
+		SignalManager.machine_unlocked.emit()
+	else:
+		SignalManager.machine_level_up.emit()
 	self._increaseStats()
 	if self.spawner_data.currentLvl == 0:#vorher1
 		self._unlockSpawner()

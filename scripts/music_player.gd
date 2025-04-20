@@ -37,8 +37,12 @@ func _ready():
 	play_random_song()
 	base_audio_player.finished.connect(on_audio_player_finished)
 	SignalManager.bubble_popped.connect(on_bubble_popped)
+	SignalManager.machine_unlocked.connect(on_machine_unlock)
 	SignalManager.machine_level_up.connect(on_level_up)
 	SignalManager.pet_cat.connect(pet_cat)
+	SignalManager.cant_upgrade.connect(cant_upgrade)
+	SignalManager.cant_unlock.connect(cant_unlock)
+	
 
 func create_playlist():
 	base_playlist = [] + base_tracks
@@ -92,6 +96,10 @@ func on_bubble_popped():
 	bubble_sfx_player.stream = bubble_sounds[bubble_index]
 	bubble_sfx_player.play()
 
+func on_machine_unlock():
+	print("Unlocked new Machine")
+	on_level_up()
+
 func on_level_up():
 	other_sfx_player.stream = level_up_sfx
 	other_sfx_player.play()
@@ -102,3 +110,13 @@ func pet_cat():
 	#cat_pet_sfx_player.stream = load(cat_pet_sounds)
 	cat_pet_sfx_player.play()
 	print("meow")
+
+func cant_upgrade():
+	print("Cannot Upgrade this Bubble Machine")
+	#other_sfx_player.stream = level_up_sfx
+	#other_sfx_player.play()
+
+func cant_unlock():
+	print("Cannot Unlock this Bubble Machine")
+	#other_sfx_player.stream = level_up_sfx
+	#other_sfx_player.play()

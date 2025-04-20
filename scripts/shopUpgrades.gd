@@ -55,7 +55,14 @@ func _on_btn_upgrade_1_pressed() -> void:
 	btnUpgradePressed(0)
 
 func btnUpgradePressed(btnNum: int)->void:
+	var currMoney = $"../../BubbleArea".getCash()
 	currentLvl = arrSpawns[btnNum].getLevel()
+	if currMoney < arrUpgradeCosts[btnNum][currentLvl+1]:
+		if currentLvl+1 == 0:
+			SignalManager.cant_unlock.emit()
+		else:
+			SignalManager.cant_upgrade.emit()
+		return
 	if currentLvl+1 <= maxLvl:
 		currentLvl = arrSpawns[btnNum].levelUp()
 		if currentLvl < 2:
@@ -82,7 +89,7 @@ func updateShop()-> void:
 		# State: Can't Unlock
 		elif current_spawner_level == 0 and (currMoney < arrUpgradeCosts[tmpCounter][current_spawner_level]):
 			set_button_textures(tmpCounter, shop_states.cant_unlock)
-			current_shop_button.disabled = true
+			#current_shop_button.disabled = true
 			#print("Spawner " + str(tmpCounter) + " - State: Locked")
 		# State: Can Unlock
 		elif current_spawner_level == 0 and (currMoney >= arrUpgradeCosts[tmpCounter][current_spawner_level]):
@@ -92,12 +99,12 @@ func updateShop()-> void:
 		# State: Upgradeable
 		elif (current_spawner_level > 0 and current_spawner_level < 3) && (currMoney >= arrUpgradeCosts[tmpCounter][current_spawner_level]):
 			set_button_textures(tmpCounter, shop_states.can_upgrade)
-			current_shop_button.disabled = false
+			#current_shop_button.disabled = false
 			#print("Spawner " + str(tmpCounter) + " - State: Upgradable")
 		# State: Can't Upgrade
 		elif (current_spawner_level > 0 and current_spawner_level < 3) && (currMoney < arrUpgradeCosts[tmpCounter][current_spawner_level]):
 			set_button_textures(tmpCounter, shop_states.cant_upgrade)
-			current_shop_button.disabled = true
+			#current_shop_button.disabled = true
 			#print("Spawner " + str(tmpCounter) + " - State: Cannot Upgrade")
 			
 			if spawn.getLevel() == 3:
