@@ -46,9 +46,11 @@ cant_upgrade_sfx = ExtResource("24_j30ih")
 cant_unlock_sfx = ExtResource("24_j30ih")
 
 [node name="base_audio_player" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
 bus = &"Music"
 
 [node name="cafe_audio_player" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
 bus = &"Music"
 
 [node name="sky_audio_player" type="AudioStreamPlayer" parent="."]
@@ -57,10 +59,11 @@ bus = &"Music"
 
 [node name="bubble_sfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_a3tu5")
-volume_db = -5.0
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="cat_pet_sfx" type="AudioStreamPlayer" parent="."]
+volume_db = 2.0
 bus = &"SFX"
 
 [node name="other_sfx" type="AudioStreamPlayer" parent="."]

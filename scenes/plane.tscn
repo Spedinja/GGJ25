@@ -46,5 +46,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tdekd")
 
 [node name="PlaneAudio" type="AudioStreamPlayer2D" parent="."]
+volume_db = 3.0
 
 [node name="Timer" type="Timer" parent="."]

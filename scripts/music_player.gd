@@ -97,7 +97,7 @@ func cross_fade(from, to):
 	var music_fade_out_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	music_fade_out_tween.tween_property(from, "volume_db", -80,2)
 	var music_fade_in_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-	music_fade_in_tween.tween_property(to, "volume_db", 0,2)
+	music_fade_in_tween.tween_property(to, "volume_db", -2,2)
 
 func on_bubble_popped():
 	#print("blub")
