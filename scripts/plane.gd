@@ -47,6 +47,7 @@ func fly():
 func _on_area_entered(area):
 	if area.has_method("pop_bubble"):
 		area.pop_bubble()
+		# challenge mode check?
 
 func _on_cooldown_over():
 	timer.stop()
