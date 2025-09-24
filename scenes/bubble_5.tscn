@@ -1,8 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx46dih265w00"]
+[gd_scene load_steps=7 format=3 uid="uid://cx46dih265w00"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_10oqw"]
 [ext_resource type="Resource" uid="uid://b3s75db0bisyu" path="res://ressources/bubbles/Bubble5.tres" id="2_dfip8"]
 [ext_resource type="Texture2D" uid="uid://1tby42kprl36" path="res://sprites/Bubbles/new/Bubble_5a.png" id="2_mpjox"]
+[ext_resource type="Texture2D" uid="uid://dx3gv8ac0rwhu" path="res://sprites/Bubbles/Bubble_5b.png" id="4_a7pk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqunp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mpjox")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a7pk1")
+}],
+"loop": false,
+"name": &"popped",
+"speed": 1.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iiivj"]
 
@@ -11,7 +31,12 @@ scale = Vector2(4, 4)
 script = ExtResource("1_10oqw")
 bubble_data = ExtResource("2_dfip8")
 
+[node name="BubbleSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.016, 0.016)
+sprite_frames = SubResource("SpriteFrames_yqunp")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 scale = Vector2(0.016, 0.016)
 texture = ExtResource("2_mpjox")

@@ -1,6 +1,9 @@
 extends Area2D
 
 @export var bubble_data: Bubble
+
+@onready var bubble_sprite: AnimatedSprite2D = $BubbleSprite
+
 var direction = 1 # Determines the horizontal direction (1 for right, -1 for left)
 
 var time = 0
@@ -18,6 +21,8 @@ func _ready() -> void:
 	self.direction = randf_range(-1,1)
 
 func _physics_process(delta):
+	if is_clicked:
+		return
 	self.time += delta
 	self.delete_timer = self.time
 	var wiggle = sin(time*bubble_data.frequency)*bubble_data.amplitude*direction
@@ -38,8 +43,10 @@ func pop_bubble():
 	is_clicked = true
 	#emit_signal("bubble_popped")
 	SignalManager.bubble_popped.emit(self.getBubbleValue())
-	SignalManager.bubble_popped.emit()
-	queue_free()  # Removes the bubble when clicked (pops it)
+	#SignalManager.bubble_popped.emit()
+	bubble_sprite.play("popped")
+	bubble_sprite.animation_finished.connect(queue_free)
+	#queue_free()  # Removes the bubble when clicked (pops it)
 	#get_tree().root.get_node("MainScene").add_score(10)  # Add points to the score
 
 func setBubbleScale(givenScale) -> void:

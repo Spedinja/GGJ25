@@ -54,11 +54,3 @@ You can click one of the OcTea-Bottles if you have
 enough money to unlock it and the corresponding 
 bubble machine!"
 horizontal_alignment = 1
-
-[node name="Test" type="Button" parent="."]
-visible = false
-offset_right = 475.0
-offset_bottom = 213.0
-text = "TEST"
-
-[connection signal="pressed" from="Test" to="." method="_on_test_pressed"]

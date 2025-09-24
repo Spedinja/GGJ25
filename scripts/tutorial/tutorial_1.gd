@@ -10,10 +10,6 @@ func _ready() -> void:
 
 func on_first_unlock():
 	var parent = self.get_parent()
-	var tut2 = load("res://scenes/tutorial/tutorial_2.tscn") as PackedScene
-	parent.add_child(tut2.instantiate())
+	var tutorial2 = load("res://scenes/tutorial/tutorial_2.tscn") as PackedScene
+	parent.add_child(tutorial2.instantiate())
 	queue_free()
-
-
-func _on_test_pressed() -> void:
-	on_first_unlock()

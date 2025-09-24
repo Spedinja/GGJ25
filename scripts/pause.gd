@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var pause_menu: Control = $Camera2D/PauseMenu
 
+func _ready() -> void:
+	SignalManager.fully_upgraded_everything.connect(_open_congrats_message)
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		pause_menu.visible = !pause_menu.visible
@@ -19,3 +22,7 @@ func _on_back_2_menu_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _open_congrats_message():
+	print("Thank you for helping me out with my shop.")
+	pass

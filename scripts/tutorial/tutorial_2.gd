@@ -11,7 +11,7 @@ func _ready() -> void:
 	animation_player.play("Tutorial2")
 	animation_player.speed_scale = animation_speed
 	down_time.wait_time = down_time_duration
-	down_time.connect("timeout", Callable(self, "_on_downtime_over"))
+	down_time.timeout.connect(_on_downtime_over)
 
 func _on_animation_player_animation_finished(anim_name: StringName):
 	down_time.start()

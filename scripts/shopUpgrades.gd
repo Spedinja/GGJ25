@@ -76,6 +76,7 @@ func btnUpgradePressed(btnNum: int)->void:
 	for spawner in arrSpawns:
 		if spawner.getLevel() < 2:
 			return
+	SignalManager.fully_upgraded_everything.emit()
 	print("All Machines Maxed out")
 
 		

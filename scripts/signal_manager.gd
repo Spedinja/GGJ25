@@ -11,4 +11,6 @@ signal pet_cat
 signal cant_upgrade
 signal cant_unlock
 
+signal fully_upgraded_everything
+
 var tutorial_completed: bool = false
