@@ -99,10 +99,10 @@ func cross_fade(from, to):
 	var music_fade_in_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	music_fade_in_tween.tween_property(to, "volume_db", -2,2)
 
-func on_bubble_popped():
+func on_bubble_popped(value):
 	#print("blub")
-	#var bubble_index = randi_range(0, bubble_sounds.size()-1)
-	#bubble_sfx_player.stream = bubble_sounds[bubble_index]
+	var bubble_index = randi_range(0, bubble_sounds.size()-1)
+	bubble_sfx_player.stream = bubble_sounds[bubble_index]
 	bubble_sfx_player.play()
 
 func on_machine_unlock():
@@ -120,14 +120,14 @@ func pet_cat():
 	cat_pet_sfx_player.stream = cat_pet_sounds[pet_index]
 	#cat_pet_sfx_player.stream = load(cat_pet_sounds)
 	cat_pet_sfx_player.play()
-	print("meow")
+	#print("meow")
 
 func cant_upgrade():
-	print("Cannot Upgrade this Bubble Machine")
+	#print("Cannot Upgrade this Bubble Machine")
 	other_sfx_player.stream = cant_upgrade_sfx
 	other_sfx_player.play()
 
 func cant_unlock():
-	print("Cannot Unlock this Bubble Machine")
+	#print("Cannot Unlock this Bubble Machine")
 	other_sfx_player.stream = cant_unlock_sfx
 	other_sfx_player.play()

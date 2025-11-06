@@ -38,7 +38,7 @@ func _process(delta):
 
 func fly():
 	current_speed = 0
-	print("Plane Reset Timer Start")
+	#print("Plane Reset Timer Start")
 	timer.start()
 	timer_running = true
 	plane_animated_sprite.flip_h = flying_left

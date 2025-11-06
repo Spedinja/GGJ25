@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxkeljmjvae8q"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/completion.gd" id="1_r0ueg"]
+[ext_resource type="Texture2D" uid="uid://butmnt27uq8qk" path="res://sprites/tutorial/Speech_Bubble.png" id="1_rkaut"]
+[ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="2_afg1b"]
+[ext_resource type="Texture2D" uid="uid://syqbqihxylk4" path="res://sprites/tutorial/Speech_Bubble_Darken.png" id="3_a5c4d"]
+[ext_resource type="Texture2D" uid="uid://b3kmh68j86jtm" path="res://sprites/tutorial/Speech_Bubble_Highlight.png" id="4_mlvqx"]
+[ext_resource type="Texture2D" uid="uid://dg1dxib61wskj" path="res://sprites/tutorial/Temp_click.png" id="5_oy3f4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfk5g"]
+atlas = ExtResource("5_oy3f4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak40u"]
+atlas = ExtResource("5_oy3f4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0482k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfk5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak40u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Completion" type="Node2D"]
+position = Vector2(960, 1620)
+script = ExtResource("1_r0ueg")
+
+[node name="SpeechBubble" type="Sprite2D" parent="."]
+position = Vector2(0, 303)
+texture = ExtResource("1_rkaut")
+
+[node name="RichTextLabel" type="Label" parent="."]
+offset_left = -657.0
+offset_top = 196.0
+offset_right = 657.0
+offset_bottom = 429.0
+theme = ExtResource("2_afg1b")
+theme_override_font_sizes/font_size = 48
+text = "Thank you, the power of friendship and 
+tranquility is now maxed out. Now there are so 
+many bubbles that even I couldn't pop all of 
+them at once."
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -622.0
+offset_top = 78.0
+offset_right = 623.0
+offset_bottom = 529.0
+texture_pressed = ExtResource("3_a5c4d")
+texture_hover = ExtResource("4_mlvqx")
+
+[node name="Cursor" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(454, 433)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0482k")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_qqi41"]
 [ext_resource type="Texture2D" uid="uid://bsayuwi4ueh76" path="res://sprites/Bubbles/new/Bubble_3a.png" id="2_q7jo4"]
 [ext_resource type="Resource" uid="uid://bdjwdmy50o21s" path="res://ressources/bubbles/Bubble3.tres" id="2_upphh"]
-[ext_resource type="Texture2D" uid="uid://d2hfuca7hixhp" path="res://sprites/Bubbles/Bubble_3b.png" id="4_8hmc6"]
+[ext_resource type="Texture2D" uid="uid://donuygi233qar" path="res://sprites/Bubbles/new/popped/Bubble_3b.png" id="4_3lx2t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7rxxk"]
 animations = [{
@@ -17,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8hmc6")
+"texture": ExtResource("4_3lx2t")
 }],
 "loop": false,
 "name": &"popped",
