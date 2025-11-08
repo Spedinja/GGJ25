@@ -44,10 +44,10 @@ offset_right = 657.0
 offset_bottom = 429.0
 theme = ExtResource("2_afg1b")
 theme_override_font_sizes/font_size = 48
-text = "Thank you, the power of friendship and 
-tranquility is now maxed out. Now there are so 
-many bubbles that even I couldn't pop all of 
-them at once."
+text = "
+Wow! Everything is upgraded to the max?!
+You helped spreading friendship and tranquility
+to the city! Thank you so much!"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
