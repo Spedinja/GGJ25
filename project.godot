@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="OcTeaPop!"
+config/name="OcTeaPop"
 run/main_scene="res://scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/image="res://sprites/Splashscreen.png"
 config/icon="res://svgs/icon_512_android.png"
 
