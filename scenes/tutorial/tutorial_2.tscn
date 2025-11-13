@@ -88,9 +88,9 @@ offset_right = 596.0
 offset_bottom = 524.0
 theme = ExtResource("5_004jo")
 theme_override_font_sizes/font_size = 48
-text = "Great, now that you unlocked your first machine,
-click on the Arrow to go up to the roof and start
-popping some bubbles!"
+text = "Great! Now that you unlocked your first
+machine, click on the Arrow to go up to
+the roof and start popping some bubbles!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

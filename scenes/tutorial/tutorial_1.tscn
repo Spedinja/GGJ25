@@ -50,8 +50,8 @@ offset_bottom = 524.0
 theme = ExtResource("5_e1p1d")
 theme_override_font_sizes/font_size = 48
 text = "Welcome to my Shop!
-You can click one of the OcTea-Bottles if you have 
-enough money to unlock it and the corresponding 
-bubble machine!"
+You can click one of the OcTea-Bottles if
+you have enough money to unlock it and the 
+corresponding bubble machine!"
 horizontal_alignment = 1
 vertical_alignment = 1
