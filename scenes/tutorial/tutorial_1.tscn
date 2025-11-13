@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvnqcgsgqk7ec"]
 
-[ext_resource type="Script" path="res://scripts/tutorial/tutorial_1.gd" id="1_bcv7t"]
+[ext_resource type="Script" uid="uid://yimyhvdthllt" path="res://scripts/tutorial/tutorial_1.gd" id="1_bcv7t"]
 [ext_resource type="Texture2D" uid="uid://butmnt27uq8qk" path="res://sprites/tutorial/Speech_Bubble.png" id="2_5sw8q"]
 [ext_resource type="Texture2D" uid="uid://dg1dxib61wskj" path="res://sprites/tutorial/Temp_click.png" id="4_76odr"]
 [ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="5_e1p1d"]
@@ -43,10 +43,10 @@ sprite_frames = SubResource("SpriteFrames_i2661")
 frame_progress = 0.772078
 
 [node name="RichTextLabel" type="Label" parent="."]
-offset_left = -657.0
-offset_top = 196.0
-offset_right = 657.0
-offset_bottom = 429.0
+offset_left = -596.0
+offset_top = 142.0
+offset_right = 596.0
+offset_bottom = 524.0
 theme = ExtResource("5_e1p1d")
 theme_override_font_sizes/font_size = 48
 text = "Welcome to my Shop!
@@ -54,3 +54,4 @@ You can click one of the OcTea-Bottles if you have
 enough money to unlock it and the corresponding 
 bubble machine!"
 horizontal_alignment = 1
+vertical_alignment = 1

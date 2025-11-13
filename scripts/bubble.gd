@@ -45,6 +45,11 @@ func pop_bubble():
 	SignalManager.bubble_popped.emit(self.getBubbleValue())
 	#SignalManager.bubble_popped.emit()
 	bubble_sprite.play("popped")
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(bubble_sprite, "modulate:a", 0.0, 0.8)
+	tween.play()
 	bubble_sprite.animation_finished.connect(queue_free)
 	#queue_free()  # Removes the bubble when clicked (pops it)
 	#get_tree().root.get_node("MainScene").add_score(10)  # Add points to the score

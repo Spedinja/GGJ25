@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy8mqtqqgy6sx"]
+
+[ext_resource type="Script" uid="uid://c3kjq71obdhh5" path="res://scripts/ui/oc_tea_button.gd" id="1_v2ygv"]
+[ext_resource type="Texture2D" uid="uid://c0odj7p0avkky" path="res://sprites/Button_Sprite.png" id="1_x20bt"]
+[ext_resource type="Texture2D" uid="uid://blrrd0hp3dl0o" path="res://sprites/Button_Sprite_Pressed.png" id="2_1etrn"]
+[ext_resource type="Texture2D" uid="uid://blwbfaorxpyv0" path="res://sprites/Button_Sprite_Hover.png" id="3_53aac"]
+[ext_resource type="Theme" uid="uid://5xwc7t140c5q" path="res://themes/buttons.tres" id="5_1etrn"]
+
+[node name="OcTeaButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_x20bt")
+texture_pressed = ExtResource("2_1etrn")
+texture_hover = ExtResource("3_53aac")
+script = ExtResource("1_v2ygv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 505.0
+offset_bottom = 150.0
+theme = ExtResource("5_1etrn")
+text = "lorem ipsum"
+horizontal_alignment = 1
+vertical_alignment = 1

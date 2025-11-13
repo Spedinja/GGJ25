@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://qlajv6titw1w"]
 
-[ext_resource type="Script" path="res://scripts/tutorial/tutorial_2.gd" id="1_u7010"]
+[ext_resource type="Script" uid="uid://ch52u8wotpos0" path="res://scripts/tutorial/tutorial_2.gd" id="1_u7010"]
 [ext_resource type="Texture2D" uid="uid://butmnt27uq8qk" path="res://sprites/tutorial/Speech_Bubble.png" id="2_j7p7d"]
 [ext_resource type="Texture2D" uid="uid://doyt5n8465k7p" path="res://sprites/tutorial/Temp_cursor_slide.png" id="4_gis2v"]
 [ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="5_004jo"]
@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0k3un"]
 _data = {
-"RESET": SubResource("Animation_ma5si"),
-"Tutorial2": SubResource("Animation_qd3eb")
+&"RESET": SubResource("Animation_ma5si"),
+&"Tutorial2": SubResource("Animation_qd3eb")
 }
 
 [node name="Tutorial 2" type="Node2D"]
@@ -82,20 +82,21 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_gis2v")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -578.0
-offset_top = 222.0
-offset_right = 578.0
-offset_bottom = 427.0
+offset_left = -596.0
+offset_top = 142.0
+offset_right = 596.0
+offset_bottom = 524.0
 theme = ExtResource("5_004jo")
 theme_override_font_sizes/font_size = 48
 text = "Great, now that you unlocked your first machine,
 click on the Arrow to go up to the roof and start
 popping some bubbles!"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0k3un")
+&"": SubResource("AnimationLibrary_0k3un")
 }
 
 [node name="DownTime" type="Timer" parent="."]

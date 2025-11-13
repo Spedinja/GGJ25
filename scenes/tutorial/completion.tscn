@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dxkeljmjvae8q"]
 
-[ext_resource type="Script" path="res://scripts/tutorial/completion.gd" id="1_r0ueg"]
+[ext_resource type="Script" uid="uid://dtx50jwfnjtou" path="res://scripts/tutorial/completion.gd" id="1_r0ueg"]
 [ext_resource type="Texture2D" uid="uid://butmnt27uq8qk" path="res://sprites/tutorial/Speech_Bubble.png" id="1_rkaut"]
 [ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="2_afg1b"]
 [ext_resource type="Texture2D" uid="uid://syqbqihxylk4" path="res://sprites/tutorial/Speech_Bubble_Darken.png" id="3_a5c4d"]
@@ -38,17 +38,17 @@ position = Vector2(0, 303)
 texture = ExtResource("1_rkaut")
 
 [node name="RichTextLabel" type="Label" parent="."]
-offset_left = -657.0
-offset_top = 196.0
-offset_right = 657.0
-offset_bottom = 429.0
+offset_left = -600.0
+offset_top = 142.0
+offset_right = 595.0
+offset_bottom = 525.0
 theme = ExtResource("2_afg1b")
 theme_override_font_sizes/font_size = 48
-text = "
-Wow! Everything is upgraded to the max?!
+text = "Wow! Everything is upgraded to the max?!
 You helped spreading friendship and tranquility
 to the city! Thank you so much!"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = -622.0
