@@ -14,3 +14,5 @@ signal cant_unlock
 signal fully_upgraded_everything
 
 var tutorial_completed: bool = false
+
+var ingame: bool = false

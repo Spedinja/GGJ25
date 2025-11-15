@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7ymwxmnkr8of"]
+
+[ext_resource type="Shader" uid="uid://cneftelmoykir" path="res://scripts/outline.gdshader" id="1_l8h15"]
+
+[resource]
+shader = ExtResource("1_l8h15")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 5.0
+shader_parameter/feather = 1.0

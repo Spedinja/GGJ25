@@ -13,7 +13,7 @@ func _ready() -> void:
 	down_time.wait_time = down_time_duration
 	down_time.timeout.connect(_on_downtime_over)
 
-func _on_animation_player_animation_finished(anim_name: StringName):
+func _on_animation_player_animation_finished(_anim_name: StringName):
 	down_time.start()
 
 func _on_downtime_over():

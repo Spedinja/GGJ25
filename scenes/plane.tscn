@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpiju8q6q2y1o"]
+[gd_scene load_steps=14 format=3 uid="uid://cpiju8q6q2y1o"]
 
-[ext_resource type="Script" path="res://scripts/plane.gd" id="1_3r5b6"]
+[ext_resource type="Script" uid="uid://cdcbdww1x53wh" path="res://scripts/plane.gd" id="1_3r5b6"]
 [ext_resource type="Texture2D" uid="uid://crcrbm5o5cf48" path="res://sprites/Temp_Plane.png" id="2_cg0jd"]
+[ext_resource type="PackedScene" uid="uid://cagel0pn34dj5" path="res://scenes/Plane/plane_attack.tscn" id="2_n0b6s"]
 [ext_resource type="Texture2D" uid="uid://wfhwlx783gdc" path="res://sprites/Airplane/Airplane_Spritesheet.png" id="3_5bhng"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucd2r"]
@@ -30,8 +31,19 @@ animations = [{
 radius = 60.0
 height = 304.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_md2q8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0b6s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec1pi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvt5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lf188"]
+
 [node name="Plane" type="Area2D"]
 script = ExtResource("1_3r5b6")
+_attack_scene = ExtResource("2_n0b6s")
 
 [node name="PlaneSprite" type="Sprite2D" parent="."]
 visible = false
@@ -49,3 +61,25 @@ shape = SubResource("CapsuleShape2D_tdekd")
 volume_db = 3.0
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -91.0
+offset_right = 159.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_md2q8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0b6s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ec1pi")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gvt5p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lf188")
+
+[connection signal="pressed" from="Button" to="." method="_on_plane_pressed"]

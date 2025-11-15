@@ -4,7 +4,7 @@ var currentLvl = 0
 var maxLvl = 3
 ## Array that holds the Unlock & Upgrade Costs for all Bubble Machines.
 @export var arrUpgradeCosts: Array[Array] #only use integer plox
-@onready var arrButtons: Array=[
+@onready var machine_buttons: Array=[
 	$ShopContainer/btnUpgrade1,
 	$ShopContainer/btnUpgrade2,
 	$ShopContainer/btnUpgrade3,
@@ -13,6 +13,7 @@ var maxLvl = 3
 	$ShopContainer/btnUpgrade6,
 	$ShopContainer/btnUpgrade7
 ]
+
 @onready var arrLabels: Array=[
 	$PriceLabels/Machine1Price, 
 	$PriceLabels/Machine2Price, 
@@ -22,7 +23,7 @@ var maxLvl = 3
 	$PriceLabels/Machine6Price, 
 	$PriceLabels/Machine7Price
 ]
-@onready var arrSpawns: Array=[
+@onready var bubble_spawners: Array=[
 	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_1", 
 	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_2", 
 	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_3", 
@@ -31,6 +32,8 @@ var maxLvl = 3
 	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_6", 
 	$"../../BubbleArea/SpawnArea/BubbleSpawn/BubbleSpawn_7"
 ]
+
+@export var cup_sprites: Array[AnimatedSprite2D]
 
 enum shop_states {cant_unlock,can_unlock,cant_upgrade,can_upgrade,max}
 
@@ -57,7 +60,7 @@ func _on_btn_upgrade_1_pressed() -> void:
 
 func btnUpgradePressed(btnNum: int)->void:
 	var currMoney = $"../../BubbleArea".getCash()
-	currentLvl = arrSpawns[btnNum].getLevel()
+	currentLvl = bubble_spawners[btnNum].getLevel()
 	# If the player doesn't have enough money to unlock or upgrade a Machine, 
 	# play a Sound, then return
 	if currMoney < arrUpgradeCosts[btnNum][currentLvl+1]:
@@ -67,13 +70,15 @@ func btnUpgradePressed(btnNum: int)->void:
 			SignalManager.cant_upgrade.emit()
 		return
 	if currentLvl+1 <= maxLvl:
-		currentLvl = arrSpawns[btnNum].levelUp()
+		currentLvl = bubble_spawners[btnNum].levelUp()
+		var animation_name = "Level_" + str(currentLvl + 1)
+		cup_sprites[btnNum].play(animation_name)
 		if currentLvl < 2:
 			arrLabels[btnNum].text = str(arrUpgradeCosts[btnNum][currentLvl+1], "$")
 		else:
 			arrLabels[btnNum].text = "Max"
 		SignalManager.money_changed.emit((arrUpgradeCosts[btnNum][currentLvl])*-1)
-	for spawner in arrSpawns:
+	for spawner in bubble_spawners:
 		if spawner.getLevel() < 2:
 			return
 	SignalManager.fully_upgraded_everything.emit()
@@ -86,9 +91,9 @@ func updateShop()-> void:
 	var currMoney = $"../../BubbleArea".getCash()
 	var current_shop_button: TextureButton
 	var lbl: Label
-	for spawn in arrSpawns:
+	for spawn in bubble_spawners:
 		current_spawner_level = spawn.getLevel()+1 
-		current_shop_button = arrButtons[tmpCounter]
+		current_shop_button = machine_buttons[tmpCounter]
 		# State: Max
 		if current_spawner_level > 2:
 			set_button_textures(tmpCounter, shop_states.max)
@@ -146,8 +151,8 @@ func set_button_textures(spawner_nr: int, button_type: shop_states):
 			print("Error in \"set_button_textures\": There is no such Button-Type/Shop-State \"" + str(button_type) + "\"")
 
 	var new_sprite = load(path)
-	arrButtons[spawner_nr].texture_normal = new_sprite
-	arrButtons[spawner_nr].texture_disabled = new_sprite
+	machine_buttons[spawner_nr].texture_normal = new_sprite
+	machine_buttons[spawner_nr].texture_disabled = new_sprite
 
 func _on_btn_upgrade_2_pressed() -> void:
 	#currentLvl = arrCurrLevel[1]

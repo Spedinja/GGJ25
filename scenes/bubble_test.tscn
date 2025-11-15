@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cipxn815b6ca2"]
 
-[ext_resource type="Script" path="res://scripts/main_scene_test.gd" id="1_qjgpw"]
-[ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/bg.png" id="2_1hpni"]
+[ext_resource type="Script" uid="uid://f3hu6d4f70x0" path="res://scripts/main_scene_test.gd" id="1_qjgpw"]
+[ext_resource type="Texture2D" uid="uid://cqwcyugi3kq57" path="res://sprites/Backgrounds/old/bg.png" id="2_1hpni"]
 [ext_resource type="Texture2D" uid="uid://n17h4nsnkp1o" path="res://sprites/shop.png" id="3_takre"]
 [ext_resource type="Texture2D" uid="uid://fvuy8fywb6rw" path="res://sprites/tmp_btn_normal.png" id="4_46cq6"]
 [ext_resource type="Texture2D" uid="uid://bob58ibtrfvo" path="res://sprites/tmp_btn_pressed.png" id="5_wh41h"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cogm7ey4bthub" path="res://sprites/tmp_btn_up_normal.png" id="7_p8wwp"]
 [ext_resource type="Texture2D" uid="uid://dptknvabur4l4" path="res://sprites/tmp_btn_up_pressed.png" id="8_d61yr"]
 [ext_resource type="Texture2D" uid="uid://c04kh6m5jhi3y" path="res://sprites/tmp_btn_up_hover.png" id="9_4qp5o"]
-[ext_resource type="Script" path="res://scripts/camera_movement.gd" id="10_3ijnd"]
+[ext_resource type="Script" uid="uid://dxp7qggvua7n8" path="res://scripts/camera_movement.gd" id="10_3ijnd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qjgpw")
