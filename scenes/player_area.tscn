@@ -519,6 +519,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_gao1g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1620)]
+}
+
 [sub_resource type="Animation" id="Animation_q7td6"]
 resource_name = "roller_shutter"
 length = 2.3
@@ -533,21 +548,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(960, 1620), Vector2(960, 720)]
-}
-
-[sub_resource type="Animation" id="Animation_gao1g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 1620)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a5uga"]
@@ -596,7 +596,7 @@ texture = ExtResource("4_wpnwe")
 z_index = 11
 
 [node name="Cat_1_Body" type="Sprite2D" parent="Middleground/Cats/Cat_1"]
-position = Vector2(71, 2101)
+position = Vector2(31, 2105)
 texture = ExtResource("5_ig77r")
 
 [node name="Cat_2" type="Node2D" parent="Middleground/Cats"]

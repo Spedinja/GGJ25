@@ -40,6 +40,8 @@ func _input_event(viewport, event, shape_idx):
 			
 
 func pop_bubble():
+	if is_clicked:
+		return
 	is_clicked = true
 	#emit_signal("bubble_popped")
 	SignalManager.bubble_popped.emit(self.getBubbleValue())
