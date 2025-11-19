@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bax2s4jw4027a"
-path="res://.godot/imported/Baristopus_1a.png-6a3374965fdf413586995c299f0e8630.ctex"
+uid="uid://ykhx0wp4sepc"
+path="res://.godot/imported/Baristopus_Tentacle_2.png-709a7985d293169ce474ca6a5d96234e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Baristapus/Baristopus_1a.png"
-dest_files=["res://.godot/imported/Baristopus_1a.png-6a3374965fdf413586995c299f0e8630.ctex"]
+source_file="res://sprites/Baristapus/Baristopus_Tentacle_2.png"
+dest_files=["res://.godot/imported/Baristopus_Tentacle_2.png-709a7985d293169ce474ca6a5d96234e.ctex"]
 
 [params]
 

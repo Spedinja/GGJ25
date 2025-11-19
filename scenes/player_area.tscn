@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=136 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" uid="uid://gyh0r8px73bi" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" uid="uid://bdlv5so0iuhwn" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -105,10 +105,21 @@
 [ext_resource type="Texture2D" uid="uid://qvnc5bs0tana" path="res://sprites/Cups/Cup_G_3a.png" id="72_fwvf3"]
 [ext_resource type="Texture2D" uid="uid://duh0u5ieormea" path="res://sprites/Cups/Cup_G_3b.png" id="73_tqluc"]
 [ext_resource type="Texture2D" uid="uid://c1nrfix4kcehx" path="res://sprites/Cups/Cup_G_3c.png" id="74_1d2ti"]
-[ext_resource type="Texture2D" uid="uid://bax2s4jw4027a" path="res://sprites/Baristapus/Baristopus_1a.png" id="75_j78le"]
-[ext_resource type="Texture2D" uid="uid://d0owymp2mtvm7" path="res://sprites/Baristapus/Baristopus_2a.png" id="76_y5qgo"]
+[ext_resource type="Texture2D" uid="uid://bax2s4jw4027a" path="res://sprites/Baristapus/old/Baristopus_1a.png" id="75_j78le"]
+[ext_resource type="Texture2D" uid="uid://d0owymp2mtvm7" path="res://sprites/Baristapus/old/Baristopus_2a.png" id="76_y5qgo"]
 [ext_resource type="Texture2D" uid="uid://cg26peegw00d7" path="res://sprites/Backgrounds/Shop/Shop_RollerShutter.png" id="78_rnajo"]
 [ext_resource type="Texture2D" uid="uid://dp5f46fu0j4co" path="res://sprites/Backgrounds/Shop/Shop_Storefront.png" id="79_m3e2x"]
+[ext_resource type="Texture2D" uid="uid://cldatmmek8eep" path="res://sprites/Baristapus/Baristopus_Tentacle_1a.png" id="80_kk2a4"]
+[ext_resource type="Texture2D" uid="uid://egtp6va68ltl" path="res://sprites/Baristapus/Baristopus_Tentacle_1b.png" id="81_er00m"]
+[ext_resource type="Texture2D" uid="uid://ykhx0wp4sepc" path="res://sprites/Baristapus/Baristopus_Tentacle_2.png" id="82_vsodm"]
+[ext_resource type="Texture2D" uid="uid://cqvygt1oerfdk" path="res://sprites/Baristapus/Baristopus_Tentacle_3a.png" id="83_ju27t"]
+[ext_resource type="Texture2D" uid="uid://1mnr6m6v31x6" path="res://sprites/Baristapus/Baristopus_Tentacle_3b.png" id="84_bqt68"]
+[ext_resource type="Texture2D" uid="uid://bokr2i2tnbhug" path="res://sprites/Baristapus/Baristopus_Tentacle_4.png" id="85_uguub"]
+[ext_resource type="Texture2D" uid="uid://ch0ci4ek0ghdx" path="res://sprites/Baristapus/Baristopus_Tentacle_5b.png" id="86_hprn5"]
+[ext_resource type="Texture2D" uid="uid://by3aklld54hre" path="res://sprites/Baristapus/Baristopus_Tentacle_5a.png" id="87_w5bm8"]
+[ext_resource type="Texture2D" uid="uid://oldd76ldxgri" path="res://sprites/Baristapus/Baristopus_Tentacle_6_7_8.png" id="88_wqxx8"]
+[ext_resource type="Texture2D" uid="uid://6htdn3t8m3m1" path="res://sprites/Baristapus/Baristopus_Body.png" id="89_askq2"]
+[ext_resource type="Texture2D" uid="uid://dxs64ujb6h4kh" path="res://sprites/Baristapus/Baristopus_Head.png" id="90_q83f1"]
 
 [sub_resource type="Animation" id="Animation_m3e2x"]
 resource_name = "PulsatingSun"
@@ -519,6 +530,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_46h8l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_askq2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0311"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_q83f1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_gao1g"]
 length = 0.001
 tracks/0/type = "value"
@@ -613,6 +646,7 @@ texture = ExtResource("7_86twd")
 [node name="Cat_3" type="Node2D" parent="Middleground/Cats"]
 
 [node name="Cat_3_Body" type="Sprite2D" parent="Middleground/Cats/Cat_3"]
+z_index = 1
 position = Vector2(621, 1986)
 texture = ExtResource("8_iyu7h")
 
@@ -642,6 +676,7 @@ autoplay = "default"
 frame_progress = 0.6123075
 
 [node name="Cup_B" type="AnimatedSprite2D" parent="Middleground/Cups"]
+z_index = 1
 position = Vector2(544, 1650)
 sprite_frames = SubResource("SpriteFrames_86twd")
 autoplay = "default"
@@ -674,15 +709,68 @@ autoplay = "default"
 [node name="Baristapus" type="Node2D" parent="Middleground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Middleground/Baristapus"]
+visible = false
 position = Vector2(960, 1620)
 texture = ExtResource("75_j78le")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Middleground/Baristapus"]
+visible = false
 z_index = 1
 position = Vector2(960, 1620)
 texture = ExtResource("76_y5qgo")
 
+[node name="Tentacles" type="Node2D" parent="Middleground/Baristapus"]
+
+[node name="Tentacle 1a" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+z_index = 2
+position = Vector2(704, 1719)
+texture = ExtResource("80_kk2a4")
+
+[node name="Tentacle 1b" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+position = Vector2(706, 1718)
+texture = ExtResource("81_er00m")
+
+[node name="Tentacle 2" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+position = Vector2(717, 1819)
+texture = ExtResource("82_vsodm")
+
+[node name="Tentacle 3a" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+z_index = 2
+position = Vector2(735, 1927)
+texture = ExtResource("83_ju27t")
+
+[node name="Tentacle 3b" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+z_index = 1
+position = Vector2(735, 1927)
+texture = ExtResource("84_bqt68")
+
+[node name="Tentacle 4" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+position = Vector2(1140, 1630)
+texture = ExtResource("85_uguub")
+
+[node name="Tentacle 5b" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+position = Vector2(1219, 1823)
+texture = ExtResource("86_hprn5")
+
+[node name="Tentacle 5a" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+position = Vector2(1219, 1823)
+texture = ExtResource("87_w5bm8")
+
+[node name="Tentacle 6 7 8" type="Sprite2D" parent="Middleground/Baristapus/Tentacles"]
+z_index = 2
+position = Vector2(961, 1621)
+texture = ExtResource("88_wqxx8")
+
+[node name="Body" type="AnimatedSprite2D" parent="Middleground/Baristapus"]
+position = Vector2(960, 1805)
+sprite_frames = SubResource("SpriteFrames_46h8l")
+
+[node name="Head" type="AnimatedSprite2D" parent="Middleground/Baristapus"]
+position = Vector2(960, 1634)
+sprite_frames = SubResource("SpriteFrames_i0311")
+
 [node name="Counter" type="Sprite2D" parent="Middleground"]
+z_index = 1
 position = Vector2(960, 1620)
 texture = ExtResource("5_0c0ci")
 

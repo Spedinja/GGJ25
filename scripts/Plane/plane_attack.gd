@@ -1,10 +1,13 @@
 extends Area2D
 class_name PlaneAttack
 
-@export var speed: float = 200
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@export var speed: float = 100
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	animation_player.play("sway")
 
 func _process(delta: float) -> void:
 	position.y += speed * delta
