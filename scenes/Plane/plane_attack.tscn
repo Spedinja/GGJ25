@@ -7,6 +7,21 @@
 radius = 25.0
 height = 112.0
 
+[sub_resource type="Animation" id="Animation_e7onu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2617994]
+}
+
 [sub_resource type="Animation" id="Animation_wveyc"]
 resource_name = "sway"
 loop_mode = 1
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "values": [0.2617994, -0.2617994, 0.2617994]
 }
 
-[sub_resource type="Animation" id="Animation_e7onu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.2617994]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7w5ca"]
 _data = {
 &"RESET": SubResource("Animation_e7onu"),
@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="PlaneAttack" type="Area2D"]
+z_index = 19
 rotation = 0.2617994
 script = ExtResource("1_wveyc")
 

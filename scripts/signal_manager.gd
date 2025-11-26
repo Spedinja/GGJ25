@@ -1,6 +1,6 @@
 extends Node
 
-signal bubble_popped(param)
+signal bubble_popped(value)
 signal money_changed(value)
 signal machine_unlocked
 signal machine_level_up

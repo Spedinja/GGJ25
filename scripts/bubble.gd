@@ -16,7 +16,7 @@ var delete_timer = 0
 var is_clicked = false
 
 func _ready() -> void:
-	self.bubbleScale= randf_range(2,4)
+	self.bubbleScale= randf_range(3.5,5)
 	self.setBubbleScale(bubbleScale)
 	self.direction = randf_range(-1,1)
 
@@ -29,7 +29,7 @@ func _physics_process(delta):
 	self.position.x += wiggle * delta
 	self.position.y -= bubble_data.upwards_speed * delta
 	
-	if delete_timer > (0.05 * bubble_data.upwards_speed): #change to speed/value
+	if delete_timer > (0.07 * bubble_data.upwards_speed): #change to speed/value
 		queue_free()
 
 # Called when the mouse clicks on the bubble.

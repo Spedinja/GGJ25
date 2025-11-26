@@ -21,6 +21,8 @@ func _ready() -> void:
 	roller_shutter_animation_player.animation_finished.connect(_on_shutter_animation_finished)
 
 func _process(_delta):
+	#if Input.is_action_just_pressed("ui_accept"):
+		#SignalManager.bubble_popped.emit(50000)
 	if not SignalManager.ingame:
 		return
 	if Input.is_action_just_pressed("ui_cancel"):

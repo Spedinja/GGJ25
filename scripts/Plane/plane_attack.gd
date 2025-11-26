@@ -4,6 +4,7 @@ class_name PlaneAttack
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var speed: float = 100
+@export var free_at_position = 2500 # 950
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
@@ -11,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position.y += speed * delta
-	if global_position.y > 950:
+	if global_position.y > free_at_position:
 		queue_free()
 
 func _on_area_entered(area):
