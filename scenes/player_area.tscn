@@ -791,7 +791,7 @@ z_index = 10
 position = Vector2(960, 1620)
 texture = ExtResource("79_m3e2x")
 
-[node name="BubbleArea" type="Node2D" parent="."]
+[node name="BubbleArea" type="Node2D" parent="." groups=["Persistables"]]
 script = ExtResource("1_hc30i")
 
 [node name="SpawnArea" type="Area2D" parent="BubbleArea"]
@@ -800,37 +800,37 @@ script = ExtResource("1_hc30i")
 
 [node name="BubbleSpawn" type="Node" parent="BubbleArea/SpawnArea"]
 
-[node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_1" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(353, 800)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("4_l5oaj")
 
-[node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_2" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(545, 766)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("5_xg42i")
 
-[node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_3" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(747, 740)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("6_qklym")
 
-[node name="BubbleSpawn_4" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_4" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(960, 708)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("7_2lglj")
 
-[node name="BubbleSpawn_5" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_5" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(1162, 731)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("8_01gma")
 
-[node name="BubbleSpawn_6" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_6" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(1367, 762)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("9_ckta8")
 
-[node name="BubbleSpawn_7" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn"]
+[node name="BubbleSpawn_7" type="Node2D" parent="BubbleArea/SpawnArea/BubbleSpawn" groups=["Persistables"]]
 position = Vector2(1555, 794)
 script = ExtResource("2_7d4fa")
 spawner_data = ExtResource("10_83vmp")

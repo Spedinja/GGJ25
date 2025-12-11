@@ -20,6 +20,7 @@ config/icon="res://svgs/icon_512_android.png"
 
 MusicPlayer="*res://scenes/autoload/music_player/music_player.tscn"
 SignalManager="*res://scripts/signal_manager.gd"
+GameDataManager="*res://scripts/SaveFileSystem/GameDataManager.gd"
 
 [display]
 
@@ -33,6 +34,7 @@ mouse_cursor/custom_image="res://sprites/tutorial/Temp_cursor_slide.png"
 [global_group]
 
 bubbles=""
+Persistables="Meant for objects that have states that need saving/loading."
 
 [input]
 

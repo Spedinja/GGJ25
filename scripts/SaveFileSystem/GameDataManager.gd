@@ -1,9 +1,9 @@
 extends Node
 
-class_name GameDataManager
+#class_name GameDataManager
 
 #important to use this as save path, as all other wont work especially on android
-const save_file_path:= "user://savegame.json"
+const save_file_path:= "user://savegame.save"
 
 
 #var save_data = {
@@ -11,13 +11,19 @@ const save_file_path:= "user://savegame.json"
 #  "stations_upgrade_LvL": station_levels,
 #}
 
+#func initialize_defaults(station_count: int):
+	#score = 0
+	#station_levels = []
+	#for i in station_count:
+		#station_levels.append(0)
+
 # Note: This can be called from anywhere inside the tree. This function is
 # path independent.
 # Go through everything in the persist category and ask them to return a
 # dict of relevant variables.
-func save_game():
+func save_game(): #durch alle persistables, classnames and extract relevant data
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	var save_nodes = get_tree().get_nodes_in_group("Persistables")
 	for node in save_nodes:
 		# Check the node is an instanced scene so it can be instanced again during load.
 		if node.scene_file_path.is_empty():
