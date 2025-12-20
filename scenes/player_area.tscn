@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=137 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" uid="uid://gyh0r8px73bi" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" uid="uid://bdlv5so0iuhwn" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -120,6 +120,7 @@
 [ext_resource type="Texture2D" uid="uid://oldd76ldxgri" path="res://sprites/Baristapus/Baristopus_Tentacle_6_7_8.png" id="88_wqxx8"]
 [ext_resource type="Texture2D" uid="uid://6htdn3t8m3m1" path="res://sprites/Baristapus/Baristopus_Body.png" id="89_askq2"]
 [ext_resource type="Texture2D" uid="uid://dxs64ujb6h4kh" path="res://sprites/Baristapus/Baristopus_Head.png" id="90_q83f1"]
+[ext_resource type="Script" uid="uid://dnqhdqs8talim" path="res://scenes/test_save.gd" id="108_er00m"]
 
 [sub_resource type="Animation" id="Animation_m3e2x"]
 resource_name = "PulsatingSun"
@@ -777,6 +778,7 @@ texture = ExtResource("5_0c0ci")
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="RollerShutter" type="Sprite2D" parent="Foreground"]
+visible = false
 z_index = 10
 position = Vector2(960, 1620)
 texture = ExtResource("78_rnajo")
@@ -840,7 +842,7 @@ position = Vector2(2100, 400)
 
 [node name="ShopArea" type="Node2D" parent="."]
 
-[node name="ShopArea_UI" type="Control" parent="ShopArea" node_paths=PackedStringArray("cup_sprites")]
+[node name="ShopArea_UI" type="Control" parent="ShopArea" node_paths=PackedStringArray("cup_sprites") groups=["Persistables"]]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1080.0
@@ -851,7 +853,6 @@ arrUpgradeCosts = Array[Array]([[10, 15, 25], [20, 40, 75], [60, 120, 300], [200
 cup_sprites = [NodePath("../../Middleground/Cups/Cup_A"), NodePath("../../Middleground/Cups/Cup_B"), NodePath("../../Middleground/Cups/Cup_C"), NodePath("../../Middleground/Cups/Cup_D"), NodePath("../../Middleground/Cups/Cup_E"), NodePath("../../Middleground/Cups/Cup_F"), NodePath("../../Middleground/Cups/Cup_G")]
 
 [node name="CurrentMoney_LS" type="Label" parent="ShopArea/ShopArea_UI"]
-visible = false
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 offset_right = 200.0
@@ -1013,6 +1014,16 @@ theme_override_font_sizes/font_size = 40
 text = "TEST"
 horizontal_alignment = 1
 
+[node name="Button" type="Button" parent="ShopArea/ShopArea_UI"]
+layout_mode = 0
+offset_left = 1296.0
+offset_top = 882.0
+offset_right = 1539.0
+offset_bottom = 959.0
+theme_override_font_sizes/font_size = 50
+text = "Save_Test"
+script = ExtResource("108_er00m")
+
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -1104,7 +1115,6 @@ _body_parts = [NodePath("../../Middleground/Cats/Cat_4/Cat_4_Body"), NodePath(".
 z_index = 15
 
 [node name="Tutorial 1" parent="Overlays" instance=ExtResource("33_csm8r")]
-visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -1367,6 +1377,7 @@ script = ExtResource("18_gmjm1")
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade5" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_5_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade6" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_6_pressed"]
 [connection signal="pressed" from="ShopArea/ShopArea_UI/ShopContainer/btnUpgrade7" to="ShopArea/ShopArea_UI" method="_on_btn_upgrade_7_pressed"]
+[connection signal="pressed" from="ShopArea/ShopArea_UI/Button" to="ShopArea/ShopArea_UI/Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="Buttons/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
