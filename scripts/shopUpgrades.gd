@@ -40,6 +40,7 @@ enum shop_states {cant_unlock,can_unlock,cant_upgrade,can_upgrade,max}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalManager.money_changed.connect(_on_bubble_area_cash_changed)
+	SignalManager.SaveLoad_ShopUpdate.connect(_on_save_load_update) #load system
 	setupLabels()
 
 
@@ -220,3 +221,15 @@ func setupLabels()->void:
 		lbl.visible = true
 		lbl.text= str(arrUpgradeCosts[counter][0], "$")
 		counter = counter +1
+		
+func _on_save_load_update() -> void:
+	updateShop()
+	updateLabels()
+	return
+
+func updateLabels()->void:
+	var btnCounter = 0
+	for lbl in arrLabels:
+		currentLvl = bubble_spawners[btnCounter].getLevel()
+		lbl.text= str(arrUpgradeCosts[btnCounter][currentLvl+1], "$")
+		btnCounter = btnCounter + 1

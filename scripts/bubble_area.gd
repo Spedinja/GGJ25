@@ -64,6 +64,7 @@ func save_state():
 	}
 	return save_dict
 
-func load_state():
+func load_state_withDict(data: Dictionary):
+	score = int(data.get("score", 0))
 	current_money_us.text = str("$: ", score)
 	current_money_ls.text = str("$: ", score)

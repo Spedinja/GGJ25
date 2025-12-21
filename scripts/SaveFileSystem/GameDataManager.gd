@@ -3,13 +3,13 @@ extends Node
 #class_name GameDataManager
 
 #important to use this as save path, as all other wont work especially on android
+#for testing purposes save files under this path will be saved to 
+#C:\Users\*CURRUSER*\AppData\Roaming\Godot\app_userdata\OcTeaPop
 const save_file_path:= "user://savegame.save"
 
 var score: int = 0
 var station_levels: Array[int] = []
 
-# Note: This can be called from anywhere inside the tree. This function is
-# path independent.
 # Go through everything in the persist category and ask them to return a
 # dict of relevant variables.
 func save_game(): #durch alle persistables, classnames and extract relevant data
@@ -37,16 +37,11 @@ func save_game(): #durch alle persistables, classnames and extract relevant data
 		# Store the save dictionary as a new line in the save file.
 		save_file.store_line(json_string)
 		
-# Note: This can be called from anywhere inside the tree. This function
-# is path independent.
+# Go through all dictionaries and return relevant variables + save to objects
 func load_game():
 	if not FileAccess.file_exists(save_file_path):
 		return # Error! We don't have a save to load.
 
-	# We need to revert the game state so we're not cloning objects
-	# during loading. This will vary wildly depending on the needs of a
-	# project, so take care with this step.
-	# For our example, we will accomplish this by deleting saveable objects.
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	for i in save_nodes:
 		i.queue_free()
@@ -69,18 +64,15 @@ func load_game():
 		# Get the data from the JSON object.
 		var node_data = json.data
 
-		# Firstly, we need to create the object and add it to the tree and set its position.
-		#var new_object = load(node_data["filename"]).instantiate()
-		#get_node(node_data["parent"]).add_child(new_object)
-		#new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
-		
 		var object_to_load = get_node(node_data["filename"])
 		
 		# Now we set the remaining variables.
 		for i in node_data.keys():
-			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
-				continue
-			object_to_load.set(i, node_data[i])
-			
-			if !object_to_load.has_method("load_state"):
-				object_to_load.call("load_state")
+			if object_to_load.has_method("load_state_withDict"):
+				object_to_load.call("load_state_withDict", node_data)
+			else:
+				for key in node_data.keys():
+					if key in ["filename", "parent"]:
+						continue
+					object_to_load.set(key, node_data[key])
+		SignalManager.SaveLoad_ShopUpdate.emit()

@@ -842,7 +842,7 @@ position = Vector2(2100, 400)
 
 [node name="ShopArea" type="Node2D" parent="."]
 
-[node name="ShopArea_UI" type="Control" parent="ShopArea" node_paths=PackedStringArray("cup_sprites") groups=["Persistables"]]
+[node name="ShopArea_UI" type="Control" parent="ShopArea" node_paths=PackedStringArray("cup_sprites")]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1080.0
