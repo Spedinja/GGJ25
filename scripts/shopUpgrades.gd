@@ -221,12 +221,14 @@ func setupLabels()->void:
 		lbl.visible = true
 		lbl.text= str(arrUpgradeCosts[counter][0], "$")
 		counter = counter +1
-		
+
+#on load of save file		
 func _on_save_load_update() -> void:
 	updateShop()
 	updateLabels()
 	return
 
+#ez way to just load everything quickly
 func updateLabels()->void:
 	var btnCounter = 0
 	for lbl in arrLabels:
