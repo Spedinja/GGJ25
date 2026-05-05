@@ -64,7 +64,12 @@ func _on_start_game_pressed() -> void:
 
 func _on_shutter_animation_finished(_anim_name):
 	SignalManager.ingame = true
-	$"Overlays/Tutorial 1".visible = SignalManager.tutorial_completed
+	print("Signal Manager tutorial completed: ", SignalManager.tutorial_completed)
+	if SignalManager.tutorial_completed:
+		$"Overlays/Tutorial 1".queue_free()
+		$Buttons/btnGoUp.visible = true
+	else:
+		$"Overlays/Tutorial 1".visible = true
 	$HUD/Score.visible = true
 	$HUD/GameStartUp.queue_free()
 	roller_shutter.queue_free()
