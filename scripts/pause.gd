@@ -19,6 +19,7 @@ func _ready() -> void:
 	SignalManager.fully_upgraded_everything.connect(_open_congrats_message)
 	animation_player.play("PulsatingSun")
 	roller_shutter_animation_player.animation_finished.connect(_on_shutter_animation_finished)
+	roller_shutter.visible = true
 
 func _process(_delta):
 	#if Input.is_action_just_pressed("ui_accept"):
