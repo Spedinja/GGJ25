@@ -8,6 +8,7 @@ extends Node2D
 #@onready var bubble_scene = preload("res://scenes/bubble.tscn")
 #@onready var timer
 var accum_time = 0
+var score_chg_counter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +47,13 @@ func change_score(points):
 		score+= points
 	current_money_us.text = str("$: ", score)
 	current_money_ls.text = str("$: ", score)
+	
+	#after 20 changes save
+	if score_chg_counter == 20:
+		GameDataManager.save_game()
+		score_chg_counter = 1
+	else:
+		score_chg_counter+=1
 	
 func on_bubble_popped(arg1):
 	SignalManager.money_changed.emit(arg1)

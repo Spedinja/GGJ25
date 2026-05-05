@@ -21,4 +21,5 @@ func _on_downtime_over():
 
 func on_first_move():
 	SignalManager.tutorial_completed = true
+	GameDataManager.save_game()
 	queue_free()

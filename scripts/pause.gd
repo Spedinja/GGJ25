@@ -60,10 +60,11 @@ func _on_back_pressed() -> void:
 func _on_start_game_pressed() -> void:
 	$HUD/GameStartUp/VBoxContainer.visible = false
 	roller_shutter_animation_player.play("roller_shutter")
+	GameDataManager.load_game() #load savefile on start
 
 func _on_shutter_animation_finished(_anim_name):
 	SignalManager.ingame = true
-	$"Overlays/Tutorial 1".visible = true
+	$"Overlays/Tutorial 1".visible = SignalManager.tutorial_completed
 	$HUD/Score.visible = true
 	$HUD/GameStartUp.queue_free()
 	roller_shutter.queue_free()

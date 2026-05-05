@@ -47,6 +47,7 @@ func levelUp() -> int:
 	self._increaseStats()
 	if self.spawner_data.currentLvl == 0:#vorher1
 		self._unlockSpawner()
+	GameDataManager.save_game() # save each upgrade
 	return self.spawner_data.currentLvl
 	
 func _increaseStats()-> void:
