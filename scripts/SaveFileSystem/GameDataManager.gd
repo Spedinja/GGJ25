@@ -16,6 +16,9 @@ func save_game(): #durch alle persistables, classnames and extract relevant data
 		
 	var save_file = FileAccess.open(save_file_path, FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persistables")
+	var node_data
+	var json_string
+	
 	for node in save_nodes:
 		# Check the node is an instanced scene so it can be instanced again during load.
 		#if node.scene_file_path.is_empty():
@@ -29,13 +32,21 @@ func save_game(): #durch alle persistables, classnames and extract relevant data
 			continue
 
 		# Call the node's save function.
-		var node_data = node.call("save_state")
+		node_data = node.call("save_state")
 
 		# JSON provides a static method to serialized JSON string.
-		var json_string = JSON.stringify(node_data)
+		json_string = JSON.stringify(node_data)
 
 		# Store the save dictionary as a new line in the save file.
 		save_file.store_line(json_string)
+	
+	#exception Tutorial
+	node_data = { 
+		"type" : "Tutorial",   
+		"tutorial_completed": SignalManager.tutorial_completed
+		} 
+	json_string = JSON.stringify(node_data)
+	save_file.store_line(json_string)	
 		
 # Go through all dictionaries and return relevant variables + save to objects
 func load_game():
@@ -63,6 +74,11 @@ func load_game():
 
 		# Get the data from the JSON object.
 		var node_data = json.data
+
+		#exception tutorial
+		if node_data.get("type") == "Tutorial":
+			SignalManager.tutorial_completed = node_data["tutorial_completed"]
+			continue
 
 		var object_to_load = get_node(node_data["filename"])
 		
