@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhb7k7e67xgfc"]
 
-[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_kgkdi"]
+[ext_resource type="Script" uid="uid://bqobsg1rpgg7h" path="res://scripts/bubble.gd" id="1_kgkdi"]
 [ext_resource type="Texture2D" uid="uid://bn4kegx72pm1f" path="res://sprites/Bubbles/new/Bubble_4a.png" id="2_3ugpq"]
 [ext_resource type="Resource" uid="uid://m5srp5aq7jlr" path="res://ressources/bubbles/Bubble4.tres" id="2_3vfp6"]
 [ext_resource type="Texture2D" uid="uid://dpffvy34tulih" path="res://sprites/Bubbles/new/popped/Bubble_4b.png" id="4_75hff"]
@@ -42,5 +42,5 @@ scale = Vector2(0.016, 0.016)
 texture = ExtResource("2_3ugpq")
 
 [node name="ClickBox" type="CollisionShape2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_iiivj")
