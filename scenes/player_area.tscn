@@ -1102,7 +1102,7 @@ _body_parts = [NodePath("../../Middleground/Cats/Cat_4/Cat_4_Body"), NodePath(".
 [node name="Overlays" type="Node2D" parent="."]
 z_index = 15
 
-[node name="Tutorial 1" parent="Overlays" groups=["Persistables"] instance=ExtResource("33_csm8r")]
+[node name="Tutorial 1" parent="Overlays" instance=ExtResource("33_csm8r")]
 visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
