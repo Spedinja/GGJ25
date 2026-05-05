@@ -22,11 +22,11 @@ func _process(delta: float) -> void:
 func spawn_bubble():
 	if spawner_data and spawner_data.bubble_scene:
 		var bubble_instance = spawner_data.bubble_scene.instantiate()
-		if self.spawner_data.toUpdate:
-			bubble_instance.setBubbleValue(self.spawner_data.currModifier)
-			bubble_instance.adjustBubbleValues(self.spawner_data.currentLvl)
+		#if self.spawner_data.toUpdate:
+		bubble_instance.setBubbleValue(self.spawner_data.currModifier)
+		bubble_instance.adjustBubbleValues(self.spawner_data.currentLvl)
 			#bubble_instance.adjustBubbleValues(self.spawner_data.currModifier)
-			self.spawner_data.toUpdate = false
+		#	self.spawner_data.toUpdate = false
 		bubble_instance.position = position
 		#SignalManager.bubble_popped.disconnect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
 		#SignalManager.bubble_popped.connect($"../../..".on_bubble_popped.bind(bubble_instance.getBubbleValue()))
@@ -40,7 +40,7 @@ func _unlockSpawner() -> void:
 
 
 func levelUp() -> int:
-	if spawner_data.currentLvl+1 == 0:
+	if self.spawner_data.currentLvl+1 == 0:
 		SignalManager.machine_unlocked.emit()
 	else:
 		SignalManager.machine_level_up.emit()
@@ -52,10 +52,10 @@ func levelUp() -> int:
 	
 func _increaseStats()-> void:
 	#get next element from array, adjust on instantiate
-	spawner_data.currentLvl = spawner_data.currentLvl+1
-	if spawner_data.currentLvl < 3:
+	self.spawner_data.currentLvl = spawner_data.currentLvl+1
+	if self.spawner_data.currentLvl < 3:
 		self.spawner_data.currModifier= spawner_data.arrStats[spawner_data.currentLvl]
-		self.spawner_data.toUpdate = true
+	#	self.spawner_data.toUpdate = true
 
 
 func getLevel() -> int:
@@ -68,15 +68,16 @@ func save_state() -> Dictionary:
 	var save_dict = { 
 		"filename" : self.get_path(), 
 		"parent" : get_parent().get_path(), 
-		"spawner_Lvl" : self.spawner_data.currentLvl, 
+		"spawner_Lvl" : int(self.spawner_data.currentLvl), 
 		"currModifier" : self.spawner_data.currModifier, 
 		"isUnlocked": self.spawner_data.isUnlocked
 		} 
 	return save_dict
 
 func load_state_withDict(data: Dictionary) -> void:
-	spawner_data.currentLvl = data.get("spawner_Lvl", -1)
-	spawner_data.isUnlocked = data.get("isUnlocked", false)
-	if spawner_data.currentLvl >= 0:
-		spawner_data.currModifier = spawner_data.currModifier
-		spawner_data.toUpdate = true
+	self.spawner_data.currentLvl = int(data.get("spawner_Lvl", -1))
+	print("test: ", data.get("spawner_Lvl", -1))
+	self.spawner_data.isUnlocked = data.get("isUnlocked", false)
+	if self.spawner_data.currentLvl >= 0:
+		self.spawner_data.currModifier = data.get("currModifier", 1)
+		#self.spawner_data.toUpdate = true

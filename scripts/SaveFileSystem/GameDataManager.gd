@@ -83,12 +83,12 @@ func load_game():
 		var object_to_load = get_node(node_data["filename"])
 		
 		# Now we set the remaining variables.
-		for i in node_data.keys():
-			if object_to_load.has_method("load_state_withDict"):
-				object_to_load.call("load_state_withDict", node_data)
-			else:
-				for key in node_data.keys():
-					if key in ["filename", "parent"]:
-						continue
-					object_to_load.set(key, node_data[key])
+		#for i in node_data.keys():
+		if object_to_load.has_method("load_state_withDict"):
+			object_to_load.call("load_state_withDict", node_data)
+			#else:
+				#for key in node_data.keys():
+					#if key in ["filename", "parent"]:
+						#continue
+					#object_to_load.set(key, node_data[key])
 		SignalManager.SaveLoad_ShopUpdate.emit()

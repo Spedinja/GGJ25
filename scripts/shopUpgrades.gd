@@ -233,5 +233,8 @@ func updateLabels()->void:
 	var btnCounter = 0
 	for lbl in arrLabels:
 		currentLvl = bubble_spawners[btnCounter].getLevel()
-		lbl.text= str(arrUpgradeCosts[btnCounter][currentLvl+1], "$")
+		if currentLvl < 2:
+			lbl.text= str(arrUpgradeCosts[btnCounter][currentLvl+1], "$")
+		else:
+			lbl.text= str(arrUpgradeCosts[btnCounter][currentLvl], "$")
 		btnCounter = btnCounter + 1
