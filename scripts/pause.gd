@@ -14,6 +14,8 @@ extends Node2D
 @onready var roller_shutter: Sprite2D = $Foreground/RollerShutter
 @onready var roller_shutter_animation_player: AnimationPlayer = $Foreground/RollerShutter/AnimationPlayer
 
+@onready var pause_button: TextureButton = $HUD/PauseButton
+
 
 func _ready() -> void:
 	SignalManager.fully_upgraded_everything.connect(_open_congrats_message)
@@ -30,13 +32,25 @@ func _process(_delta):
 		if credits.visible:
 			credits.visible = false
 		else:
-			pause_menu.visible = !pause_menu.visible
+			_toggle_menu()
 
 func _on_continue_pressed():
 	close_menu()
 
+func _on_pause_pressed() -> void:
+	_open_menu()
+
+func _toggle_menu():
+	@warning_ignore("standalone_ternary")
+	close_menu() if pause_menu.visible  else _open_menu()
+
+func _open_menu():
+	pause_menu.visible = true
+	pause_button.visible = false
+
 func close_menu():
 	pause_menu.visible = false
+	pause_button.visible = true
 
 func _on_back_2_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
@@ -70,6 +84,7 @@ func _on_shutter_animation_finished(_anim_name):
 		$Buttons/btnGoUp.visible = true
 	else:
 		$"Overlays/Tutorial 1".visible = true
+	pause_button.visible = true
 	$HUD/Score.visible = true
 	$HUD/GameStartUp.queue_free()
 	roller_shutter.queue_free()

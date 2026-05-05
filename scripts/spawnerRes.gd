@@ -1,10 +1,10 @@
 extends Resource
 class_name Spawner
 
-var bubbleValue: float
-var currentLvl = -1
-var currModifier: int
-var isUnlocked: bool  = false
+@export var bubbleValue: float
+@export var currentLvl = -1
+@export var currModifier: int
+@export var isUnlocked: bool  = false
 @export var arrStats: Array[float]
 @export var bubble_scene: PackedScene
-var toUpdate: bool = false
+@export var toUpdate: bool = false

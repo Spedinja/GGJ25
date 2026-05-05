@@ -5,6 +5,8 @@ extends Node2D
 @export var down_time_duration : float = 2.0
 @export var animation_speed : float = 1
 
+@onready var cursor: AnimatedSprite2D = $Cursor2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalManager.move_to_bubbles.connect(on_first_move)
@@ -12,6 +14,8 @@ func _ready() -> void:
 	animation_player.speed_scale = animation_speed
 	down_time.wait_time = down_time_duration
 	down_time.timeout.connect(_on_downtime_over)
+	
+	cursor.play("default")
 
 func _on_animation_player_animation_finished(_anim_name: StringName):
 	down_time.start()

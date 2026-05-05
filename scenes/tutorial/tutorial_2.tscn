@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://qlajv6titw1w"]
+[gd_scene load_steps=12 format=3 uid="uid://qlajv6titw1w"]
 
 [ext_resource type="Script" uid="uid://ch52u8wotpos0" path="res://scripts/tutorial/tutorial_2.gd" id="1_u7010"]
 [ext_resource type="Texture2D" uid="uid://butmnt27uq8qk" path="res://sprites/tutorial/Speech_Bubble.png" id="2_j7p7d"]
 [ext_resource type="Texture2D" uid="uid://doyt5n8465k7p" path="res://sprites/tutorial/Temp_cursor_slide.png" id="4_gis2v"]
+[ext_resource type="Texture2D" uid="uid://dg1dxib61wskj" path="res://sprites/tutorial/Temp_click.png" id="5_2yi1l"]
 [ext_resource type="Theme" uid="uid://7jqarffrk3um" path="res://themes/CozyFont.tres" id="5_004jo"]
 
 [sub_resource type="Animation" id="Animation_ma5si"]
@@ -10,26 +11,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cursor:position")
+tracks/0/path = NodePath("Cursor:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-590, -198)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cursor:self_modulate")
+tracks/1/path = NodePath("Cursor:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(-590, -198)]
 }
 
 [sub_resource type="Animation" id="Animation_qd3eb"]
@@ -37,26 +38,26 @@ resource_name = "Tutorial2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cursor:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Cursor:self_modulate")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-590, -198), Vector2(892, -491)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Cursor:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cursor:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-590, -198), Vector2(892, -491)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0k3un"]
@@ -64,6 +65,28 @@ _data = {
 &"RESET": SubResource("Animation_ma5si"),
 &"Tutorial2": SubResource("Animation_qd3eb")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfk5g"]
+atlas = ExtResource("5_2yi1l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak40u"]
+atlas = ExtResource("5_2yi1l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suiuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfk5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak40u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Tutorial 2" type="Node2D"]
 position = Vector2(960, 1620)
@@ -76,6 +99,7 @@ position = Vector2(0, 303)
 texture = ExtResource("2_j7p7d")
 
 [node name="Cursor" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-590, -198)
 scale = Vector2(2, 2)
@@ -100,5 +124,12 @@ libraries = {
 }
 
 [node name="DownTime" type="Timer" parent="."]
+
+[node name="Cursor2" type="AnimatedSprite2D" parent="."]
+z_index = 5
+texture_filter = 1
+position = Vector2(892, -372)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_suiuw")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

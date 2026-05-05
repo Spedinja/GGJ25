@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://cb6ad1kyqcpmi"]
+[gd_scene load_steps=139 format=3 uid="uid://cb6ad1kyqcpmi"]
 
 [ext_resource type="Script" uid="uid://gyh0r8px73bi" path="res://scripts/bubble_area.gd" id="1_hc30i"]
 [ext_resource type="Script" uid="uid://bdlv5so0iuhwn" path="res://scripts/pause.gd" id="1_muuwv"]
@@ -120,6 +120,9 @@
 [ext_resource type="Texture2D" uid="uid://oldd76ldxgri" path="res://sprites/Baristapus/Baristopus_Tentacle_6_7_8.png" id="88_wqxx8"]
 [ext_resource type="Texture2D" uid="uid://6htdn3t8m3m1" path="res://sprites/Baristapus/Baristopus_Body.png" id="89_askq2"]
 [ext_resource type="Texture2D" uid="uid://dxs64ujb6h4kh" path="res://sprites/Baristapus/Baristopus_Head.png" id="90_q83f1"]
+[ext_resource type="Texture2D" uid="uid://dqtnmfnonsc7s" path="res://sprites/UI/Buttons/Pause Button/OcTeaPop Pause Button.png" id="115_er00m"]
+[ext_resource type="Texture2D" uid="uid://xus1ld46lmx4" path="res://sprites/UI/Buttons/Pause Button/OcTeaPop Pause Button pressed.png" id="121_ju27t"]
+[ext_resource type="Texture2D" uid="uid://dgeirlqdf82tx" path="res://sprites/UI/Buttons/Pause Button/OcTeaPop Pause Button hover.png" id="122_bqt68"]
 
 [sub_resource type="Animation" id="Animation_m3e2x"]
 resource_name = "PulsatingSun"
@@ -1029,12 +1032,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1728.0
-offset_top = 916.0
-offset_right = 1880.0
-offset_bottom = 1040.0
+offset_left = 1652.0
+offset_top = 854.0
+offset_right = 1804.0
+offset_bottom = 978.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("13_g2y3q")
 texture_pressed = ExtResource("14_oa8sp")
 texture_hover = ExtResource("15_idymo")
@@ -1049,11 +1053,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 1728.0
+offset_left = 1652.0
 offset_top = 1080.0
-offset_right = 1880.0
+offset_right = 1804.0
 offset_bottom = 1204.0
 grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("18_i6f7b")
 texture_pressed = ExtResource("19_r2f3t")
 texture_hover = ExtResource("20_7avwc")
@@ -1156,10 +1161,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = 169.0
-offset_right = 150.0
-offset_bottom = 369.0
+offset_left = -252.5
+offset_top = -211.0
+offset_right = 252.5
+offset_bottom = 449.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -1169,6 +1174,12 @@ layout_mode = 2
 
 [node name="Label" parent="HUD/PauseMenu/VBoxContainer/Continue" index="0"]
 text = "Continue"
+
+[node name="OcTeaButton" parent="HUD/PauseMenu/VBoxContainer" instance=ExtResource("31_b105t")]
+layout_mode = 2
+
+[node name="Label" parent="HUD/PauseMenu/VBoxContainer/OcTeaButton" index="0"]
+text = "Reset Savefile"
 
 [node name="Credits" parent="HUD/PauseMenu/VBoxContainer" instance=ExtResource("31_b105t")]
 layout_mode = 2
@@ -1227,6 +1238,7 @@ size_flags_vertical = 4
 text = "Quit"
 
 [node name="Credits" type="Control" parent="HUD"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
@@ -1354,6 +1366,17 @@ grow_vertical = 0
 [node name="Label" parent="HUD/Credits/Back" index="0"]
 text = "Back"
 
+[node name="PauseButton" type="TextureButton" parent="HUD"]
+visible = false
+offset_left = 1750.0
+offset_top = 465.0
+offset_right = 2050.0
+offset_bottom = 765.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("115_er00m")
+texture_pressed = ExtResource("121_ju27t")
+texture_hover = ExtResource("122_bqt68")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 1620)
 script = ExtResource("18_gmjm1")
@@ -1374,8 +1397,10 @@ script = ExtResource("18_gmjm1")
 [connection signal="pressed" from="HUD/GameStartUp/VBoxContainer/btnCredits" to="." method="_on_startup_credits_pressed"]
 [connection signal="pressed" from="HUD/GameStartUp/VBoxContainer/btnQuit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="HUD/Credits/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HUD/PauseButton" to="." method="_on_pause_pressed"]
 
 [editable path="HUD/PauseMenu/VBoxContainer/Continue"]
+[editable path="HUD/PauseMenu/VBoxContainer/OcTeaButton"]
 [editable path="HUD/PauseMenu/VBoxContainer/Credits"]
 [editable path="HUD/PauseMenu/VBoxContainer/Quit"]
 [editable path="HUD/GameStartUp/VBoxContainer/btnStartGame"]
