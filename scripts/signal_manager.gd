@@ -7,6 +7,7 @@ signal machine_level_up
 signal move_to_bubbles
 signal move_to_shop
 signal pet_cat
+signal SaveLoad_ShopUpdate
 
 signal cant_upgrade
 signal cant_unlock

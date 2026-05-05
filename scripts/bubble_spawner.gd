@@ -62,3 +62,20 @@ func getLevel() -> int:
 	
 func getNextStats() -> void:
 	var nextLvl = self.spawner_data.currentLvl+1
+
+func save_state() -> Dictionary:
+	var save_dict = { 
+		"filename" : self.get_path(), 
+		"parent" : get_parent().get_path(), 
+		"spawner_Lvl" : self.spawner_data.currentLvl, 
+		"currModifier" : self.spawner_data.currModifier, 
+		"isUnlocked": self.spawner_data.isUnlocked
+		} 
+	return save_dict
+
+func load_state_withDict(data: Dictionary) -> void:
+	spawner_data.currentLvl = data.get("spawner_Lvl", -1)
+	spawner_data.isUnlocked = data.get("isUnlocked", false)
+	if spawner_data.currentLvl >= 0:
+		spawner_data.currModifier = spawner_data.currModifier
+		spawner_data.toUpdate = true

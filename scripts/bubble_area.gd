@@ -4,7 +4,7 @@ extends Node2D
 @onready var current_money_ls: Label = $"../ShopArea/ShopArea_UI/CurrentMoney_LS"
 
 
-@onready var score = 10
+@onready var score: int = 10
 #@onready var bubble_scene = preload("res://scenes/bubble.tscn")
 #@onready var timer
 var accum_time = 0
@@ -55,3 +55,16 @@ func on_money_changed(arg1):
 
 func getCash() -> int:
 	return score
+
+func save_state():
+	var save_dict = {
+		"filename" : self.get_path(),
+		"parent" : get_parent().get_path(),
+		"score" : score
+	}
+	return save_dict
+
+func load_state_withDict(data: Dictionary):
+	score = int(data.get("score", 0))
+	current_money_us.text = str("$: ", score)
+	current_money_ls.text = str("$: ", score)

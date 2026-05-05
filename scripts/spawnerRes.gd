@@ -3,7 +3,7 @@ class_name Spawner
 
 var bubbleValue: float
 var currentLvl = -1
-var currModifier
+var currModifier: int
 var isUnlocked: bool  = false
 @export var arrStats: Array[float]
 @export var bubble_scene: PackedScene
