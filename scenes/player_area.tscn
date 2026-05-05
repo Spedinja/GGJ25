@@ -1391,6 +1391,7 @@ script = ExtResource("18_gmjm1")
 [connection signal="pressed" from="Buttons/btnGoDown" to="Camera2D" method="_on_to_shop_pressed"]
 [connection signal="pressed" from="Buttons/btnGoUp" to="Camera2D" method="_on_to_bubbles_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="HUD/PauseMenu/VBoxContainer/OcTeaButton" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="HUD/GameStartUp/VBoxContainer/btnStartGame" to="." method="_on_start_game_pressed"]

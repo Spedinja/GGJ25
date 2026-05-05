@@ -92,3 +92,6 @@ func _on_shutter_animation_finished(_anim_name):
 func _on_startup_credits_pressed() -> void:
 	credits.visible = true
 	startup_credits_button.release_focus()
+
+func _on_reset_pressed()-> void:
+	GameDataManager.reset_game()

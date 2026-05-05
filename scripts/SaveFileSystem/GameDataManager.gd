@@ -92,3 +92,12 @@ func load_game():
 						#continue
 					#object_to_load.set(key, node_data[key])
 		SignalManager.SaveLoad_ShopUpdate.emit()
+		
+func reset_game():
+	if FileAccess.file_exists(save_file_path):
+		DirAccess.remove_absolute(save_file_path)
+		get_tree().reload_current_scene() # reload and start anew
+		SignalManager.tutorial_completed = false # exception case
+		print("Save deleted")
+	else:
+		print("No save file found")
