@@ -778,7 +778,6 @@ texture = ExtResource("5_0c0ci")
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="RollerShutter" type="Sprite2D" parent="Foreground"]
-visible = false
 z_index = 10
 position = Vector2(960, 1620)
 texture = ExtResource("78_rnajo")
@@ -1115,6 +1114,7 @@ _body_parts = [NodePath("../../Middleground/Cats/Cat_4/Cat_4_Body"), NodePath(".
 z_index = 15
 
 [node name="Tutorial 1" parent="Overlays" instance=ExtResource("33_csm8r")]
+visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
