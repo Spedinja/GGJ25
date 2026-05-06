@@ -18,6 +18,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	get_tree().paused = true
 	SignalManager.fully_upgraded_everything.connect(_open_congrats_message)
 	animation_player.play("PulsatingSun")
 	roller_shutter_animation_player.animation_finished.connect(_on_shutter_animation_finished)
@@ -72,6 +73,7 @@ func _on_back_pressed() -> void:
 	credits_back_button.release_focus()
 
 func _on_start_game_pressed() -> void:
+	get_tree().paused = false
 	$HUD/GameStartUp/VBoxContainer.visible = false
 	roller_shutter_animation_player.play("roller_shutter")
 	GameDataManager.load_game() #load savefile on start

@@ -74,6 +74,16 @@ func save_state() -> Dictionary:
 		} 
 	return save_dict
 
+func reset_state() -> Dictionary:
+	var reset_dict = { 
+		"filename" : self.get_path(), 
+		"parent" : get_parent().get_path(), 
+		"spawner_Lvl" : -1, 
+		"currModifier" : 0, 
+		"isUnlocked": false
+		} 
+	return reset_dict
+
 func load_state_withDict(data: Dictionary) -> void:
 	self.spawner_data.currentLvl = int(data.get("spawner_Lvl", -1))
 	print("test: ", data.get("spawner_Lvl", -1))

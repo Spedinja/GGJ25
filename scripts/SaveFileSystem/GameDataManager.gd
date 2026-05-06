@@ -46,8 +46,16 @@ func save_game(): #durch alle persistables, classnames and extract relevant data
 		"tutorial_completed": SignalManager.tutorial_completed
 		} 
 	json_string = JSON.stringify(node_data)
-	save_file.store_line(json_string)	
-		
+	save_file.store_line(json_string)
+	
+	#exception Reset Count
+	node_data = {
+		"type": "Resets",
+		"reset_count": SignalManager.reset_count
+		}
+	json_string = JSON.stringify(node_data)
+	save_file.store_line(json_string)
+
 # Go through all dictionaries and return relevant variables + save to objects
 func load_game():
 	if not FileAccess.file_exists(save_file_path):
@@ -79,6 +87,10 @@ func load_game():
 		if node_data.get("type") == "Tutorial":
 			SignalManager.tutorial_completed = node_data["tutorial_completed"]
 			continue
+		
+		if node_data.get("type") == "Resets":
+			SignalManager.reset_count = node_data["reset_count"]
+			continue
 
 		var object_to_load = get_node(node_data["filename"])
 		
@@ -93,11 +105,58 @@ func load_game():
 					#object_to_load.set(key, node_data[key])
 		SignalManager.SaveLoad_ShopUpdate.emit()
 		
+#func reset_game():
+	#if FileAccess.file_exists(save_file_path):
+		#DirAccess.remove_absolute(save_file_path)
+		#get_tree().reload_current_scene() # reload and start anew
+		#SignalManager.tutorial_completed = false # exception case
+		#print("Save deleted")
+	#else:
+		#print("No save file found")
+
+
+# Currently a slightly edited copy of save_game()
 func reset_game():
-	if FileAccess.file_exists(save_file_path):
-		DirAccess.remove_absolute(save_file_path)
-		get_tree().reload_current_scene() # reload and start anew
-		SignalManager.tutorial_completed = false # exception case
-		print("Save deleted")
-	else:
-		print("No save file found")
+	var save_file = FileAccess.open(save_file_path, FileAccess.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("Persistables")
+	var node_data
+	var json_string
+	
+	for node in save_nodes:
+		# Check the node is an instanced scene so it can be instanced again during load.
+		#if node.scene_file_path.is_empty():
+		if node.get_path().is_empty():
+			print("no path '%s' skipped" % node.name)
+			continue
+			
+		# Check the node has a save function.
+		if !node.has_method("reset_state"):
+			print("persistent node '%s' is missing a reset() function, skipped" % node.name)
+			continue
+
+		# Call the node's save function.
+		node_data = node.call("reset_state")
+
+		# JSON provides a static method to serialized JSON string.
+		json_string = JSON.stringify(node_data)
+
+		# Store the save dictionary as a new line in the save file.
+		save_file.store_line(json_string)
+	
+	#exception Tutorial
+	node_data = { 
+		"type" : "Tutorial",   
+		"tutorial_completed": false
+		} 
+	json_string = JSON.stringify(node_data)
+	save_file.store_line(json_string)
+	
+	#exception Reset Count
+	node_data = {
+		"type": "Resets",
+		"reset_count": SignalManager.reset_game()
+		}
+	json_string = JSON.stringify(node_data)
+	save_file.store_line(json_string)
+		
+	get_tree().reload_current_scene()

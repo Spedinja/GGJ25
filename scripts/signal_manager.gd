@@ -17,3 +17,9 @@ signal fully_upgraded_everything
 var tutorial_completed: bool = false
 
 var ingame: bool = false
+
+var reset_count: int = 0
+
+func reset_game() -> int:
+	reset_count += 1
+	return reset_count

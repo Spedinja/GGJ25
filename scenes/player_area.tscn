@@ -780,6 +780,7 @@ texture = ExtResource("5_0c0ci")
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="RollerShutter" type="Sprite2D" parent="Foreground"]
+process_mode = 3
 z_index = 10
 position = Vector2(960, 1620)
 texture = ExtResource("78_rnajo")
@@ -1111,6 +1112,7 @@ z_index = 15
 visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Score" type="Control" parent="HUD"]
 visible = false

@@ -72,6 +72,14 @@ func save_state():
 	}
 	return save_dict
 
+func reset_state():
+	var reset_dict = {
+		"filename" : self.get_path(),
+		"parent" : get_parent().get_path(),
+		"score" : 10
+	}
+	return reset_dict
+
 func load_state_withDict(data: Dictionary):
 	score = int(data.get("score", 0))
 	current_money_us.text = str("$: ", score)

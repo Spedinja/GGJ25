@@ -34,6 +34,7 @@ stream_1/stream = ExtResource("16_y0k48")
 stream_2/stream = ExtResource("17_l688k")
 
 [node name="music_player" type="Node"]
+process_mode = 3
 script = ExtResource("1_gp57g")
 base_tracks = Array[AudioStream]([ExtResource("2_plxjo"), ExtResource("3_m08fu"), ExtResource("4_bj175"), ExtResource("5_7glwf")])
 cafe_tracks = Array[AudioStream]([ExtResource("6_euvau"), ExtResource("7_72vym"), ExtResource("8_n3a54"), ExtResource("9_q777p")])
